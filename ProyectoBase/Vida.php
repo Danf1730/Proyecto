@@ -11,12 +11,12 @@
 <body>
 
 	<div class="cabeza">
-		<h1><a href="Inicio.php" style="text-decoration: none">Aseguradora UCAB Contineltal </h1>
+		<h1>Aseguradora UCAB Contineltal </h1>
 	</div>
 
 	
 	<div class="footer">
-		<p>Todos los derchos reservados &copy; 2022</p>
+	<p> <a href="Inicio.php" style="float:right">Regresar</a> </p>
 	</div>
     
 </body>
