@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Aseguradora UCAB Contineltal - Director</title>
 	<link rel="stylesheet" type="text/css" href="style_proyecto/Menus.css" style="text-decoration:none">
+    <body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
 </head>
 
 <body>
@@ -13,7 +14,6 @@
 	<div class="cabeza">
 		<h1>
 			Aseguradora UCAB Contineltal
-			<a href="Sesion.php" style="float:right" allin>Iniciar sesion</a>
 			</h1>
 	</div>
 
@@ -36,7 +36,7 @@
                 <li>Agentes
                     <ul>
 						<a href="Vida.php" style="text-decoration:none"><li>Consultar</a></li>
-						<a href="Hogar.php" style="text-decoration:none"><li>Añadir</a></li>
+						<a href="AñadirAgentes.php" style="text-decoration:none"><li>Añadir</a></li>
                     </ul>
                 </li>
 				<li>Accidentes y multas

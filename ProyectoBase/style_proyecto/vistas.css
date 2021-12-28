@@ -19,24 +19,7 @@ html{
     padding: 15px;
     text-align: center;
 }
-.menu ul{
-    text-decoration: none;
-    text-align: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.menu li{
-    background-color:#0099cc;
-    margin-bottom:7px;
-    padding: 8px;
-    color: black;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
-}
 
-.menu li:hover/*oscurecer menu al seleccionar*/{
-    background-color: #33b5e5;
-}
 
 .aside{
     background-color: #0099cc;
@@ -49,10 +32,17 @@ html{
 .footer{
     background-color:#0099cc;
     color: black;
+    text-align: right;
     text-align: center;
     font-size: 12px;
     padding: 15px;
 }
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
 /*Para dispositivos moviles*/
 [class*=col-]{
     width: 100%;
