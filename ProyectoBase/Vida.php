@@ -5,7 +5,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Vida</title>
-	<link rel="stylesheet" type="text/css" href="style_proyecto/proyecto.css">
+	<link rel="stylesheet" type="text/css" href="style_proyecto/vistas.css">
+	<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
 </head>
 
 <body>

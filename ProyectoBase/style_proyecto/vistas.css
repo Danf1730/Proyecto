@@ -49,10 +49,17 @@ html{
 .footer{
     background-color:#0099cc;
     color: black;
+    text-align: right;
     text-align: center;
     font-size: 12px;
     padding: 15px;
 }
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
 /*Para dispositivos moviles*/
 [class*=col-]{
     width: 100%;
