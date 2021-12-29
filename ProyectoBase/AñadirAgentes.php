@@ -11,10 +11,10 @@
 
 <body>
 	<div class="cabeza">
-		<h1>Aseguradora UCAB Contineltal </h1>
+		<h1>Aseguradora UCAB Continental </h1>
 	</div>
     <form>
-        <ul>Añadir Agentes</ul>
+        <ul>Añadir Agente</ul>
         <ul>Ingrese los siguientes datos de agente</ul>
         <label for="">Nombre:</label>
         <input type="text" name="Anombre">

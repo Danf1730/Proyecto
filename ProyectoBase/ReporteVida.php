@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Aseguradora UCAB Contineltal  </title>
+	<title>Reportes de Vehiculos</title>
 	<link rel="stylesheet" type="text/css" href="style_proyecto/Menus.css" style="text-decoration:none">
 	<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
 </head>
@@ -14,23 +14,15 @@
 	<div class="cabeza">
 		<h1>
 			Aseguradora UCAB Continental
-			<a href="Sesion.php" style="float:right" allin>Iniciar sesion</a>
-			</h1>
 	</div>
 
 	<div class="row">
 
 		<div class="col-3 col-s-3 menu">
 			<ul>
-			    <li><a href="Sucursales.php" style="text-decoration:none" >Sucursales</li></a>
-				<li><a href="#" > Seguros/Polizas </a>
-                   <ul>
-				       <li><a href="Vida.php" style="text-decoration:none" >Vida</a></li>
-					   <li><a href="Hogar.php" style="text-decoration:none" >Hogar</a></li>
-					   <li><a href="Vehiculo.php" style="text-decoration:none">Vehiculo</a></li>
-                  </ul>
+				<li><a href="Inicio.php" > Top Clientes</a>
+                   <ul>  <li>Tres clientes propietarios de mas polizas de vida </li>  </ul>
                 </li> 
-				<li> <a href="Financiamiento.php" style="text-decoration:none"> Financiamiento</li></a>
 			</ul>
         </div>
 	

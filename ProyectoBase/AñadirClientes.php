@@ -11,7 +11,7 @@
 
 <body>
 	<div class="cabeza">
-		<h1>Aseguradora UCAB Contineltal </h1>
+		<h1>Aseguradora UCAB Continental </h1>
 	</div>
     <form>
         <ul>Añadir Clientes</ul>

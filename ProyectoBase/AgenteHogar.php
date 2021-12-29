@@ -14,22 +14,25 @@
 	<div class="cabeza">
 		<h1>Aseguradora UCAB Continental </h1>
 	</div>
+
 	<div class="row">
 
-<div class="col-3 col-s-3 menu">
-<ul>
-	<a href="#" style="text-decoration:none"><li>Consultar poliza de Hogar</a></li>
-</ul>
+    <div class="col-3 col-s-3 menu">
+	<ul>
+		<a href="AñadirHogar.php" style="text-decoration:none"><li>Añadir poliza de Hogar</a></li>
+		<a href="#" style="text-decoration:none"><li>Consultar poliza de Hogar</a></li>
+	</ul>
+		
+    </div>
+
+     <div class="col-6 col-s-9">
 	
-</div>
-
- <div class="col-6 col-s-9">
-
-<div align="center"> <img src="img/ucab.jpg" width="400" height="400" alt="Imagen no disponible"> </div>
+	<div align="center"> <img src="img/ucab.jpg" width="400" height="400" alt="Imagen no disponible"> </div>
+	
+  </div>
 
 </div>
 
-</div>
 	
 	<div class="footer">
 	<p> <a href="Inicio.php" style="float:right">Regresar</a> </p>
