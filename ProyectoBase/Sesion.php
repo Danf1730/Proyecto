@@ -10,17 +10,19 @@
 </head>
 
 <body>
-
-	<div class="cabeza">
-		<h1>Aseguradora UCAB Continental </h1>
-	</div>
-	<form>
-        <ul>Inicio de sesión</ul>
-        <label for="">Usuario:</label>
-        <input type="text" name="usuario">
-        <label for="">Contraseña:</label>
-        <input type="text" name="conraseña">
-        <input type="submit" name="Asubmit">
+		<h1>Introduce tus datos</h1>
+	
+	<form action="comprueba_datos.php" merhod="post" >
+		<table>
+		<tr>
+	    <td class="izq">
+		usuario</td><td class="der"><input type="text" name="usuario"></td></tr>
+		
+		<tr><td class="izq">
+		clave</td><td class="der"><input type="password" name="clave"></td></tr>
+		<tr><td colspan="2"><input type="submit" name="enviar" value="login"></tr>
+		</table>
+        
 </form>
 
 	<div class="footer">

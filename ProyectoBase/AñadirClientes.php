@@ -13,27 +13,35 @@
 	<div class="cabeza">
 		<h1>Aseguradora UCAB Continental </h1>
 	</div>
-    <form>
-        <ul>Añadir Clientes</ul>
+        
+     <form name="form1" method="get" action="insertarcliente.php">
         <ul>Ingrese los siguientes datos de cliente</ul>
-        <label for="">Nombre:</label>
-        <input type="text" name="Cnombre">
+      
+       <label for="">Nombre:</label>
+        <input type="text" name="Nombre">
         <label for="">Apellido:</label>
-        <input type="text" name="Capellido">
-        <label for="">Edad:</label>
-        <input type="text" name="Cedad">
-        <ul></ul>
+        <input type="text" name="Apellido">
         <label for="">Calle:</label>
-        <input type="text" name="Ccalle">
+        <input type="text" name="Calle">
         <label for="">Ciudad:</label>
         <input type="text" name="Ciudad">
-        <ul></ul>
         <label for="">Nº de Contacto:</label>
-        <input type="string" name="Ctelefono">
+        <input type="string" name="Telefono">
         <label for="">Cédula de identidad:</label>
-        <input type="text" name="Ccedula">
-        <input type="submit" name="Csubmit">
-</form>
+        <input type="text" name="Cedula">
+        <label for="">Genero:</label>
+        <input type="text" name="Genero">
+        <label for="">Fecha Nacimiento:</label>
+        <input type="text" name="f_nacimineto">
+        <label for="">id cliente:</label>
+        <input type="text" name="id_cliente">
+        <label for="">id sucursal:</label>
+        <input type="text" name="id_sucursal">
+        <label for="">id agente:</label>
+        <input type="text" name="id_agente">
+        <input type="submit" name="submit">
+
+    </form>
 	
 	<div class="footer">
 	<p> <a href="Inicio.php" style="float:right">Regresar</a> </p>

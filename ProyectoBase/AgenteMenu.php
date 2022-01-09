@@ -11,6 +11,13 @@
 
 <body>
 
+<?php 
+ session_start();
+ if(!isset($_SESSION["login"])){
+	header("location:sesion.php");
+ }
+?>
+
 	<div class="cabeza">
 		<h1>
 			Aseguradora UCAB Continental
