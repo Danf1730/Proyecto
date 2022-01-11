@@ -24,7 +24,7 @@
         <input type="text" name="Edad">
         <label for="">Profesión:</label>
         <input type="text" name="Prof">
-        <label for="">Prima:</label>
+        <label for="">Primag:</label>
         <input type="text" name="Prima">
         <label for="">Cobertura:</label>
         <input type="string" name="Cobertura">
