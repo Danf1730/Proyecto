@@ -33,7 +33,7 @@
         <label for="">Prima:</label>
         <input type="text" name="Vprima">
         <label for="">Fecha del pago:</label>
-        <input type="text" name="Fpago">
+        <input type="date" name="Fpago">
         <label for="">Cobertura:</label>
         <input type="text" name="Vcobertura">
         <label for="">Recargos:</label>

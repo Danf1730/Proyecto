@@ -13,26 +13,30 @@
 	<div class="cabeza">
 		<h1>Aseguradora UCAB Continental </h1>
 	</div>
-    <form>
+    <form action="insertarpolizaBD.php" method="POST">
         <ul>Añadir Poliza de Hogar</ul>
         <ul>Ingrese los siguientes datos</ul>
-        <label for="">Titular:</label>
-        <input type="text" name="Vtitular">
-        <label for="">Valor:</label>
-        <input type="text" name="Valor">
-        <label for="">Contendo:</label>
-        <input type="text" name="Contenido">
-        <label for="">Riesgos Auxiliares:</label>
-        <input type="text" name="Riesgos Auxiliares">
-        <label for="">Prima:</label>
-        <input type="text" name="Prima">
-        <label for="">Dirreción:</label>
-        <input type="string" name="Direc">
+        <label for="">id poliza:</label>
+        <input type="text" name="id_poliza" id="id_poliza">
+        <label for="">id empleado asegurador:</label>
+        <input type="text" name="id_empleado" id="id_empleado">
+        <label for="">Nombre Cliente:</label>
+        <input type="text" name="nombre_tomador" id="nombre_tomador">
+        <label for="">Cobertura:</label>
+        <input type="text" name="Cobertura" id="Cobertuta">
         <label for="">Forma de pago:</label>
-        <input type="text" name="Forma de pago">
-        <label for="">Fecha del pago:</label>
-        <input type="text" name="Fpago">
-        <input type="submit" name="Asubmit">
+        <input type="text" name="forma_de_pago" id="forma_de_pago">
+        <label for="">Fecha del contarto:</label>
+        <input type="date" name="f_contrato" id="f_contrato">
+        <label for="">Fecha de renovacion:</label>
+        <input type="date" name="f_renovacion" id="f_renovacon">
+        <label for="">Vigente:</label>
+        <input type="text" name="vigente" id="vigente">
+        <label for="">Tipo:</label>
+        <input type="text" name="tipo" id="tipo">
+        <label for="">Prima:</label>
+        <input type="text" name="prima" id="prima">
+        <input type="submit" name="añadir">
 </form>
 	
 	<div class="footer">
@@ -41,3 +45,4 @@
     
 </body>
 </html>
+

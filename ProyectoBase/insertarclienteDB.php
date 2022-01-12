@@ -16,7 +16,7 @@
         >=1 && strlen($_POST['id_cliente'])>=1 && strlen($_POST['id_sucursal'])>=1 && strlen($_POST['id_agente'])>=1 && strlen($_POST['Genero'])
         >=1 && strlen($_POST['id_prestamo'])){
 
-              $sql="INSERT INTO 'cliente' (id_cliente, id_sucursal,id_agente_prestamo,id_asesor_personal
+              $sql="INSERT INTO cliente (id_cliente, id_sucursal,id_agente_prestamo,id_asesor_personal
                                              , nombre, apellido, calle, ciudad, genero, fecha_nacimiento
                                            , telefono,cedula,profesion) 
                                    VALUES (:id_cliente,:id_sucursal,:id_prestamo,:id_agente
@@ -24,20 +24,30 @@
                                           ,:f_nacimineto,:Telefono,:Cedula,:prof)";
                      
               $resultado=$base->prepare($sql);
-              $resultado->execute(array(":id_cliente"=>$cliente,":id_sucursal"=>$sucursal,":id_prestamo"=>$prestamo,
-                                        ":id_agente"=>$agente,":Nombre"=>$name,":Apellido"=>$ape,":Calle"=>$calle,
-                                        ":Ciudad"=>$ciudad,":Genero"=>$genero,":f_nacimineto"=>$nan,":Telefono"=>$cel,
-                                        ":Cedula"=>$cedula,":prof"=>$prof));}
-                                   echo "registrado";
+              $resultado->execute(array(":id_cliente"=>$cliente,
+                                        ":id_sucursal"=>$sucursal,
+                                        ":id_prestamo"=>$prestamo,
+                                        ":id_agente"=>$agente,
+                                        ":Nombre"=>$name,
+                                        ":Apellido"=>$ape,
+                                        ":Calle"=>$calle,
+                                        ":Ciudad"=>$ciudad,
+                                        ":Genero"=>$genero,
+                                        ":f_nacimineto"=>$nan,
+                                        ":Telefono"=>$cel,
+                                        ":Cedula"=>$cedula,
+                                        ":prof"=>$prof));}else { echo "vacio";}
+                                  
                
         
 
               
 
-        $resultado->closeCursor(); 
+        
 
        }catch(Exception $e){
-              echo "linea del error:". $e->getLine();
+              echo "linea del erro:". $e->getLine();
+              echo "mensaje error". $e->getMessage();
        }
 
        finally{

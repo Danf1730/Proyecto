@@ -31,7 +31,7 @@
         <label for="">Genero:</label>
         <input type="text" name="Genero" id="Genero">
         <label for="">Fecha Nacimiento:</label>
-        <input type="text" name="f_nacimineto" id="f_nacimineto">
+        <input type="date" name="f_nacimineto" id="f_nacimineto">
         <label for="">Profesion:</label>
         <input type="text" name="prof" id="prof">
         <label for="">id cliente:</label>
