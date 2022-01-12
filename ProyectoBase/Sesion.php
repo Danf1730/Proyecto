@@ -12,7 +12,7 @@
 <body>
 		<h1>Introduce tus datos</h1>
 	
-	<form action="comprueba_datos.php" merhod="post" >
+	<form action="comprueba_datos.php" method="post" >
 		<table>
 		<tr>
 	    <td class="izq">

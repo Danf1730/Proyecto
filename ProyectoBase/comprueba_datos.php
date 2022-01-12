@@ -13,7 +13,7 @@
 <?php 
 
 try{
-     $base=new PDO("mysql:host=localhost; dbname=proyectobase" ,"root","");
+     $base=new PDO("mysql:host=bcfwtrpmeo8khveqpqcu-mysql.services.clever-cloud.com; dbname=bcfwtrpmeo8khveqpqcu" ,"uimjtch6xs9bod2v","fMfmvxQzfl8D6VWnmeCq");
      $base->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
      $sql="SELECT *FROM login WHERE usuario=:login AND clave=:clave";
      $resultado=$base->prepare($sql);
