@@ -24,9 +24,9 @@ try{
      $resultado->execute();
      $numero_registro=$resultado->rowCount();
      if ($numero_registro!=0){
-        echo "<h2>buenas 20</h2>";
+        echo "<h2>paso </h2>";
      }else{
-        echo "<h2>buenas</h2>";
+        echo "<h2>no paso</h2>";
      }
 
 }catch(Exception $e){
@@ -37,3 +37,4 @@ try{
 
 </body>
 </html>
+

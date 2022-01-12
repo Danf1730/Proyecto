@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Añadir Cliente</title>
 	<link rel="stylesheet" type="text/css" href="style_proyecto/añadir.css">
-	<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
 </head>
 
 <body>
@@ -14,32 +13,36 @@
 		<h1>Aseguradora UCAB Continental </h1>
 	</div>
         
-     <form name="form1" method="get" action="insertarcliente.php">
+     <form action="insertarclienteDB.php" method="POST" >
         <ul>Ingrese los siguientes datos de cliente</ul>
       
        <label for="">Nombre:</label>
-        <input type="text" name="Nombre">
+        <input type="text" name="Nombre" id="Nombre">
         <label for="">Apellido:</label>
-        <input type="text" name="Apellido">
+        <input type="text" name="Apellido" id="Apellido">
         <label for="">Calle:</label>
-        <input type="text" name="Calle">
+        <input type="text" name="Calle" id="Calle">
         <label for="">Ciudad:</label>
-        <input type="text" name="Ciudad">
+        <input type="text" name="Ciudad" id="Ciudad">
         <label for="">Nº de Contacto:</label>
-        <input type="string" name="Telefono">
+        <input type="string" name="Telefono" id="Telefono">
         <label for="">Cédula de identidad:</label>
-        <input type="text" name="Cedula">
+        <input type="text" name="Cedula" id="Cedula">
         <label for="">Genero:</label>
-        <input type="text" name="Genero">
+        <input type="text" name="Genero" id="Genero">
         <label for="">Fecha Nacimiento:</label>
-        <input type="text" name="f_nacimineto">
+        <input type="text" name="f_nacimineto" id="f_nacimineto">
+        <label for="">Profesion:</label>
+        <input type="text" name="prof" id="prof">
         <label for="">id cliente:</label>
-        <input type="text" name="id_cliente">
-        <label for="">id sucursal:</label>
-        <input type="text" name="id_sucursal">
-        <label for="">id agente:</label>
-        <input type="text" name="id_agente">
-        <input type="submit" name="submit">
+        <input type="text" name="id_cliente" id="id_cliente">
+        <label for="">id sucursal registro:</label>
+        <input type="text" name="id_sucursal" id="id_sucursal">
+        <label for="">id agente personal:</label>
+        <input type="text" name="id_agente" id="id_agente">
+        <label for="">id agente prestamo:</label>
+        <input type="text" name="id_prestamo" id="id_prestamo">
+        <input type="submit" name="añadir">
 
     </form>
 	
