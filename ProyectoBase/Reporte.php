@@ -50,7 +50,25 @@
 
                     $conexion = mysqli_connect($host, $user, $password, $database);
 
-                    $query = "SELECT * FROM cliente where nombre like '%Jos%' or apellido like '%Jos%'";
+                    $query = "SELECT * FROM cliente 
+                    where nombre like '%Jos%' 
+                    and id_cliente in (
+                                        SELECT id_cliente from propietario_poliza 
+                                        where id_poliza in (
+                                                            select id_poliza from poliza 
+                                                            where vigente = 'si' 
+                                                            and id_poliza in(
+                                                                            SELECT id_poliza from poliza_vehiculo
+                                                                            )
+
+                                                            )
+                                        )
+                    and id_cliente in (
+                    SELECT id_cliente from vehiculo
+                    where id_vehiculo in (
+                                         SELECT id_vehiculo from involucrado_vehiculo
+                                         )
+                    )";
 
                     $resultado = mysqli_query($conexion,$query);
 
