@@ -21,12 +21,11 @@
 		<div class="col-3 col-s-3 menu">
 			<ul>
 			    <li><a href="#" style="text-decoration:none" >Clientes con mas polizas</li></a>
-				<li><a href="Inicio.php" > Clientes con mas de 5 Polizas</a>
-                   <ul>  <li>ejmplo xd</li>  </ul>
-                </li> 
+				<li><a href="Inicio.php" > Clientes con mas de 5 Polizas</a></li> 
 				<li> <a href="#" >Poliza sucrusal por fecha</li></a>
                 <li> <a href="#" >Asegurados Titulares</li></a>
                 <li> <a href="#" >Sucursales con mas prestamos</li></a>
+				<li> <a href="Reporte.php" >Persona con nombre Jos</li></a>
 			</ul>
         </div>
 	

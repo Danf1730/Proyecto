@@ -45,6 +45,11 @@
         <input type="submit" name="añadir">
 
         <?php
+
+            id_cliente=intval(id_cliente)
+            id_sucursal=intval(id_sucursal)
+            id_agente=intval(id_agente)
+            
        $con=new PDO("mysql:host=bcfwtrpmeo8khveqpqcu-mysql.services.clever-cloud.com:3306; dbname=bcfwtrpmeo8khveqpqcu" ,"uimjtch6xs9bod2v","fMfmvxQzfl8D6VWnmeCq");
        if(isset($_POST['añadir'])){
         if(strlen($_POST['Nombre'])>=1 && strlen($_POST['Apellido'])>=1 && strlen($_POST['Calle'])>=1 && strlen($_POST['Ciudad'])
