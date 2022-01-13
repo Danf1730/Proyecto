@@ -25,7 +25,7 @@
                 </li> 
 				<li> <a href="#" >Vehiculos Accidentados</a></li>
                 <li> <a href="#" >Matricula "Jos"</a> 
-                <ul>  <li>Matricula con cadena "Jos" que tenga una poliza activa y haya sufrido almenos 2 accidentes</li>  </ul>
+                <ul> <li> <a href="Reporte.php" >Matricula con cadena "Jos" que tenga una poliza activa y haya sufrido almenos 2 accidentes </a> </li>  </ul>
                 </li>
                 <li> <a href="#" >Multas Gravedad 8 o superior </li></a>
 			</ul>

@@ -24,9 +24,11 @@ try{
      $resultado->execute();
      $numero_registro=$resultado->rowCount();
      if ($numero_registro!=0){
-        echo "<h2>buenas 20</h2>";
+      //echo "buenas tardes";
+      header("Location:AgenteMenu.php");
      }else{
-        echo "<h2>buenas</h2>";
+        header("Location:Sesion.php");
+       
      }
 
 }catch(Exception $e){
@@ -37,3 +39,4 @@ try{
 
 </body>
 </html>
+

@@ -8,7 +8,6 @@
 	<link rel="stylesheet" type="text/css" href="style_proyecto/Añadir.css">
     <body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
 </head>
-
 <body>
 		<h1>Introduce tus datos</h1>
 	
@@ -24,7 +23,6 @@
 		</table>
         
 </form>
-
 	<div class="footer">
 		<p> <a href="Inicio.php" style="float:right">Regresar</a> </p>
 	</div>
