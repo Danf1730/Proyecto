@@ -13,7 +13,7 @@
 	<div class="cabeza">
 		<h1>Aseguradora UCAB Continental </h1>
 	</div>
-    <form action="insertarpolizaBD.php" method="POST">
+    <form action="insertarpolizaHogarBD.php" method="POST">
         <ul>Añadir Poliza de Hogar</ul>
         <ul>Ingrese los siguientes datos</ul>
         <label for="">id poliza:</label>
@@ -23,7 +23,7 @@
         <label for="">Nombre Cliente:</label>
         <input type="text" name="nombre_tomador" id="nombre_tomador">
         <label for="">Cobertura:</label>
-        <input type="text" name="Cobertura" id="Cobertuta">
+        <input type="double" name="Cobertura" id="Cobertuta">
         <label for="">Forma de pago:</label>
         <input type="text" name="forma_de_pago" id="forma_de_pago">
         <label for="">Fecha del contarto:</label>
@@ -36,6 +36,13 @@
         <input type="text" name="tipo" id="tipo">
         <label for="">Prima:</label>
         <input type="text" name="prima" id="prima">
+        <ul> Datos del Hogar</ul>
+        <label for="">Nombre item a asegurar:</label>
+        <input type="text" name="nombre_item" id="nombre_item">
+        <label for="">Tipo del Item :</label>
+        <input type="text" name="tipo_item" id="tipo_item">
+        <label for="">Valor del Item :</label>
+        <input type="double" name="valor_item" id="valor_item">
         <input type="submit" name="añadir">
 </form>
 	

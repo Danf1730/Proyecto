@@ -1,0 +1,381 @@
+					                        *LOGIN*
+
+create table login(
+    id_login int NOT NULL AUTO_INCREMENT,
+    usuario varchar(30) NOT NULL,
+    clave varchar(30) NOT NULL ,
+    id_empleado int,
+    id_cliente int,
+    pregunta_1 varchar(50) NOT NULL,
+    respuesta_1 varchar(50) NOT NULL,
+    pregunta_2 varchar(50) NOT NULL,
+    respuesta_2 varchar(50) NOT NULL,
+    pregunta_3 varchar(50) NOT NULL,
+    respuesta_3 varchar(50) NOT NULL,
+    PRIMARY KEY (id_login),    
+    FOREIGN KEY (id_empleado) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_empleado) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente) ON DELETE CASCADE ON UPDATE CASCADE 
+)
+
+ALTER TABLE login ADD CONSTRAINT UQ_ID_EMPLEADO_LOGIN UNIQUE (id_empleado);
+
+ALTER TABLE login ADD CONSTRAINT UQ_USUARIO_LOGIN UNIQUE (usuario);
+
+INSERT INTO `login`(`usuario`, `clave`, `id_empleado`, `id_cliente`, `pregunta_1`, `respuesta_1`, `pregunta_2`, `respuesta_2`, `pregunta_3`, `respuesta_3`) VALUES ()
+
+
+
+
+				                        *SUCURSAL*
+
+create table sucursal(
+    id_sucursal int NOT NULL AUTO_INCREMENT,
+    ubicacion varchar(50) NOT NULL,
+    nombre varchar(50) NOT NULL,
+    id_director int NOT NULL,
+    PRIMARY KEY (id_sucursal)
+)
+
+INSERT INTO `sucursal`(`ubicacion`, `nombre`, `id_director`) VALUES ()
+
+
+				                        *EMPLEADO*
+
+create table empleado(
+    id_empleado int NOT NULL AUTO_INCREMENT,
+    id_sucursal int NOT NULL,
+    cedula int NOT NULL,  
+    nombre varchar(50) NOT NULL, 
+    apellido varchar(50) NOT NULL,
+    telefono int NOT NULL, 
+    direccion varchar(50) NOT NULL,
+    fecha_inicio_empresa DATE NOT NULL,
+    fecha_inicio_sucursal DATE NOT NULL,
+    b_salarial double NOT NULL,
+    s_objetivos double NOT NULL,
+    tipo_empleado varchar(50) NOT NULL,
+    PRIMARY KEY (id_empleado)
+    FOREIGN KEY (id_sucursal) REFERENCES sucursal (id_sucursal) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE empleado ADD CONSTRAINT UQ_ID_EMPLEADO_EMPLEADO UNIQUE (id_empleado);
+ALTER TABLE empleado ADD CONSTRAINT UQ_ID_CEDULA_EMPLEADO UNIQUE (cedula);
+
+INSERT INTO `empleado`(`id_sucursal`, `cedula`, `nombre`, `apellido`, `telefono`, `direccion`, `fecha_inicio_empresa`, `fecha_inicio_sucursal`, `b_salarial`, `s_objetivos`, `tipo_empleado`) VALUES ()
+
+
+
+
+				                        *SUBORDINADO*
+
+create table subordinado(
+    id_subordinado int NOT NULL AUTO_INCREMENT,
+    id_empleado int NOT NULL,
+    id_empleado_subordinado int,  
+    nombre varchar(50) NOT NULL,
+    PRIMARY KEY (id_subordinado)
+    FOREIGN KEY (id_empleado_subordinado) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (id_empleado) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (id_empleado_subordinado) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE subordinado ADD CONSTRAINT UQ_ID_SUBORDINADO_SUBORDINADO UNIQUE (id_subordinado);
+
+INSERT INTO `subordinado`(`id_empleado`, `id_empleado_subordinado`, `nombre`) VALUES ()
+
+
+				                      *CARTERA_AGENTE*
+
+create table cartera_agente(
+    id_cartera int NOT NULL AUTO_INCREMENT,
+    id_empleado int NOT NULL,
+    id_poliza int NOT NULL,
+    monto int NOT NULL, 
+    year int NOT NULL,  
+    PRIMARY KEY (id_cartera),
+    FOREIGN KEY (id_empleado) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_poliza) REFERENCES poliza (id_poliza) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE cartera_agente ADD CONSTRAINT UQ_ID_CARTERA_CARTAGENTE UNIQUE (id_cartera);
+
+INSERT INTO `cartera_agente`(`id_empleado`, `monto`, `year`, `id_poliza`) VALUES ()
+
+
+
+				                          *CLIENTE*
+
+create table cliente(
+    id_cliente int NOT NULL AUTO_INCREMENT,
+    id_sucursal int NOT NULL,
+    id_agente_prestamo int NOT NULL,
+    id_asesor_personal int NOT NULL,
+    nombre varchar(50) NOT NULL,
+    apellido varchar(50) NOT NULL,
+    calle varchar(50) NOT NULL,
+    ciudad varchar(50) NOT NULL,
+    genero varchar(50) NOT NULL,
+    fecha_nacimiento DATE NOT NULL,
+    telefono int NOT NULL,
+    cedula int NOT NULL, 
+    profesion varchar(50) NOT NULL, 
+    PRIMARY KEY (id_cliente),
+    FOREIGN KEY (id_sucursal) REFERENCES sucursal (id_sucursal) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_agente_prestamo) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_asesor_personal) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE cliente ADD CONSTRAINT UQ_ID_CLIENTE_CLIENTE UNIQUE (id_cliente);
+ALTER TABLE cliente ADD CONSTRAINT UQ_CEDULA_CLIENTE UNIQUE (cedula);
+
+
+
+
+
+				                         *PRESTAMO*
+
+create table prestamo(
+    id_prestamo int NOT NULL AUTO_INCREMENT,
+    id_empleado int NOT NULL,
+    id_sucursal int NOT NULL,
+    interes double NOT NULL, 
+    importe double NOT NULL,
+    PRIMARY KEY (id_prestamo),
+    FOREIGN KEY (id_empleado) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_sucursal) REFERENCES sucursal (id_sucursal) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE prestamo ADD CONSTRAINT UQ_ID_PRESTAMO_PRESTAMO UNIQUE (id_prestamo);
+
+
+
+
+				                     *SOLICITANTE_PRESTAMO*
+
+create table solicitante_prestamo(
+    id_solicitante int NOT NULL AUTO_INCREMENT,
+    id_prestamo int NOT NULL,
+    id_cliente int NOT NULL,
+    PRIMARY KEY (id_solicitante),
+    FOREIGN KEY (id_prestamo) REFERENCES prestamo (id_prestamo) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE solicitante_prestamo ADD CONSTRAINT UQ_ID_SOLICITANTE_SPRESTAMO UNIQUE (id_solicitante);
+
+
+
+
+				                     *MOVIMIENTO_PAGO*
+
+create table movimiento_pago(
+    id_movimiento int NOT NULL AUTO_INCREMENT,
+    id_prestamo int NOT NULL,
+    monto_abono double NOT NULL,
+    monto_pendiente double NOT NULL,
+    f_pago datetime NOT NULL,
+    f_pago_prox date NOT NULL,
+    PRIMARY KEY (id_movimiento),
+    FOREIGN KEY (id_prestamo) REFERENCES prestamo (id_prestamo) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE movimiento_pago ADD CONSTRAINT UQ_ID_MOVIMIENTO_MOVP UNIQUE (id_movimiento);
+
+
+
+
+				                         *VEHICULO*
+
+create table vehiculo(
+    id_vehiculo int NOT NULL AUTO_INCREMENT,
+    id_cliente int NOT NULL,
+    matricula varchar(50) NOT NULL,
+    marca varchar(50) NOT NULL,
+    modelo varchar(50) NOT NULL,
+    PRIMARY KEY (id_vehiculo),
+    FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE vehiculo ADD CONSTRAINT UQ_ID_VEHICULO_VEHICULO UNIQUE (id_vehiculo);
+ALTER TABLE vehiculo ADD CONSTRAINT UQ_MATRICULA_VEHICULO UNIQUE (matricula);
+
+INSERT INTO vehiculo (id_cliente, matricula, marca, modelo) VALUES ()
+
+
+				                    *VEHICULO_ACCIDENTE*
+
+create table vehiculo_accidente(
+    id_accidente int NOT NULL AUTO_INCREMENT,
+    lugar varchar(50) NOT NULL,
+    f_accidente datetime NOT NULL,
+    PRIMARY KEY (id_accidente)
+)
+
+ALTER TABLE vehiculo_accidente ADD CONSTRAINT UQ_ID_ACCIDENTE_VACCIDENTE UNIQUE (id_accidente);
+
+INSERT INTO vehiculo_accidente (lugar, f_accidente) VALUES ()
+
+
+				                 *INVOLUCRADO_VEHICULO*
+
+create table involucrado_vehiculo(
+    id_involucrado int NOT NULL AUTO_INCREMENT,
+    id_accidente int,
+    id_vehiculo int,
+    id_persona int,
+    id_multa int,
+    PRIMARY KEY (id_involucrado),
+    FOREIGN KEY (id_accidente) REFERENCES vehiculo_accidente (id_accidente) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_vehiculo) REFERENCES vehiculo (id_vehiculo) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_multa) REFERENCES multa (id_multa) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_persona) REFERENCES persona_adicional (id_persona) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE involucrado_vehiculo ADD CONSTRAINT UQ_ID_INVOLUCRADO_INVEHICULO UNIQUE (id_involucrado);
+
+
+
+
+				                            *MULTA*
+
+create table multa(
+    id_multa int NOT NULL AUTO_INCREMENT,
+    id_vehiculo int NOT NULL,
+    id_cliente_conductor int NOT NULL,
+    importe int NOT NULL,
+    f_multa date NOT NULL,
+    lugar varchar(50) NOT NULL,
+    PRIMARY KEY (id_multa),
+    FOREIGN KEY (id_vehiculo) REFERENCES vehiculo (id_vehiculo) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_cliente_conductor) REFERENCES cliente (id_cliente) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE multa ADD CONSTRAINT UQ_ID_MULTA_MULTA UNIQUE (id_multa);
+
+
+
+
+				                             *POLIZA*
+
+create table poliza(
+    id_poliza int NOT NULL AUTO_INCREMENT,
+    id_empleado int NOT NULL,
+    nombre_tomador varchar(50) NOT NULL,
+    cobertura double NOT NULL,
+    forma_de_pago varchar(50) NOT NULL,
+    f_contrato date NOT NULL,
+    f_Renovacion varchar(50) NOT NULL,
+    vigente varchar(50) NOT NULL,
+    tipo varchar(50) NOT NULL,
+    prima double NOT NULL,
+    PRIMARY KEY (id_poliza),
+    FOREIGN KEY (id_empleado) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE poliza ADD CONSTRAINT UQ_ID_POLIZA_POLIZA UNIQUE (id_poliza);
+
+
+
+
+				                        *POLIZA_HOGAR*
+
+create table poliza_hogar(
+    id int NOT NULL AUTO_INCREMENT,
+    id_poliza int NOT NULL,
+    nombre_item varchar(50) NOT NULL,
+    tipo_item varchar(50) NOT NULL,
+    valor_item double NOT NULL,
+    prima_asignada double NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_poliza) REFERENCES poliza (id_poliza) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE poliza_hogar ADD CONSTRAINT UQ_ID_PHOGAR UNIQUE (id);
+
+
+
+
+				                        *POLIZA_VIDA*
+
+create table poliza_vida(
+    id int NOT NULL AUTO_INCREMENT,
+    id_poliza int NOT NULL,
+    edad_cliente date NOT NULL,
+    profesion_cliente varchar(50) NOT NULL,
+    cobertura_economica double NOT NULL,
+    prima_asignada double NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_poliza) REFERENCES poliza (id_poliza) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE poliza_vida ADD CONSTRAINT UQ_ID_PVIDA UNIQUE (id);
+
+
+
+
+				                     *POLIZA_VEHICULO*
+
+create table poliza_vehiculo(
+    id int NOT NULL AUTO_INCREMENT,
+    id_poliza int NOT NULL,
+    categoria_vehiculo varchar(50) NOT NULL,
+    edad_vehiculo int NOT NULL,
+    edad_conductor date NOT NULL,
+    tipo_cobertura varchar(50) NOT NULL,
+    prima_asignada double NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_poliza) REFERENCES poliza (id_poliza) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE poliza_vehiculo ADD CONSTRAINT UQ_ID_PVEHICULO UNIQUE (id);
+
+
+
+
+				                    *PROPIETARIO_POLIZA*
+
+create table propietario_poliza(
+    id_propietario int NOT NULL AUTO_INCREMENT,
+    id_cliente int NOT NULL,
+    id_poliza int NOT NULL,
+    id_agente_personal int NOT NULL,
+    f_ultimo_uso date NOT NULL,
+    PRIMARY KEY (id_propietario),
+    FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_poliza) REFERENCES poliza (id_poliza) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_agente_personal) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE propietario_poliza ADD CONSTRAINT UQ_ID_PROPIETARIO_PPOLIZA UNIQUE (id_propietario);
+
+
+
+
+				                          *PERSONA_ADICIONAL*
+
+create table persona_adicional(
+    id_persona int NOT NULL AUTO_INCREMENT,
+    nombre varchar(50) NOT NULL,
+    apellido varchar(50) NOT NULL,
+    cedula int NOT NULL,
+    direccion varchar(50) NOT NULL,
+    telefono int NOT NULL, 
+    ciudad varchar(50) NOT NULL, 
+    PRIMARY KEY (id_persona)
+)
+
+
+
+
+		                                  *BENEFICIARIO_POLIZA*
+
+create table beneficiario_poliza(
+    id_beneficiario int NOT NULL AUTO_INCREMENT,
+    id_persona_beneficiario int NOT NULL,
+    id_poliza int NOT NULL,
+    PRIMARY KEY (id_beneficiario),
+    FOREIGN KEY (id_poliza) REFERENCES poliza (id_poliza) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_persona_beneficiario) REFERENCES persona_adicional (id_persona) ON DELETE CASCADE ON UPDATE CASCADE
+)

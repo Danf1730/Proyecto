@@ -1,9 +1,11 @@
 <?php
        
-       $name =$_POST['Nombre'];  $ape =$_POST['Apellido']; $calle =$_POST['Calle'];
-       $ciudad =$_POST['Ciudad']; $cel =$_POST['Telefono']; $cedula =$_POST['Cedula'];
-       $nan =$_POST['f_nacimineto']; $prof =$_POST['prof']; $cliente =$_POST['id_cliente'];
-       $sucursal =$_POST['id_sucursal']; $agente =$_POST['id_agente']; $genero =$_POST['Genero'];
+       $name =$_POST['Nombre'];        $ape =$_POST['Apellido']; 
+       $calle =$_POST['Calle'];        $ciudad =$_POST['Ciudad']; 
+       $cel =$_POST['Telefono'];       $cedula =$_POST['Cedula'];
+       $nan =$_POST['f_nacimineto'];   $prof =$_POST['prof']; 
+       $cliente =$_POST['id_cliente']; $sucursal =$_POST['id_sucursal']; 
+       $agente =$_POST['id_agente'];   $genero =$_POST['Genero'];
        $prestamo  =$_POST['id_prestamo'];
 
 
