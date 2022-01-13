@@ -8,20 +8,18 @@
 	<link rel="stylesheet" type="text/css" href="style_proyecto/Menus.css" style="text-decoration:none">
 	<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
 </head>
-
 <body>
-
 	<div class="cabeza">
 		<h1>
 			Aseguradora UCAB Continental
 	</div>
-
 	<div class="row">
-
 		<div class="col-3 col-s-3 menu">
 			<ul>
 			    <li><a href="#" style="text-decoration:none" >Clientes con mas polizas</li></a>
-				<li><a href="Inicio.php" > Clientes con mas de 5 Polizas</a></li> 
+				<li><a href="#.php" > Clientes con mas de 5 Polizas</a>
+                   <ul>  <li>Cliente que tienen un contrato con 5 polizas o superior</li>  </ul>
+                </li> 
 				<li> <a href="#" >Poliza sucrusal por fecha</li></a>
                 <li> <a href="#" >Asegurados Titulares</li></a>
                 <li> <a href="#" >Sucursales con mas prestamos</li></a>

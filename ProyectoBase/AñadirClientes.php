@@ -10,8 +10,9 @@
 
 <body>
 	<div class="cabeza">
-		<h1>Aseguradora UCAB Continental </h1>
-	</div>
+        <h1> Aseguradora UCAB Continental </h1>
+	 </div>
+		
         
      <form action="insertarclienteDB.php" method="POST" >
         <ul>Ingrese los siguientes datos de cliente</ul>
