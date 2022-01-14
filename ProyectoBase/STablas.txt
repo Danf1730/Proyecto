@@ -1,4 +1,4 @@
-					                        *LOGIN*
+					*LOGIN*
 
 create table login(
     id_login int NOT NULL AUTO_INCREMENT,
@@ -20,15 +20,13 @@ create table login(
 )
 
 ALTER TABLE login ADD CONSTRAINT UQ_ID_EMPLEADO_LOGIN UNIQUE (id_empleado);
-
 ALTER TABLE login ADD CONSTRAINT UQ_USUARIO_LOGIN UNIQUE (usuario);
 
-INSERT INTO `login`(`usuario`, `clave`, `id_empleado`, `id_cliente`, `pregunta_1`, `respuesta_1`, `pregunta_2`, `respuesta_2`, `pregunta_3`, `respuesta_3`) VALUES ()
 
 
 
 
-				                        *SUCURSAL*
+				      *SUCURSAL*
 
 create table sucursal(
     id_sucursal int NOT NULL AUTO_INCREMENT,
@@ -38,10 +36,13 @@ create table sucursal(
     PRIMARY KEY (id_sucursal)
 )
 
-INSERT INTO `sucursal`(`ubicacion`, `nombre`, `id_director`) VALUES ()
+
+ALTER TABLE sucursal ADD CONSTRAINT NN_NOMBRE_SUCURSAL CHECK (nombre<>' ');
 
 
-				                        *EMPLEADO*
+
+
+				      *EMPLEADO*
 
 create table empleado(
     id_empleado int NOT NULL AUTO_INCREMENT,
@@ -62,13 +63,19 @@ create table empleado(
 
 ALTER TABLE empleado ADD CONSTRAINT UQ_ID_EMPLEADO_EMPLEADO UNIQUE (id_empleado);
 ALTER TABLE empleado ADD CONSTRAINT UQ_ID_CEDULA_EMPLEADO UNIQUE (cedula);
+ALTER TABLE empleado ADD CONSTRAINT VN_CEDULA_EMPLEADO CHECK (cedula>0);
+ALTER TABLE empleado ADD CONSTRAINT VN_TELEFONO_EMPLEADO CHECK (telefono>0);
+ALTER TABLE empleado ADD CONSTRAINT VN_BSALARIAL_EMPLEADO CHECK (b_salarial>0);
+ALTER TABLE empleado ADD CONSTRAINT VN_SOBJETIVOS_EMPLEADO CHECK (s_objetivos>0);
+ALTER TABLE empleado ADD CONSTRAINT AD_TIPOE_EMPLEADO CHECK (tipo_empleado='Agente' or tipo_empleado='Director');
+ALTER TABLE empleado ADD CONSTRAINT NN_NOMBRE_EMPLEADO CHECK (nombre<>' ');
+ALTER TABLE empleado ADD CONSTRAINT NN_APELLIDO_EMPLEADO CHECK (apellido<>' ');
 
-INSERT INTO `empleado`(`id_sucursal`, `cedula`, `nombre`, `apellido`, `telefono`, `direccion`, `fecha_inicio_empresa`, `fecha_inicio_sucursal`, `b_salarial`, `s_objetivos`, `tipo_empleado`) VALUES ()
 
 
 
 
-				                        *SUBORDINADO*
+				     *SUBORDINADO*
 
 create table subordinado(
     id_subordinado int NOT NULL AUTO_INCREMENT,
@@ -82,11 +89,12 @@ create table subordinado(
 )
 
 ALTER TABLE subordinado ADD CONSTRAINT UQ_ID_SUBORDINADO_SUBORDINADO UNIQUE (id_subordinado);
+ALTER TABLE subordinado ADD CONSTRAINT NN_NOMBRE_SUBORDINADO CHECK (nombre<>' ');
 
-INSERT INTO `subordinado`(`id_empleado`, `id_empleado_subordinado`, `nombre`) VALUES ()
 
 
-				                      *CARTERA_AGENTE*
+
+				     *CARTERA_AGENTE*
 
 create table cartera_agente(
     id_cartera int NOT NULL AUTO_INCREMENT,
@@ -100,12 +108,14 @@ create table cartera_agente(
 )
 
 ALTER TABLE cartera_agente ADD CONSTRAINT UQ_ID_CARTERA_CARTAGENTE UNIQUE (id_cartera);
+ALTER TABLE cartera_agente ADD CONSTRAINT VN_MONTO_CARTAGENTE CHECK (monto>0);
+ALTER TABLE cartera_agente ADD CONSTRAINT VN_YEAR_CARTAGENTE CHECK (year>0);
 
-INSERT INTO `cartera_agente`(`id_empleado`, `monto`, `year`, `id_poliza`) VALUES ()
 
 
 
-				                          *CLIENTE*
+
+				        *CLIENTE*
 
 create table cliente(
     id_cliente int NOT NULL AUTO_INCREMENT,
@@ -129,12 +139,18 @@ create table cliente(
 
 ALTER TABLE cliente ADD CONSTRAINT UQ_ID_CLIENTE_CLIENTE UNIQUE (id_cliente);
 ALTER TABLE cliente ADD CONSTRAINT UQ_CEDULA_CLIENTE UNIQUE (cedula);
+ALTER TABLE cliente ADD CONSTRAINT G_GENERO_EMPLEADO CHECK (genero='F' or genero='M' or genero='N/A');
+ALTER TABLE cliente ADD CONSTRAINT VN_FNACIMIENTO_CLIENTE CHECK (fecha_nacimiento>0);
+ALTER TABLE cliente ADD CONSTRAINT VN_TELEFONO_CLIENTE CHECK (telefono>0);
+ALTER TABLE cliente ADD CONSTRAINT VN_CEDULA_CLIENTE CHECK (cedula>0);
+ALTER TABLE cliente ADD CONSTRAINT NN_NOMBRE_CLIENTE CHECK (nombre<>' ');
+ALTER TABLE cliente ADD CONSTRAINT NN_APELLIDO_CLIENTE CHECK (apellido<>' ');
 
 
 
 
 
-				                         *PRESTAMO*
+				        *PRESTAMO*
 
 create table prestamo(
     id_prestamo int NOT NULL AUTO_INCREMENT,
@@ -148,11 +164,13 @@ create table prestamo(
 )
 
 ALTER TABLE prestamo ADD CONSTRAINT UQ_ID_PRESTAMO_PRESTAMO UNIQUE (id_prestamo);
+ALTER TABLE prestamo ADD CONSTRAINT VN_INTERES_PRESTAMO CHECK (interes>0);
+ALTER TABLE prestamo ADD CONSTRAINT VN_IMPORTE_PRESTAMO CHECK (importe>0);
 
 
 
 
-				                     *SOLICITANTE_PRESTAMO*
+				  *SOLICITANTE_PRESTAMO*
 
 create table solicitante_prestamo(
     id_solicitante int NOT NULL AUTO_INCREMENT,
@@ -168,7 +186,7 @@ ALTER TABLE solicitante_prestamo ADD CONSTRAINT UQ_ID_SOLICITANTE_SPRESTAMO UNIQ
 
 
 
-				                     *MOVIMIENTO_PAGO*
+				     *MOVIMIENTO_PAGO*
 
 create table movimiento_pago(
     id_movimiento int NOT NULL AUTO_INCREMENT,
@@ -182,11 +200,15 @@ create table movimiento_pago(
 )
 
 ALTER TABLE movimiento_pago ADD CONSTRAINT UQ_ID_MOVIMIENTO_MOVP UNIQUE (id_movimiento);
+ALTER TABLE movimiento_pago ADD CONSTRAINT VN_MABONO_MOVP CHECK (monto_abono>0);
+ALTER TABLE movimiento_pago ADD CONSTRAINT VN_MONTOP_MOVP CHECK (monto_pendiente>0);
+ALTER TABLE movimiento_pago ADD CONSTRAINT VN_FPAGO_MOVP CHECK (f_pago>0);
+ALTER TABLE movimiento_pago ADD CONSTRAINT VN_FPAGO_APROX_MOVP CHECK (f_pago_prox>0);
 
 
 
 
-				                         *VEHICULO*
+				        *VEHICULO*
 
 create table vehiculo(
     id_vehiculo int NOT NULL AUTO_INCREMENT,
@@ -200,11 +222,12 @@ create table vehiculo(
 
 ALTER TABLE vehiculo ADD CONSTRAINT UQ_ID_VEHICULO_VEHICULO UNIQUE (id_vehiculo);
 ALTER TABLE vehiculo ADD CONSTRAINT UQ_MATRICULA_VEHICULO UNIQUE (matricula);
+ALTER TABLE vehiculo ADD CONSTRAINT VN_MATRICULA_VEHICULO CHECK (matricula>0);
 
-INSERT INTO vehiculo (id_cliente, matricula, marca, modelo) VALUES ()
 
 
-				                    *VEHICULO_ACCIDENTE*
+
+				  *VEHICULO_ACCIDENTE*
 
 create table vehiculo_accidente(
     id_accidente int NOT NULL AUTO_INCREMENT,
@@ -214,11 +237,12 @@ create table vehiculo_accidente(
 )
 
 ALTER TABLE vehiculo_accidente ADD CONSTRAINT UQ_ID_ACCIDENTE_VACCIDENTE UNIQUE (id_accidente);
+ALTER TABLE vehiculo_accidente ADD CONSTRAINT VN_FACCIDENTE_VACCIDENTE CHECK (f_accidente>0);
 
-INSERT INTO vehiculo_accidente (lugar, f_accidente) VALUES ()
 
 
-				                 *INVOLUCRADO_VEHICULO*
+
+				  *INVOLUCRADO_VEHICULO*
 
 create table involucrado_vehiculo(
     id_involucrado int NOT NULL AUTO_INCREMENT,
@@ -238,7 +262,7 @@ ALTER TABLE involucrado_vehiculo ADD CONSTRAINT UQ_ID_INVOLUCRADO_INVEHICULO UNI
 
 
 
-				                            *MULTA*
+				          *MULTA*
 
 create table multa(
     id_multa int NOT NULL AUTO_INCREMENT,
@@ -247,17 +271,21 @@ create table multa(
     importe int NOT NULL,
     f_multa date NOT NULL,
     lugar varchar(50) NOT NULL,
+    nivel_gravedad varchar(50) NOT NULL,
     PRIMARY KEY (id_multa),
     FOREIGN KEY (id_vehiculo) REFERENCES vehiculo (id_vehiculo) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (id_cliente_conductor) REFERENCES cliente (id_cliente) ON DELETE CASCADE ON UPDATE CASCADE
 )
 
 ALTER TABLE multa ADD CONSTRAINT UQ_ID_MULTA_MULTA UNIQUE (id_multa);
+ALTER TABLE multa ADD CONSTRAINT VN_IMPORTE_MULTA CHECK (importe>0);
+ALTER TABLE multa ADD CONSTRAINT VN_FMULTA_MULTA CHECK (f_multa>0);
+ALTER TABLE multa ADD CONSTRAINT NIVEL_GRAVEDAD_MULTA CHECK (nivel_gravedad>='1' and nivel_gravedad<='10');
 
 
 
 
-				                             *POLIZA*
+				          *POLIZA*
 
 create table poliza(
     id_poliza int NOT NULL AUTO_INCREMENT,
@@ -275,11 +303,17 @@ create table poliza(
 )
 
 ALTER TABLE poliza ADD CONSTRAINT UQ_ID_POLIZA_POLIZA UNIQUE (id_poliza);
+ALTER TABLE poliza ADD CONSTRAINT V_VIGENTE_POLIZA CHECK (vigente='Si' or 'No');
+ALTER TABLE poliza ADD CONSTRAINT V_TIPO_POLIZA CHECK (tipo='Vehiculo' or tipo='Hogar' or tipo='Vida');
+ALTER TABLE poliza ADD CONSTRAINT VN_COBERTURA_POLIZA CHECK (cobertura>0);
+ALTER TABLE poliza ADD CONSTRAINT VN_FCONTRATO_POLIZA CHECK (f_contrato>0);
+ALTER TABLE poliza ADD CONSTRAINT VN_FRENOVACION_POLIZA CHECK (f_renovacion>0);
+ALTER TABLE poliza ADD CONSTRAINT VN_PRIMA_POLIZA CHECK (prima>0);
 
 
 
 
-				                        *POLIZA_HOGAR*
+				     *POLIZA_HOGAR*
 
 create table poliza_hogar(
     id int NOT NULL AUTO_INCREMENT,
@@ -293,11 +327,13 @@ create table poliza_hogar(
 )
 
 ALTER TABLE poliza_hogar ADD CONSTRAINT UQ_ID_PHOGAR UNIQUE (id);
+ALTER TABLE poliza_hogar ADD CONSTRAINT VN_VITEM_PHOGAR CHECK (valor_item>0);
+ALTER TABLE poliza_hogar ADD CONSTRAINT VN_PRIMA_PHOGAR CHECK (prima_asignada>0);
 
 
 
 
-				                        *POLIZA_VIDA*
+				     *POLIZA_VIDA*
 
 create table poliza_vida(
     id int NOT NULL AUTO_INCREMENT,
@@ -311,11 +347,14 @@ create table poliza_vida(
 )
 
 ALTER TABLE poliza_vida ADD CONSTRAINT UQ_ID_PVIDA UNIQUE (id);
+ALTER TABLE poliza_vida ADD CONSTRAINT VN_EDAD_CLIENTE_PVIDA CHECK (edad_cliente>0);
+ALTER TABLE poliza_vida ADD CONSTRAINT VN_COBERTURAE_PVIDA CHECK (cobertura_economica>0);
+ALTER TABLE poliza_vida ADD CONSTRAINT VN_PRIMA_PVIDA CHECK (prima_asignada>0);
 
 
 
 
-				                     *POLIZA_VEHICULO*
+				     *POLIZA_VEHICULO*
 
 create table poliza_vehiculo(
     id int NOT NULL AUTO_INCREMENT,
@@ -330,11 +369,14 @@ create table poliza_vehiculo(
 )
 
 ALTER TABLE poliza_vehiculo ADD CONSTRAINT UQ_ID_PVEHICULO UNIQUE (id);
+ALTER TABLE poliza_vehiculo ADD CONSTRAINT VN_EDADV_PVEHICULO CHECK (edad_vehiculo>0);
+ALTER TABLE poliza_vehiculo ADD CONSTRAINT VN_EDADC_PVEHICULO CHECK (edad_conductor>0);
+ALTER TABLE poliza_vehiculo ADD CONSTRAINT VN_PRIMA_PVEHICULO CHECK (prima_asignada>0);
 
 
 
 
-				                    *PROPIETARIO_POLIZA*
+				  *PROPIETARIO_POLIZA*
 
 create table propietario_poliza(
     id_propietario int NOT NULL AUTO_INCREMENT,
@@ -349,11 +391,12 @@ create table propietario_poliza(
 )
 
 ALTER TABLE propietario_poliza ADD CONSTRAINT UQ_ID_PROPIETARIO_PPOLIZA UNIQUE (id_propietario);
+ALTER TABLE propietario_poliza ADD CONSTRAINT VN_FULT_USO_PPOLIZA CHECK (f_ultimo_uso>0);
 
 
 
 
-				                          *PERSONA_ADICIONAL*
+				  *PERSONA_ADICIONAL*
 
 create table persona_adicional(
     id_persona int NOT NULL AUTO_INCREMENT,
@@ -366,10 +409,14 @@ create table persona_adicional(
     PRIMARY KEY (id_persona)
 )
 
+ALTER TABLE persona_adicional ADD CONSTRAINT NN_NOMBRE_PERSONAD CHECK (nombre<>' ');
+ALTER TABLE persona_adicional ADD CONSTRAINT NN_APELLIDO_PERSONAD CHECK (apellido<>' ');
+ALTER TABLE persona_adicional ADD CONSTRAINT VN_CEDULA_PERSONAD CHECK (cedula>0);
+ALTER TABLE persona_adicional ADD CONSTRAINT VN_TELEFONO_PERSONAD CHECK (telefono>0);
 
 
 
-		                                  *BENEFICIARIO_POLIZA*
+		                *BENEFICIARIO_POLIZA*
 
 create table beneficiario_poliza(
     id_beneficiario int NOT NULL AUTO_INCREMENT,
