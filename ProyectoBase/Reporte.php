@@ -57,7 +57,7 @@
                                         SELECT id_cliente from propietario_poliza 
                                         where id_poliza in (
                                                             select id_poliza from poliza 
-                                                            where vigente = 'si' 
+                                                            where vigente = 'Si' 
                                                             and id_poliza in(
                                                                             SELECT id_poliza from poliza_vehiculo
                                                                             )
