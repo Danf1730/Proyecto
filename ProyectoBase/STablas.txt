@@ -21,6 +21,7 @@ create table login(
 
 ALTER TABLE login ADD CONSTRAINT UQ_ID_EMPLEADO_LOGIN UNIQUE (id_empleado);
 ALTER TABLE login ADD CONSTRAINT UQ_USUARIO_LOGIN UNIQUE (usuario);
+ALTER TABLE login ADD CONSTRAINT NN_CLAVE_LOGIN CHECK (clave not like '%-%');
 
 
 
