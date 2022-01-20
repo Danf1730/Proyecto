@@ -48,7 +48,7 @@
     </form>
 	
 	<div class="footer">
-	<p> <a href="Inicio.php" style="float:right">Regresar</a> </p>
+	<p> <a href="AgenteMenu.php" style="float:right">Regresar</a> </p>
 	</div>
     
 </body>

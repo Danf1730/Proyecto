@@ -38,18 +38,11 @@
                                         ":f_nacimineto"=>$nan,
                                         ":Telefono"=>$cel,
                                         ":Cedula"=>$cedula,
-                                        ":prof"=>$prof));}else { echo "vacio";}
+                                        ":prof"=>$prof));
+                                    }else { echo "vacio";}
                                   
-               
-        
-
-              
-
-        
-
        }catch(Exception $e){
-              echo "linea del erro:". $e->getLine();
-              echo "mensaje error". $e->getMessage();
+             echo "mensaje error". $e->getMessage();
        }
 
        finally{

@@ -23,7 +23,9 @@
 				<li> <a href="#" >Poliza sucrusal por fecha</li></a>
                 <li> <a href="#" >Asegurados Titulares</li></a>
                 <li> <a href="#" >Sucursales con mas prestamos</li></a>
-				<li> <a href="Reporte.php" >Persona con nombre Jos</li></a>
+				<li> <a href="Reporte_8.php" >Persona con nombre Jos</a>
+				<ul>  <li>Matricula con cadena "Jos" que tenga una poliza activa y haya sufrido almenos 2 accidentes</li>  </ul>
+			</li>
 			</ul>
         </div>
 	

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Reportes de Vehiculos</title>
+	<title>Aseguradora UCAB Contineltal  </title>
 	<link rel="stylesheet" type="text/css" href="style_proyecto/Menus.css" style="text-decoration:none">
 	<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
 </head>
@@ -14,20 +14,24 @@
 	<div class="cabeza">
 		<h1>
 			Aseguradora UCAB Continental
+			<a href="Sesion.php" style="float:right" allin>Iniciar sesion</a>
+			</h1>
 	</div>
 
 	<div class="row">
 
 		<div class="col-3 col-s-3 menu">
 			<ul>
-				<li><a href="Inicio.php" > Clientes con mas Polizas</a>
-                   <ul>  <li>Clientes propietarios de 2 o mas polizas de vehiculos que son propietarios de una de salud</li>  </ul>
+			    <li><a href="AñadirBeneficiario.php" style="text-decoration:none" >Beneficiario</li></a>
+			    <li><a href="Sucursales.php" style="text-decoration:none" >Sucursales</li></a>
+				<li><a href="#" > Seguros/Polizas </a>
+                   <ul>
+				       <li><a href="Vida.php" style="text-decoration:none" >Vida</a></li>
+					   <li><a href="Hogar.php" style="text-decoration:none" >Hogar</a></li>
+					   <li><a href="Vehiculo.php" style="text-decoration:none">Vehiculo</a></li>
+                  </ul>
                 </li> 
-				<li> <a href="#" >Vehiculos Accidentados</a></li>
-                <li> <a href="Reporte_8.php" >Matricula "Jos"</a> 
-                <ul>  <li>Matricula con cadena "Jos" que tenga una poliza activa y haya sufrido almenos 2 accidentes</li>  </ul>
-                </li>
-                <li> <a href="#" >Multas Gravedad 8 o superior </li></a>
+				<li> <a href="Financiamiento.php" style="text-decoration:none"> Financiamiento</li></a>
 			</ul>
         </div>
 	
