@@ -20,6 +20,8 @@
         <input type="text" name="id_poliza" id="id_poliza">
         <label for="">id empleado asegurador:</label>
         <input type="text" name="id_empleado" id="id_empleado">
+        <label for="">id cliente:</label>
+        <input type="text" name="id_cliente" id="id_cliente">
         <label for="">Nombre Cliente:</label>
         <input type="text" name="nombre_tomador" id="nombre_tomador">
         <label for="">Cobertura:</label>

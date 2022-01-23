@@ -19,6 +19,12 @@
        $valor=$_POST['valor_item'];
        $prima2 =$_POST['prima']; 
        //////////////////////
+         //Datos Propietario//  
+         $id_cliente=$_POST['id_cliente'];
+         $id_poliza3=$_POST['id_poliza'];
+         $id_empleado2=$_POST['id_empleado'];
+         $contrato2 =$_POST['f_contrato']; 
+         ////////////////////
 
 
        try{
@@ -35,7 +41,7 @@
               && strlen($_POST['vigente'])>=1 
               && strlen($_POST['tipo'])>=1 
               && strlen($_POST['prima'])>=1){
-
+/////// datos poliza///////////
               $sql="INSERT INTO  poliza (id_poliza,  
                                          id_empleado, 
                                          nombre_tomador,
@@ -69,6 +75,8 @@
                                         ":vigente"=>$vigente,
                                         ":tipo"=>$tipo,
                                         ":prima"=>$prima));
+                                        //////////////////
+                                        ///// datos hogar//////
               $sql2="INSERT INTO poliza_hogar(id_poliza, nombre_item, 
                                              tipo_item, valor_item, prima_asignada) 
                       VALUES (:id_poliza,:nombre_item,
@@ -78,7 +86,18 @@
                                         ":nombre_item"=>$nitem,
                                         ":tipo_item"=>$titem,
                                         ":valor_item"=>$prima,
-                                        ":prima"=>$prima2,)); 
+                                        ":prima"=>$prima2,));
+                                        //////////////////
+                      //Datos Propietario// 
+                      $sql3="INSERT INTO propietario_poliza ( id_cliente, id_poliza, id_agente_personal, f_ultimo_uso) 
+                      VALUES (:id_cliente,:id_poliza,:id_empleado,:f_contrato)";
+   
+$resultado3=$base->prepare($sql3);
+$resultado3->execute(array(":id_cliente"=>$id_cliente,
+                      ":id_poliza"=>$id_poliza3,
+                      ":id_empleado"=>$id_empleado2,
+                      ":f_contrato"=>$contrato2,));           
+                      //////////////////////        
 
                                         echo "Registrado con exito:";  
                                    }else { echo "Error al registar";   

@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Reportes seguros y polizas</title>
 	<link rel="stylesheet" type="text/css" href="style_proyecto/Menus.css" style="text-decoration:none">
-	<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
+	
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
@@ -39,18 +39,20 @@ por la fecha de la póliza..
                     $user="uimjtch6xs9bod2v";
                     $password="fMfmvxQzfl8D6VWnmeCq";
                     $conexion = mysqli_connect($host, $user, $password, $database);
-                    $query = "SELECT id_sucursal FROM sucursal
-                    ORDER BY id_sucursal WHERE id_sucursal IN(SELECT id_sucursal FROM empleado
-                                                              WHERE id_empleado IN (SELECT id_poliza, f_renovacion FROM poliza
-                                                                                    ORDER BY f_renovacion ))";
+                    $query = "SELECT P.id_poliza,P.f_contrato,S.id_sucursal
+                    From sucursal AS S, poliza AS P , empleado AS E
+                    WHERE (S.id_sucursal=E.id_sucursal) AND (E.id_empleado=P.id_empleado) 
+                    Group by P.id_poliza ";
+
+
                     $resultado = mysqli_query($conexion,$query);
                     $indice = 0;
                     while($fila=mysqli_fetch_row($resultado)){
                         echo "<tr>";
                         echo "<th scope='row'>" .++$indice."</th><td>";
-                        echo $fila[4] . "</td><td>";
-                        echo $fila[5]. "</td><td>";
-                        echo $fila[6]. "</td><td>";
+                        echo $fila[2] . "</td><td>";
+                        echo $fila[0]. "</td><td>";
+                        echo $fila[1]. "</td><td>";
                         echo "</tr>";
                         echo "</br>";
                         echo "</br>";

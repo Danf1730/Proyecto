@@ -19,6 +19,12 @@ include 'AñadirVida.php';
       $cobertura2=$_POST['Cobertura2'];
       $prima2=$_POST['prima']; 
       /////////////////////
+        //Datos Propietario//  
+        $id_cliente=$_POST['id_cliente'];
+        $id_poliza3=$_POST['id_poliza'];
+        $id_empleado2=$_POST['id_empleado'];
+        $contrato2 =$_POST['f_contrato']; 
+        ////////////////////
 
        try{
               $base=new PDO("mysql:host=bcfwtrpmeo8khveqpqcu-mysql.services.clever-cloud.com:3306; dbname=bcfwtrpmeo8khveqpqcu" ,"uimjtch6xs9bod2v","fMfmvxQzfl8D6VWnmeCq");
@@ -34,7 +40,7 @@ include 'AñadirVida.php';
               && strlen($_POST['vigente'])>=1 
               && strlen($_POST['tipo'])>=1 
               && strlen($_POST['prima'])>=1){
-
+////////// datos poliza///////////////
               $sql="INSERT INTO  poliza (id_poliza,  
                                          id_empleado, 
                                          nombre_tomador,
@@ -68,7 +74,8 @@ include 'AñadirVida.php';
                                         ":vigente"=>$vigente,
                                         ":tipo"=>$tipo,
                                         ":prima"=>$prima));
-
+//////////////////////
+///poliza vida////////
               $sql2="INSERT INTO poliza_vida ( id_poliza, edad_cliente, 
                                               profesion_cliente, cobertura_economica, prima_asignada) 
                             VALUES (:id_poliza,:edad_cliente,
@@ -79,6 +86,16 @@ include 'AñadirVida.php';
                                          ":profesion_cliente"=>$prof,
                                          ":Cobertura2"=>$cobertura2,
                                          ":prima"=>$prima2));
+                //Datos Propietario// 
+                $sql3="INSERT INTO propietario_poliza ( id_cliente, id_poliza, id_agente_personal, f_ultimo_uso) 
+                VALUES (:id_cliente,:id_poliza,:id_empleado,:f_contrato)";
+
+$resultado3=$base->prepare($sql3);
+$resultado3->execute(array(":id_cliente"=>$id_cliente,
+                ":id_poliza"=>$id_poliza3,
+                ":id_empleado"=>$id_empleado2,
+                ":f_contrato"=>$contrato2,));           
+                //////////////////////       
                                    
                                    
                                    
