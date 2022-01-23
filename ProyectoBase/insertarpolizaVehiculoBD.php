@@ -1,4 +1,5 @@
 <?php
+include 'AñadirVehiculo.php';
        //Datos Poliza //
        $id_poliza=$_POST['id_poliza'];  
        $id_empleado=$_POST['id_empleado']; 
@@ -85,20 +86,18 @@
                                         ":tipo_cobertura"=>$cobertura2,
                                         ":prima"=>$prima2));
 
-
+                                        echo "Registrado correctamente";
                             
-                     }else { echo "Error al registra, no pueden haber campos vacios"; header("Location:AñadirVehiculo.php");}
-
-        echo "Registrado con exito:";
-        header("Location:AñadirVehiculo.php");
+                     }else { echo "Error al registra, no pueden haber campos vacios"; }
 
        }catch(Exception $e){
-              echo "linea del erro:". $e->getLine();
+             
        
               echo "mensaje error". $e->getMessage();
        }
 
        finally{
-              $base=null;}
+              $base=null;
+              $base2=null;}
             
     ?>       

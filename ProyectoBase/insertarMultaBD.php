@@ -1,5 +1,5 @@
 <?php
-       
+       include 'AñadirMulta.php';
        $multa =$_POST['id_multa'];        
        $vehiculo =$_POST['id_vehiculo']; 
        $conductor =$_POST['id_cliente_conductor'];        
@@ -31,6 +31,9 @@
                                         ":f_multa"=>$f_multa,
                                         ":lugar"=>$lugar,
                                         ":nivel_gravedad"=>$gravedad));
+
+                                        echo "Registrado correctamente";
+                                        
                                     }else { echo "vacio";
                                         
                                         

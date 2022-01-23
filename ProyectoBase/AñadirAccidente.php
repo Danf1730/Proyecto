@@ -16,17 +16,22 @@
     <form>
         <ul>Añadir Accidente</ul>
         <ul>Ingrese los siguientes datos</ul>
-        <label for="">Fecha:</label>
-        <input type="text" name="Fecha">
-        <label for="">Hora:</label>
-        <input type="text" name="Hora">
+        <label for="">Fecha y Hora del accidente:</label>
+        <input type="datetime-local" name="Fecha">
         <label for="">Lugar:</label>
         <input type="text" name="Lugar">
-        <label for="">Persona(s) involucrada(s):</label>
-        <input type="text" name="Conductor">
-        <label for="">Vehiculo(s) involucrado(s):</label>
-        <input type="string" name="Ivehiculo">
-        <input type="submit" name="Asubmit">
+        <label for="">ID cliente incolucrado:</label>
+        <input type="text" name="id_involucrado">
+        <label for="">ID Vehiculo:</label>
+        <input type="text" name="id_vehiculo">
+        <label for="">ID persona  incolucrado:</label>
+        <label for="">Importante: añadir primero en persona adicional:</label>
+        <input type="text" name="id_persona">
+        <label for="">ID multa:</label>
+        <label for="">Importante: añadir primero información de multa:</label>
+        <input type="text" name="id_multa">
+        <input type="submit" name="submit">
+
 </form>
 	<div class="footer">
 	<p> <a href="AgenteMenu.php" style="float:right">Regresar</a> </p>

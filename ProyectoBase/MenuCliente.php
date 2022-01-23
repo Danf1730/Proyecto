@@ -22,9 +22,14 @@
 
 		<div class="col-3 col-s-3 menu">
 			<ul>
-			    <li><a href="AñadirBeneficiario.php" style="text-decoration:none" >Beneficiario</li></a>
+			    <li>Beneficiario
+				<ul>
+				       <li><a href="AñadirBeneficiario.php" style="text-decoration:none" >Informacion Beneficiario Poliza</a></li>
+					   <li><a href="AñadirPersona.php" style="text-decoration:none" >Informacion beneficiatio personal</a></li>
+                  </ul>
+				</li>
 			    <li><a href="Sucursales.php" style="text-decoration:none" >Sucursales</li></a>
-				<li><a href="#" > Seguros/Polizas </a>
+				<li>Seguros/Polizas 
                    <ul>
 				       <li><a href="Vida.php" style="text-decoration:none" >Vida</a></li>
 					   <li><a href="Hogar.php" style="text-decoration:none" >Hogar</a></li>

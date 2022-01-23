@@ -1,4 +1,5 @@
 <?php
+include 'AñadirVida.php';
        /////Datos Poliza//////
        $id_poliza=$_POST['id_poliza'];  
        $id_empleado=$_POST['id_empleado']; 
@@ -81,19 +82,21 @@
                                    
                                    
                                    
-                                   }else { echo "Error al registra, no pueden haber campos vacios"; header("Location:AñadirVida.php");
+                                         echo "Registrado correctamente";
+                                         
+                                   }else { echo "Error al registra, no pueden haber campos vacios"; 
                                    }
 
-                                   echo "Registrado con exito:";
-                                   header("Location:AñadirVida.php");
+                                   
 
        }catch(Exception $e){
-              echo "linea del erro:". $e->getLine();
+             
        
               echo "mensaje error". $e->getMessage();
        }
 
        finally{
-              $base=null;}
+              $base=null;
+              $base2=null;}
             
     ?>       

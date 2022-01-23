@@ -1,4 +1,5 @@
 <?php
+      include 'AñadirHogar.php';
        //// Datos Poliza//////
        $id_poliza=$_POST['id_poliza'];  
        $id_empleado=$_POST['id_empleado']; 
@@ -77,23 +78,24 @@
                                         ":nombre_item"=>$nitem,
                                         ":tipo_item"=>$titem,
                                         ":valor_item"=>$prima,
-                                        ":prima"=>$prima2,));                
-                                   
-                                   }else { echo "Error al registar";     header("Location:AñadirHogar.php");
+                                        ":prima"=>$prima2,)); 
+
+                                        echo "Registrado con exito:";  
+                                   }else { echo "Error al registar";   
                                    }
 
-                                   echo "Registrado con exito:";  
-                                   header("Location:AñadirHogar.php");
+                                   
+                                   
                                     
 
 
        }catch(Exception $e){
-              echo "linea del erro:". $e->getLine();
        
               echo "mensaje error". $e->getMessage();
        }
 
        finally{
-              $base=null;}
+              $base=null;
+              $base2=null;}
             
     ?>       

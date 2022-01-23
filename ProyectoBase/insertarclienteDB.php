@@ -1,5 +1,5 @@
 <?php
-       
+      include 'AñadirCliente.php'; 
        $name =$_POST['Nombre'];        $ape =$_POST['Apellido']; 
        $calle =$_POST['Calle'];        $ciudad =$_POST['Ciudad']; 
        $cel =$_POST['Telefono'];       $cedula =$_POST['Cedula'];
@@ -39,6 +39,9 @@
                                         ":Telefono"=>$cel,
                                         ":Cedula"=>$cedula,
                                         ":prof"=>$prof));
+
+                                        echo "Registrado correctamente";
+                                        
                                     }else { echo "vacio";}
                                   
        }catch(Exception $e){
