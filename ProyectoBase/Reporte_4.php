@@ -18,16 +18,15 @@
 </nav>
     <div class="container">
     <div class="alert alert-primary" role="alert">
-    Listar los datos de todas las pólizas por sucursal 
-    ordenadas cronológicamente por la fecha de la póliza..
+    sucursales donde viven usuarios que tengas más de 5 pólizas de cualquier tipo.
     </div>
         <table class="table">
             <thead>
                 <tr>
                 <th scope="col">Indice</th>
                 <th scope="col">ID Sucursal</th>
-                <th scope="col">ID Poliza</th>
-                <th scope="col">Fecha</th>
+                <th scope="col">Nombre Sucursal</th>
+                <th scope="col">Ciudad</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,10 +36,11 @@
                     $user="uimjtch6xs9bod2v";
                     $password="fMfmvxQzfl8D6VWnmeCq";
                     $conexion = mysqli_connect($host, $user, $password, $database);
-                    $query = "SELECT P.id_poliza,P.f_contrato,S.id_sucursal
-                    From sucursal AS S, poliza AS P , empleado AS E
-                    WHERE (S.id_sucursal=E.id_sucursal) AND (E.id_empleado=P.id_empleado) 
-                  order by S.id_sucursal ,P.f_contrato";
+                    $query = "SELECT C.nb_ciudad ,S.nombre, S.id_sucursal , P.id_poliza
+                    FROM ciudad AS C ,sucursal AS S, empleado AS E , cliente AS L, propietario_poliza AS P
+                    WHERE (C.id_ciudad=S.id_ciudad) AND (S.id_sucursal=E.id_sucursal) AND 
+                           (E.id_empleado=L.id_asesor_personal) AND (L.id_cliente=P.id_cliente) 
+                           HAVING COUNT(P.id_poliza)>5";
 
 
                     $resultado = mysqli_query($conexion,$query);
@@ -49,8 +49,8 @@
                         echo "<tr>";
                         echo "<th scope='row'>" .++$indice."</th><td>";
                         echo $fila[2] . "</td><td>";
-                        echo $fila[0]. "</td><td>";
                         echo $fila[1]. "</td><td>";
+                        echo $fila[0]. "</td><td>";
                         echo "</tr>";
                     }
            
