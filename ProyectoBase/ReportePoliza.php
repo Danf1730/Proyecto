@@ -17,10 +17,10 @@
 		<div class="col-3 col-s-3 menu">
 			<ul>
 			    <li><a href="#" style="text-decoration:none" >Clientes con mas polizas</li></a>
-				<li><a href="#.php" > Clientes con mas de 5 Polizas</a>
-                   <ul>  <li>Cliente que tienen un contrato con 5 polizas o superior</li>  </ul>
+				<li><a href="Reporte_4.php" > Sucursales con mas  Polizas</a>
+                   <ul>  <li>Sucursales que tienen clientes que tienen un contrato con mas de 5 polizas </li>  </ul>
                 </li> 
-				<li> <a href="#" >Poliza sucrusal por fecha</li></a>
+				<li> <a href="Reporte_5" >Poliza sucrusal por fecha</li></a>
                 <li> <a href="#" >Asegurados Titulares</li></a>
                 <li> <a href="#" >Sucursales con mas prestamos</li></a>
 				<li> <a href="Reporte_8.php" >Persona con nombre Jos</a>
