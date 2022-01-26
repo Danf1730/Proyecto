@@ -18,10 +18,15 @@
 <nav class="navbar fixed-bottom navbar-light" style="background-color: #2196F3;">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"> </a>
+	<nav aria-label="Page navigation example">
+  		<ul class="pagination justify-content-end">
+    		<li class="page-item"><a class="page-link" href="MenuCliente.php">Regresar</a></li>
+  		</ul>
+	</nav>
   </div>
 </nav>
 <body>
-
+		<h1></h1>
 		<figure class="text-center">
   			<blockquote class="blockquote">
 			  <p class="h2">Ingrese sus datos</p>
@@ -43,10 +48,6 @@
   			</div>
   			<button type="submit" name="enviar" value="login" class="btn btn-primary">Sign in</button>
 		</form>
-
-	<div >
-		<p> <a href="MenuCliente.php" style="float:right">Regresar</a> </p>
-	</div>
     
 </body>
 </html>
