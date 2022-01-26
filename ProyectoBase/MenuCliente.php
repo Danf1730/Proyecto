@@ -30,7 +30,7 @@
 
 	<div class="row mt-5">
 
-		<div class="col-3 col-s-3 menu ml-5">
+		<div class="col-3 col-s-3 menu mt-5 ml-5">
 			<ul>
 			    <li>Beneficiario
 				<ul>
@@ -52,7 +52,7 @@
 	
 		<div class="col-6 col-s-9 mt-5 ml-4">
 			
-			<div align="center"> <img src="img/Logo_UCAB_2.png" alt="" width="600" height="200"> </div>
+			<div class="mt-5" align="center"> <img class="mt-5" src="img/Logo_UCAB_2.png" alt="" width="600" height="200"> </div>
 			
 		</div>
 		
