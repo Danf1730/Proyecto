@@ -12,13 +12,13 @@
 <nav class="navbar navbar-light bg-primary">
         <div class="container-fluid col-md-11">
           <h1 class="navbar-brand text-light p-1 fs-3">Aseguradora UCAB Continental</h1>
-          <!--<img src="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/04/Logo_UCAB_2.png" width="200"/> --> 
+		  	<img src="img/Logo_UCAB_2.png" alt="" width="145" height="45"> 
         
         </div>
 </nav>
     <div class="container">
     <div class="alert alert-primary" role="alert">
-    Listar los datos de todas las pólizas por sucursal 
+    Lista de los datos de todas las pólizas por sucursal 
     ordenadas cronológicamente por la fecha de la póliza..
     </div>
         <table class="table">

@@ -5,9 +5,16 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Inicio sesión</title>
-	<link rel="stylesheet" type="text/css" href="style_proyecto/Añadir.css">
-    <body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
+	<link rel="stylesheet" type="text/css" href="style_proyecto/Añadir.css" style="text-decoration:none">
+	
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
+<nav class="navbar navbar-light bg-primary">
+        <div class="container-fluid col-md-11">
+          <h1 class="navbar-brand text-light p-1 fs-3">Aseguradora UCAB Continental</h1>
+		  	<img src="img/Logo_UCAB_2.png" alt="" width="145" height="45">
+        </div>
+</nav>
 <body>
 		<h1>Introduce tus datos</h1>
 	
