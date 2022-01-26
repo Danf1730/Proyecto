@@ -4,14 +4,10 @@
        $calle =$_POST['Calle'];        $ciudad =$_POST['Ciudad']; 
        $cel =$_POST['Telefono'];       $cedula =$_POST['Cedula'];
        $nan =$_POST['f_nacimineto'];   $prof =$_POST['prof']; 
-<<<<<<< Updated upstream
+
        $sucursal =$_POST['id_sucursal']; $agente =$_POST['id_agente'];  
        $genero =$_POST['Genero'];   $prestamo  =$_POST['id_prestamo'];
-=======
-       $sucursal =$_POST['id_sucursal']; 
-       $agente =$_POST['id_agente'];   $genero =$_POST['Genero'];
-       $prestamo  =$_POST['id_prestamo'];
->>>>>>> Stashed changes
+
 
 
        try{
@@ -23,11 +19,8 @@
         >=1 && strlen($_POST['id_sucursal'])>=1 && strlen($_POST['id_agente'])>=1 && strlen($_POST['Genero'])
         >=1 && strlen($_POST['id_prestamo'])){
 
-<<<<<<< Updated upstream
               $sql="INSERT INTO cliente (id_sucursal,id_agente_prestamo,id_asesor_personal
-=======
-              $sql="INSERT INTO cliente ( id_sucursal,id_agente_prestamo,id_asesor_personal
->>>>>>> Stashed changes
+
                                              , nombre, apellido, calle, ciudad, genero, fecha_nacimiento
                                            , telefono,cedula,profesion) 
                                    VALUES (:id_sucursal,:id_prestamo,:id_agente
