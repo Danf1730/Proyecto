@@ -27,36 +27,48 @@
 	</figure>
 
     <form action="insertarpolizaVehiculoBD.php" method="POST">
-        <label for="">id poliza:</label>
-        <input type="text" name="id_poliza" id="id_poliza">
+        <!-- <label for="">id poliza:</label>
+        <input type="text" name="id_poliza" id="id_poliza"> -->
+        <div class="row g-3">
+          <div class="col-auto">
+            <label for="" class="visually-hidden">Id empleado asegurador</label>
+            <input type="text" name="id_empleado" id="id_empleado" class="form-control mb-3">
+          </div>
+          <div class="col-auto">
+            <label for="" class="visually-hidden">Id cliente</label>
+            <input type="text" name="id_cliente" id="id_cliente" class="form-control mb-3">
+          </div>
+        </div>
+
+
         <label for="">id empleado asegurador:</label>
         <input type="text" name="id_empleado" id="id_empleado">
         <label for="">id cliente:</label>
         <input type="text" name="id_cliente" id="id_cliente">
-        <label for="">Nombre Cliente:</label>
+        <label for="">Nombre Cliente</label>
         <input type="text" name="nombre_tomador" id="nombre_tomador">
-        <label for="">Cobertura:</label>
+        <label for="">Cobertura</label>
         <input type="double" name="Cobertura" id="Cobertuta">
-        <label for="">Forma de pago:</label>
+        <label for="">Forma de pago</label>
         <input type="text" name="forma_de_pago" id="forma_de_pago">
-        <label for="">Fecha del contarto:</label>
+        <label for="">Fecha del contarto</label>
         <input type="date" name="f_contrato" id="f_contrato">
-        <label for="">Fecha de renovacion:</label>
+        <label for="">Fecha de renovacion</label>
         <input type="date" name="f_renovacion" id="f_renovacon">
-        <label for="">Vigente:</label>
+        <label for="">Vigente</label>
         <input type="text" name="vigente" id="vigente">
-        <label for="">Tipo:</label>
+        <label for="">Tipo</label>
         <input type="text" name="tipo" id="tipo">
-        <label for="">Prima:</label>
+        <label for="">Prima</label>
         <input type="text" name="prima" id="prima">
         <ul>Datos Vehiculo</ul>
-        <label for="">Categoria del Vehiculo:</label>
+        <label for="">Categoria del Vehiculo</label>
         <input type="text" name="categoria_vehiculo" id="categoria_vehiculo">
-        <label for="">Edad Véhiculo:</label>
+        <label for="">Edad Véhiculo</label>
         <input type="text" name="edad_vehiculo" id="edad_vehiculo">
-        <label for="">Edad Conductor:</label>
+        <label for="">Edad Conductor</label>
         <input type="date" name="edad_conductor" id="edad_conductor">
-        <label for="">Tipo Cobertura:</label>
+        <label for="">Tipo Cobertura</label>
         <input type="text" name="tipo_cobertura" id="tipo_cobertura">
         <input type="submit" name="añadir" class="mt-3">
 </form>
