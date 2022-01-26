@@ -26,28 +26,35 @@
   </div>
 </nav>
 <body>
-		<h1></h1>
+		<h1 class="mt-5"></h1>
 		<figure class="text-center">
   			<blockquote class="blockquote">
-			  <p class="h2">Ingrese sus datos</p>
+			  <p class="h2">Bienvenido al portal</p>
   			</blockquote>
+			<figcaption class="blockquote">Por favor ingrese sus datos a continuación</figcaption>
 		</figure>
 	
-		<form action="comprueba_datos.php" method="post">
-  			<div class="row mb-3">
-    			<label for="usuario" class="col-sm-2 col-form-label"> </label>
-    			<div class="col-sm-10">
-      				<input type="text" class="form-control" placeholder="Usuario" name="usuario">
-    			</div>
-  			</div>
-  			<div class="row mb-3">
-    			<label for="clave" class="col-sm-2 col-form-label"> </label>
-    			<div class="col-sm-10">
-      				<input type="password" class="form-control" placeholder="Clave" name="clave">
-    			</div>
-  			</div>
-  			<button type="submit" name="enviar" value="login" class="btn btn-primary">Sign in</button>
-		</form>
+		<!--<div class="container">-->
+			<form action="comprueba_datos.php" method="post">
+    			<!--<div class="alert alert-primary" role="alert">-->
+					<div class="mx-auto" style="width: 400px;">
+    					<div class="col-sm-10">
+							<label for="usuario" class="col-sm-2 col-form-label"> </label>
+      						<input type="text" class="form-control" placeholder="Usuario" name="usuario">
+    					</div>
+  					</div>
+  					<div class="mx-auto" style="width: 400px;">
+    					<div class="col-sm-10">
+							<label for="clave" class="col-sm-2 col-form-label"> </label>
+      						<input type="password" class="form-control" placeholder="Clave" name="clave">
+    					</div>
+  					</div>
+					<div class="mx-auto" style="width: 140px;">
+  						<button type="submit" name="enviar" value="login" class="btn btn-primary mt-1">Ingresar</button>
+					</div>
+				<!--</div>-->
+			</form>
+    	<!--</div>-->
     
 </body>
 </html>
