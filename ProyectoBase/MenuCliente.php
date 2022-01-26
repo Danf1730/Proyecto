@@ -6,21 +6,31 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Aseguradora UCAB Contineltal  </title>
 	<link rel="stylesheet" type="text/css" href="style_proyecto/Menus.css" style="text-decoration:none">
-	<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
+
+<nav class="navbar navbar-light" style="background-color: #2196F3;">
+        <div class="container-fluid col-md-11">
+          <h1 class="navbar-brand text-light p-1 fs-3">Aseguradora UCAB Continental</h1>
+			  <nav aria-label="Page navigation example">
+  				<ul class="pagination justify-content-end">
+    				<li class="page-item"><a class="page-link" href="Sesion.php">Iniciar sesion</a></li>
+  				</ul>
+			</nav>
+        </div>
+</nav>
+
+<nav class="navbar fixed-bottom navbar-light" style="background-color: #2196F3;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"> </a>
+  </div>
+</nav>
 
 <body>
 
-	<div class="cabeza">
-		<h1>
-			Aseguradora UCAB Continental
-			<a href="Sesion.php" style="float:right" allin>Iniciar sesion</a>
-			</h1>
-	</div>
+	<div class="row mt-5">
 
-	<div class="row">
-
-		<div class="col-3 col-s-3 menu">
+		<div class="col-3 col-s-3 menu ml-5">
 			<ul>
 			    <li>Beneficiario
 				<ul>
@@ -40,17 +50,12 @@
 			</ul>
         </div>
 	
-		<div class="col-6 col-s-9">
+		<div class="col-6 col-s-9 mt-5 ml-4">
 			
-			<div align="center"> <img src="img/ucab.jpg" width="400" height="400" alt="Imagen no disponible"> </div>
+			<div align="center"> <img src="img/Logo_UCAB_2.png" alt="" width="600" height="200"> </div>
 			
 		</div>
 		
-	</div>
-	
-	<div class="footer">
-		<p>Todos los derchos reservados &copy; 2022 
-		</p>
 	</div>
     
 </body>
