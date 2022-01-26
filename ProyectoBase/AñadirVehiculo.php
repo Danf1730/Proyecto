@@ -68,26 +68,6 @@
         <label for="">Tipo</label>
         <input type="text" name="tipo" id="tipo" class="form-control mb-3" placeholder="Vehiculo / Vida / Hogar">
        
-       
-        <!-- <ul>Datos Vehiculo</ul>
-
-        <label for="">Categoria del Vehiculo</label>
-        <input type="text" name="categoria_vehiculo" id="categoria_vehiculo" class="form-control mb-3">
-        <div class="row g-3">
-          <div class="col-auto">
-            <label for="" class="visually-hidden">Año del Vehículo</label>
-            <input type="text" name="edad_vehiculo" id="edad_vehiculo" class="form-control mb-3">
-          </div>
-          <div class="col-auto">
-            <label for="" class="visually-hidden">Fecha de Nacimiento</label>
-            <input type="date" name="edad_conductor" id="edad_conductor" class="form-control mb-3">
-          </div>
-        </div>
-        <label for="">Tipo Cobertura</label>
-        <input type="text" name="tipo_cobertura" id="tipo_cobertura" class="form-control mb-3">
-        <input type="submit" name="añadir" class="mt-3"> -->
-</form>
-	
     <h1 class="mt-5"></h1>
 	<figure class="text-center">
 		<figcaption class="blockquote">Datos del vehículo</figcaption>
