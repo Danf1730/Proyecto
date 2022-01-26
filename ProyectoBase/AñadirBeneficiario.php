@@ -35,7 +35,7 @@
         <input type="text" name="id_persona_beneficiario" id="id_persona_beneficiario">
         <label for="">id Poliza:</label>
         <input type="text" name="id_poliza" id="id_poliza">
-        <input type="submit" name="añadir">
+        <input type="submit" name="añadir" class="mt-3">
 
     </form>
 	

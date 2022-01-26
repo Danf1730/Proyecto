@@ -41,7 +41,8 @@
         <label for="">ID multa:</label>
         <label for="">Importante: añadir primero información de multa:</label>
         <input type="text" name="id_multa">
-        <input type="submit" name="submit">
+        <input type="submit" name="submit" class="mt-3">
+        
 
 </form>
 <nav class="navbar bottom navbar-light mt-5" style="background-color: #2196F3;">
