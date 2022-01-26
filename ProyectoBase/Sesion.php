@@ -9,28 +9,37 @@
 	
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<nav class="navbar navbar-light bg-primary">
+<nav class="navbar navbar-light" style="background-color: #2196F3;">
         <div class="container-fluid col-md-11">
           <h1 class="navbar-brand text-light p-1 fs-3">Aseguradora UCAB Continental</h1>
 		  	<img src="img/Logo_UCAB_2.png" alt="" width="145" height="45">
         </div>
 </nav>
+<nav class="navbar fixed-bottom navbar-light" style="background-color: #2196F3;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"> </a>
+  </div>
+</nav>
 <body>
 		<h1>Introduce tus datos</h1>
 	
-	<form action="comprueba_datos.php" method="post" >
-		<table>
-		<tr>
-	    <td class="izq">
-		usuario</td><td class="der"><input type="text" name="usuario"></td></tr>
-		
-		<tr><td class="izq">
-		clave</td><td class="der"><input type="password" name="clave"></td></tr>
-		<tr><td colspan="2"><input type="submit" name="enviar" value="login"></tr>
-		</table>
-        
-</form>
-	<div class="footer">
+		<form action="comprueba_datos.php" method="post">
+  			<div class="row mb-3">
+    			<label for="usuario" class="col-sm-2 col-form-label"> </label>
+    			<div class="col-sm-10">
+      				<input type="text" class="form-control" placeholder="Usuario" name="usuario">
+    			</div>
+  			</div>
+  			<div class="row mb-3">
+    			<label for="clave" class="col-sm-2 col-form-label"> </label>
+    			<div class="col-sm-10">
+      				<input type="password" class="form-control" placeholder="Clave" name="clave">
+    			</div>
+  			</div>
+  			<button type="submit" name="enviar" value="login" class="btn btn-primary">Sign in</button>
+		</form>
+
+	<div >
 		<p> <a href="MenuCliente.php" style="float:right">Regresar</a> </p>
 	</div>
     
