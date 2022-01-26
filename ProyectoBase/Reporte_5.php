@@ -16,7 +16,7 @@
         
         </div>
 </nav>
-    <div class="container">
+    <div class="container mt-3">
     <div class="alert alert-primary" role="alert">
     Lista de los datos de todas las pólizas por sucursal 
     ordenadas cronológicamente por la fecha de la póliza..
