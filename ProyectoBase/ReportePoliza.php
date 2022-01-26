@@ -21,7 +21,7 @@
                    <ul>  <li>Sucursales que tienen clientes que tienen un contrato con mas de 5 polizas </li>  </ul>
                 </li> 
 				<li> <a href="Reporte_5" >Poliza sucrusal por fecha</li></a>
-                <li> <a href="#" >Asegurados Titulares</li></a>
+                <li> <a href="Reporte_6" >Asegurados Titulares</li></a>
                 <li> <a href="#" >Sucursales con mas prestamos</li></a>
 				<li> <a href="Reporte_8.php" >Persona con nombre Jos</a>
 				<ul>  <li>Matricula con cadena "Jos" que tenga una poliza activa y haya sufrido almenos 2 accidentes</li>  </ul>
