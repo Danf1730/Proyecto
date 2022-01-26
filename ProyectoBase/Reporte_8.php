@@ -8,7 +8,7 @@
 	<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<body>
+
 <nav class="navbar navbar-light" style="background-color: #2196F3;">
         <div class="container-fluid col-md-11">
           <h1 class="navbar-brand text-light p-1 fs-3">Aseguradora UCAB Continental</h1>
@@ -16,10 +16,13 @@
         
         </div>
 </nav>
+
+<body>
+
     <div class="container mt-3">
     <div class="alert alert-primary" role="alert">
-    Liste toda la información del asegurado que tengan en su nombre la cadena
-    “Jos”, que tengan una suscripción de póliza activa de vehículo y cuyo vehículo
+    Lista de toda la información del asegurado que tiene en su nombre la cadena
+    “Jos”, además, una suscripción de póliza activa de vehículo y cuyo vehículo
     haya sufrido al menos 2 accidentes.
     </div>
         <table class="table">
@@ -85,7 +88,17 @@
                 </tbody>
         </table>
     </div>
-        </br>
+
+    <nav class="navbar bottom navbar-light mt-5" style="background-color: #2196F3;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> </a>
+	        <nav aria-label="Page navigation example">
+  		        <ul class="pagination justify-content-end">
+    		        <li class="page-item"><a class="page-link" href="ReportePoliza.php">Regresar</a></li>
+  		        </ul>
+	        </nav>
+        </div>
+    </nav>
     
 </body>
 </html>
