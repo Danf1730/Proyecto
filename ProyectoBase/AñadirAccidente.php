@@ -26,22 +26,32 @@
 		<figcaption class="blockquote">Por favor ingrese los siguientes datos del accidente</figcaption>
 	</figure>
 
-    <form>
+    <form class="w-30 p-3 border-0" style="background-color: white;">
+        <div class="row g-3">
+          <div class="col-auto">
+            <label for="" class="visually-hidden">ID Cliente Incolucrado</label>
+            <input type="text" name="id_involucrado" class="form-control mb-3" style="background-color: #E3F2FD;">
+          </div>
+          <div class="col-auto">
+            <label for="" class="visually-hidden">ID Vehículo</label>
+            <input type="text" name="id_vehiculo" class="form-control mb-3" style="background-color: #E3F2FD;">
+          </div>
+        </div>
+        <div class="row g-3">
+          <div class="col-auto">
+            <label for="" class="visually-hidden">Id Persona Incolucrado</label>
+            <input type="text" name="id_persona" class="form-control mb-3" style="background-color: #E3F2FD;" placeholder="Añadido en persona adicional">
+          </div>
+          <div class="col-auto">
+            <label for="" class="visually-hidden">Id Multa</label>
+            <input type="text" name="id_multa" class="form-control mb-3" style="background-color: #E3F2FD;">
+          </div>
+        </div>
         <label for="">Fecha y Hora del accidente:</label>
-        <input type="datetime-local" name="Fecha">
+        <input type="datetime-local" name="Fecha" class="form-control mb-3" style="background-color: #E3F2FD;">
         <label for="">Lugar:</label>
-        <input type="text" name="Lugar">
-        <label for="">ID cliente incolucrado:</label>
-        <input type="text" name="id_involucrado">
-        <label for="">ID Vehiculo:</label>
-        <input type="text" name="id_vehiculo">
-        <label for="">ID persona  incolucrado:</label>
-        <label for="">Importante: añadir primero en persona adicional:</label>
-        <input type="text" name="id_persona">
-        <label for="">ID multa:</label>
-        <label for="">Importante: añadir primero información de multa:</label>
-        <input type="text" name="id_multa">
-        <input type="submit" name="submit" class="mt-3">
+        <input type="text" name="Lugar" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <input type="submit" name="submit" class="mt-5">
         
 
 </form>

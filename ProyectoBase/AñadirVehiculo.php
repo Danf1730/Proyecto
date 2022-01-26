@@ -26,68 +26,67 @@
 		<figcaption class="blockquote">Por favor ingrese los siguientes datos de la poliza del vehículo</figcaption>
 	</figure>
 
-    <form action="insertarpolizaVehiculoBD.php" method="POST">
-        <!-- <label for="">id poliza:</label>
-        <input type="text" name="id_poliza" id="id_poliza"> -->
+    <form action="insertarpolizaVehiculoBD.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
+        <label for="">Id Póliza</label>
+        <input type="text" name="id_poliza" id="id_poliza" class="form-control mb-3 " style="background-color: #E3F2FD;">
         <div class="row g-3">
           <div class="col-auto">
-            <label for="" class="visually-hidden">Id empleado asegurador</label>
-            <input type="text" name="id_empleado" id="id_empleado" class="form-control mb-3">
+            <label for="" class="visually-hidden">Id Empleado Asegurador</label>
+            <input type="text" name="id_empleado" id="id_empleado" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
           <div class="col-auto">
-            <label for="" class="visually-hidden">Id cliente</label>
-            <input type="text" name="id_cliente" id="id_cliente" class="form-control mb-3">
+            <label for="" class="visually-hidden">Id Cliente</label>
+            <input type="text" name="id_cliente" id="id_cliente" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
         </div>
-        <label for="">Nombre Cliente</label>
-        <input type="text" name="nombre_tomador" id="nombre_tomador" class="form-control mb-3">
+        <label for="">Nombre del Cliente</label>
+        <input type="text" name="nombre_tomador" id="nombre_tomador" class="form-control mb-3" style="background-color: #E3F2FD;">
         <label for="">Cobertura</label>
-        <input type="double" name="Cobertura" id="Cobertuta" class="form-control mb-3">
-        <label for="">Forma de pago</label>
-        <input type="text" name="forma_de_pago" id="forma_de_pago" class="form-control mb-3">
+        <input type="double" name="Cobertura" id="Cobertuta" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <label for="">Forma de Pago</label>
+        <input type="text" name="forma_de_pago" id="forma_de_pago" class="form-control mb-3" style="background-color: #E3F2FD;">
         <div class="row g-3">
           <div class="col-auto">
-            <label for="" class="visually-hidden">Fecha del contrato</label>
-            <input type="date" name="f_contrato" id="f_contrato" class="form-control mb-3">
+            <label for="" class="visually-hidden">Fecha del Contrato</label>
+            <input type="date" name="f_contrato" id="f_contrato" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
           <div class="col-auto">
-            <label for="" class="visually-hidden">Fecha de renovación</label>
-            <input type="date" name="f_renovacion" id="f_renovacon" class="form-control mb-3">
-          </div>
-        </div>
-        <div class="row g-3">
-          <div class="col-auto">
-            <label for="" class="visually-hidden">Vigente</label>
-            <input type="text" name="vigente" id="vigente" class="form-control mb-3" placeholder="Si / No">
-          </div>
-          <div class="col-auto">
-            <label for="" class="visually-hidden">Prima</label>
-            <input type="text" name="prima" id="prima" class="form-control mb-3">
+            <label for="" class="visually-hidden">Fecha de Renovación</label>
+            <input type="date" name="f_renovacion" id="f_renovacion" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
         </div>
         <label for="">Tipo</label>
-        <input type="text" name="tipo" id="tipo" class="form-control mb-3" placeholder="Vehiculo / Vida / Hogar">
+        <input type="text" name="tipo" id="tipo" class="form-control mb-3" style="background-color: #E3F2FD;" placeholder="Vehiculo">
+        <div class="row g-3">
+          <div class="col-auto">
+            <label for="" class="visually-hidden">Vigente</label>
+            <input type="text" name="vigente" id="vigente" class="form-control mb-3" style="background-color: #E3F2FD;" placeholder="Si / No">
+          </div>
+          <div class="col-auto">
+            <label for="" class="visually-hidden">Prima</label>
+            <input type="text" name="prima" id="prima" class="form-control mb-3" style="background-color: #E3F2FD;">
+          </div>
+        </div>
        
-    <h1 class="mt-5"></h1>
-	<figure class="text-center">
-		<figcaption class="blockquote">Datos del vehículo</figcaption>
-	</figure>
-    <form action="insertarpolizaVehiculoBD.php" method="POST">
-        <label for="">Categoria del Vehiculo</label>
-        <input type="text" name="categoria_vehiculo" id="categoria_vehiculo" class="form-control mb-3">
+        <h1 class="mt-3"></h1>
+	    <figure class="text-start">
+		    <figcaption class="blockquote">Datos del Vehículo</figcaption>
+	    </figure>
         <div class="row g-3">
             <div class="col-auto">
                 <label for="" class="visually-hidden">Año del Vehículo</label>
-                <input type="text" name="edad_vehiculo" id="edad_vehiculo" class="form-control mb-3">
+                <input type="text" name="edad_vehiculo" id="edad_vehiculo" class="form-control mb-3" style="background-color: #E3F2FD;">
             </div>
             <div class="col-auto">
                 <label for="" class="visually-hidden">Fecha de Nacimiento</label>
-                <input type="date" name="edad_conductor" id="edad_conductor" class="form-control mb-3">
+                <input type="date" name="edad_conductor" id="edad_conductor" class="form-control mb-3" style="background-color: #E3F2FD;">
             </div>
         </div>
+        <label for="">Categoria del Vehiculo</label>
+        <input type="text" name="categoria_vehiculo" id="categoria_vehiculo" class="form-control mb-3" style="background-color: #E3F2FD;" placeholder="utilitario, gama media, gama alta, gran turismo, lujo, otros">
         <label for="">Tipo Cobertura</label>
-        <input type="text" name="tipo_cobertura" id="tipo_cobertura" class="form-control mb-3">
-        <input type="submit" name="añadir" class="mt-3">			
+        <input type="text" name="tipo_cobertura" id="tipo_cobertura" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <input type="submit" name="añadir" class="mt-5">			
     </form>
 
     <nav class="navbar bottom navbar-light mt-5" style="background-color: #2196F3;">

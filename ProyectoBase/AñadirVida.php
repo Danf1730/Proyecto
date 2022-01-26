@@ -26,37 +26,65 @@
 		<figcaption class="blockquote">Por favor ingrese los siguientes datos de la poliza</figcaption>
 	</figure>
 
-    <form action="insertarpolizaVidaBD.php" method="POST">
-        <label for="">id poliza:</label>
-        <input type="text" name="id_poliza" id="id_poliza">
-        <label for="">id empleado asegurador:</label>
-        <input type="text" name="id_empleado" id="id_empleado">
-        <label for="">id cliente:</label>
-        <input type="text" name="id_cliente" id="id_cliente">
-        <label for="">Nombre Cliente:</label>
-        <input type="text" name="nombre_tomador" id="nombre_tomador">
-        <label for="">Cobertura:</label>
-        <input type="double" name="Cobertura" id="Cobertuta">
-        <label for="">Forma de pago:</label>
-        <input type="text" name="forma_de_pago" id="forma_de_pago">
-        <label for="">Fecha del contarto:</label>
-        <input type="date" name="f_contrato" id="f_contrato">
-        <label for="">Fecha de renovacion:</label>
-        <input type="date" name="f_renovacion" id="f_renovacon">
-        <label for="">Vigente:</label>
-        <input type="text" name="vigente" id="vigente">
-        <label for="">Tipo:</label>
-        <input type="text" name="tipo" id="tipo">
-        <label for="">Prima:</label>
-        <input type="text" name="prima" id="prima">
-        <ul>Datos de Vida</ul>
-        <label for="">Edad cliene:</label>
-        <input type="date" name="edad_cliente" id="edad_cliente">
-        <label for="">Profesion:</label>
-        <input type="text" name="profesion_cliente" id="profesion_cliente">
-        <label for="">Cobertura economica:</label>
-        <input type="double" name="Cobertura2" id="Cobertuta2">
-        <input type="submit" name="añadir" class="mt-3">
+    <form action="insertarpolizaVidaBD.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
+        <label for="">Id Póliza</label>
+        <input type="text" name="id_poliza" id="id_poliza" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <div class="row g-3">
+          <div class="col-auto">
+            <label for="" class="visually-hidden">Id Empleado Asegurador</label>
+            <input type="text" name="id_empleado" id="id_empleado" class="form-control mb-3" style="background-color: #E3F2FD;">
+          </div>
+          <div class="col-auto">
+            <label for="" class="visually-hidden">Id Cliente</label>
+            <input type="text" name="id_cliente" id="id_cliente" class="form-control mb-3" style="background-color: #E3F2FD;">
+          </div>
+        </div>
+        <label for="">Nombre del Cliente</label>
+        <input type="text" name="nombre_tomador" id="nombre_tomador" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <label for="">Cobertura</label>
+        <input type="double" name="Cobertura" id="Cobertuta" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <label for="">Forma de Pago</label>
+        <input type="text" name="forma_de_pago" id="forma_de_pago" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <div class="row g-3">
+          <div class="col-auto">
+            <label for="" class="visually-hidden">Fecha del Contrato</label>
+            <input type="date" name="f_contrato" id="f_contrato" class="form-control mb-3" style="background-color: #E3F2FD;">
+          </div>
+          <div class="col-auto">
+            <label for="" class="visually-hidden">Fecha de Renovación</label>
+            <input type="date" name="f_renovacion" id="f_renovacion" class="form-control mb-3" style="background-color: #E3F2FD;">
+          </div>
+        </div>
+        <label for="">Tipo</label>
+        <input type="text" name="tipo" id="tipo" class="form-control mb-3" style="background-color: #E3F2FD;" placeholder="Vida">
+        <div class="row g-3">
+          <div class="col-auto">
+            <label for="" class="visually-hidden">Vigente</label>
+            <input type="text" name="vigente" id="vigente" class="form-control mb-3" placeholder="Si / No" style="background-color: #E3F2FD;">
+          </div>
+          <div class="col-auto">
+            <label for="" class="visually-hidden">Prima</label>
+            <input type="text" name="prima" id="prima" class="form-control mb-3" style="background-color: #E3F2FD;">
+          </div>
+        </div>
+        
+        <h1 class="mt-3"></h1>
+	    <figure class="text-start">
+		    <figcaption class="blockquote">Datos de Vida</figcaption>
+	    </figure>
+        <div class="row g-3">
+            <div class="col-auto">
+                <label for="" class="visually-hidden">Fecha de Nacimiento</label>
+                <input type="date" name="edad_cliente" id="edad_cliente" class="form-control mb-3" style="background-color: #E3F2FD;">
+            </div>
+            <div class="col-auto">
+                <label for="" class="visually-hidden">Cobertura Económica</label>
+                <input type="double" name="Cobertura2" id="Cobertuta2" class="form-control mb-3" style="background-color: #E3F2FD;">
+            </div>
+        </div>
+        <label for="">Profesión</label>
+        <input type="text" name="profesion_cliente" id="profesion_cliente" class="form-control mb-3" style="background-color: #E3F2FD;">
+       <input type="submit" name="añadir" class="mt-5">
 </form>
 	
     <nav class="navbar bottom navbar-light mt-5" style="background-color: #2196F3;">

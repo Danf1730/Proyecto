@@ -26,22 +26,34 @@
 		<figcaption class="blockquote">Por favor ingrese los siguientes datos de la multa</figcaption>
 	</figure>
 
-    <form action="insertarMultaBD.php" method="POST">
-        <label for="">ID multa:</label>
-        <input type="text" name="id_multa" id="id_multa">
-        <label for="">ID vehiculo:</label>
-        <input type="text" name="id_vehiculo" id="id_vehiculo">
-        <label for="">ID Conductor:</label>
-        <input type="text" name="id_cliente_conductor" id="id_cliente_conductor">
-        <label for="">Importe:</label>
-        <input type="text" name="importe" id="importe"> 
-        <label for="">Fecha multa:</label>
-        <input type="date" name="f_multa" id="f_multa">
-        <label for="">Lugar:</label>
-        <input type="text" name="lugar" id="lugar">
-        <label for="">Gravedad:</label>
-        <input type="text" name="nivel_gravedad" id="nivel_gravedad">
-        <input type="submit" name="Asubmit" class="mt-3">
+    <form action="insertarMultaBD.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
+        <div class="row g-3">
+          <div class="col-auto">
+            <label for="">ID Multa</label>
+            <input type="text" name="id_multa" id="id_multa" class="form-control mb-3" style="background-color: #E3F2FD;">
+          </div>
+          <div class="col-auto">
+            <label for="">ID Vehículo</label>
+            <input type="text" name="id_vehiculo" id="id_vehiculo" class="form-control mb-3" style="background-color: #E3F2FD;">
+          </div>
+        </div>
+        <div class="row g-3">
+          <div class="col-auto">
+            <label for="">ID Conductor</label>
+            <input type="text" name="id_cliente_conductor" id="id_cliente_conductor" class="form-control mb-3" style="background-color: #E3F2FD;">
+         </div>
+          <div class="col-auto">
+            <label for="">Fecha de la Multa</label>
+            <input type="date" name="f_multa" id="f_multa" class="form-control mb-3" style="background-color: #E3F2FD;">
+          </div>
+        </div>
+        <label for="">Importe</label>
+        <input type="text" name="importe" id="importe" class="form-control mb-3" style="background-color: #E3F2FD;"> 
+        <label for="">Lugar</label>
+        <input type="text" name="lugar" id="lugar" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <label for="">Gravedad</label>
+        <input type="text" name="nivel_gravedad" id="nivel_gravedad" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <input type="submit" name="Asubmit" class="mt-5">
 </form>
 	
     <nav class="navbar bottom navbar-light mt-5" style="background-color: #2196F3;">

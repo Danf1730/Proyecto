@@ -26,38 +26,60 @@
 		<figcaption class="blockquote">Por favor ingrese los siguientes datos de la poliza</figcaption>
 	</figure>
         
-    <form action="insertarpolizaHogarBD.php" method="POST">
+    <form action="insertarpolizaHogarBD.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
         
-        <label for="">id poliza:</label>
-        <input type="text" name="id_poliza" id="id_poliza">
-        <label for="">id empleado asegurador:</label>
-        <input type="text" name="id_empleado" id="id_empleado">
-        <label for="">id cliente:</label>
-        <input type="text" name="id_cliente" id="id_cliente">
-        <label for="">Nombre Cliente:</label>
-        <input type="text" name="nombre_tomador" id="nombre_tomador">
-        <label for="">Cobertura:</label>
-        <input type="double" name="Cobertura" id="Cobertuta">
-        <label for="">Forma de pago:</label>
-        <input type="text" name="forma_de_pago" id="forma_de_pago">
-        <label for="">Fecha del contarto:</label>
-        <input type="date" name="f_contrato" id="f_contrato">
-        <label for="">Fecha de renovacion:</label>
-        <input type="date" name="f_renovacion" id="f_renovacon">
-        <label for="">Vigente:</label>
-        <input type="text" name="vigente" id="vigente">
+        <label for="">Id Póliza</label>
+        <input type="text" name="id_poliza" id="id_poliza" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <div class="row g-3">
+          <div class="col-auto">
+            <label for="" class="visually-hidden">Id Empleado Asegurador</label>
+            <input type="text" name="id_empleado" id="id_empleado" class="form-control mb-3" style="background-color: #E3F2FD;">
+          </div>
+          <div class="col-auto">
+            <label for="" class="visually-hidden">Id Cliente</label>
+            <input type="text" name="id_cliente" id="id_cliente" class="form-control mb-3" style="background-color: #E3F2FD;">
+          </div>
+        </div>
+        <label for="">Nombre del Cliente</label>
+        <input type="text" name="nombre_tomador" id="nombre_tomador" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <label for="">Cobertura</label>
+        <input type="double" name="Cobertura" id="Cobertuta" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <label for="">Forma de Pago</label>
+        <input type="text" name="forma_de_pago" id="forma_de_pago" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <div class="row g-3">
+          <div class="col-auto">
+            <label for="" class="visually-hidden">Fecha del Contrato</label>
+            <input type="date" name="f_contrato" id="f_contrato" class="form-control mb-3" style="background-color: #E3F2FD;">
+          </div>
+          <div class="col-auto">
+            <label for="" class="visually-hidden">Fecha de Renovación</label>
+            <input type="date" name="f_renovacion" id="f_renovacion" class="form-control mb-3" style="background-color: #E3F2FD;">
+          </div>
+        </div>
         <label for="">Tipo:</label>
-        <input type="text" name="tipo" id="tipo">
-        <label for="">Prima:</label>
-        <input type="text" name="prima" id="prima">
-        <ul> Datos del Hogar</ul>
-        <label for="">Nombre item a asegurar:</label>
-        <input type="text" name="nombre_item" id="nombre_item">
-        <label for="">Tipo del Item :</label>
-        <input type="text" name="tipo_item" id="tipo_item">
-        <label for="">Valor del Item :</label>
-        <input type="double" name="valor_item" id="valor_item">
-        <input type="submit" name="añadir" class="mt-3">
+        <input type="text" name="tipo" id="tipo" class="form-control mb-3" style="background-color: #E3F2FD;" placeholder="Hogar">
+        <div class="row g-3">
+          <div class="col-auto">
+            <label for="" class="visually-hidden">Vigente</label>
+            <input type="text" name="vigente" id="vigente" class="form-control mb-3" placeholder="Si / No" style="background-color: #E3F2FD;">
+          </div>
+          <div class="col-auto">
+            <label for="" class="visually-hidden">Prima</label>
+            <input type="text" name="prima" id="prima" class="form-control mb-3" style="background-color: #E3F2FD;">
+          </div>
+        </div>
+
+        <h1 class="mt-3"></h1>
+	      <figure class="text-start">
+		      <figcaption class="blockquote">Datos del Hogar</figcaption>
+	      </figure>
+        <label for="">Nombre Item a Asegurar</label>
+        <input type="text" name="nombre_item" id="nombre_item" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <label for="">Tipo del Item</label>
+        <input type="text" name="tipo_item" id="tipo_item" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <label for="">Valor del Item</label>
+        <input type="double" name="valor_item" id="valor_item" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <input type="submit" name="añadir" class="mt-5">
 </form>
 	
 <nav class="navbar bottom navbar-light mt-5" style="background-color: #2196F3;">
