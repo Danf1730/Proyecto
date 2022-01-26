@@ -16,7 +16,7 @@
         
         </div>
 </nav>
-    <div class="container">
+    <div class="container mt-3">
     <div class="alert alert-primary" role="alert">
     sucursales donde viven usuarios que tengas más de 5 pólizas de cualquier tipo.
     </div>

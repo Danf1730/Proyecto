@@ -16,7 +16,7 @@
         
         </div>
 </nav>
-    <div class="container">
+    <div class="container mt-3">
     <div class="alert alert-primary" role="alert">
     Se requiere conocer los datos y las pólizas de los asegurados que son titulares
     </div>

@@ -16,7 +16,7 @@
         
         </div>
 </nav>
-    <div class="container">
+    <div class="container mt-3">
     <div class="alert alert-primary" role="alert">
     Liste toda la información del asegurado que tengan en su nombre la cadena
     “Jos”, que tengan una suscripción de póliza activa de vehículo y cuyo vehículo
