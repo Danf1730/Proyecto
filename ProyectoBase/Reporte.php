@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-light bg-primary">
+<nav class="navbar navbar-light" style="background-color: #2196F3;">
         <div class="container-fluid col-md-11">
           <h1 class="navbar-brand text-light p-1 fs-3">Aseguradora UCAB Continental</h1>
 		  	<img src="img/Logo_UCAB_2.png" alt="" width="145" height="45"> 

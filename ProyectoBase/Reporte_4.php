@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-<nav class="navbar navbar-light bg-primary">
+<nav class="navbar navbar-light" style="background-color: #2196F3;">
         <div class="container-fluid col-md-11">
           <h1 class="navbar-brand text-light p-1 fs-3">Aseguradora UCAB Continental</h1>
 		  	<img src="img/Logo_UCAB_2.png" alt="" width="145" height="45">
