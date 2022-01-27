@@ -30,9 +30,9 @@
      <form action="insertarbeneficiarioDB.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
 
         <label for="">Id Beneficiario</label>
-        <input type="text" name="id_persona" id="id_persona" class="form-control mb-3" style="background-color: #E3F2FD;"> 
+        <input type="text" name="id_persona_beneficiario" id="id_persona_beneficiario" class="form-control mb-3" style="background-color: #E3F2FD;"> 
         <label for="">Id Benefactor</label>
-        <input type="text" name="id_persona_beneficiario" id="id_persona_beneficiario" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <input type="text" name="id_beneficiario" id="id_beneficiario" class="form-control mb-3" style="background-color: #E3F2FD;">
         <label for="">Id Póliza</label>
         <input type="text" name="id_poliza" id="id_poliza" class="form-control mb-3" style="background-color: #E3F2FD;">
         <input type="submit" name="añadir" class="mt-3">
@@ -44,7 +44,7 @@
             <a class="navbar-brand" href="#"> </a>
 	        <nav aria-label="Page navigation example">
   		        <ul class="pagination justify-content-end">
-    		        <li class="page-item"><a class="page-link" href="MenuCliente.php">Regresar</a></li>
+    		        <li class="page-item"><a class="page-link" href="AgenteMenu.php">Regresar</a></li>
   		        </ul>
 	        </nav>
         </div>

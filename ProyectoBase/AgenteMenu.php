@@ -45,7 +45,13 @@
 						<a href="AñadirClientes.php" style="text-decoration:none"><li>Añadir</a></li>
                     </ul>
                 </li>
-				 <a href="AñadirPersona.php" style="text-decoration:none"><li>Persona adicional accidentes/beneficiario</li></a>
+
+				<li>Persona adicional accidentes/beneficiario
+                    <ul> 
+						<a href="AñadirPersona.php" style="text-decoration:none"><li>Persona adicional</a></li>
+						<a href="AñadirBeneficiario.php" style="text-decoration:none"><li>Benefciario</a></li>
+                    </ul>
+                </li> 
                 <a href="Solicitudes.php" style="text-decoration:none"><li>Solicitudes</a></li>
 				<li>Accidentes y multas
                     <ul> 
