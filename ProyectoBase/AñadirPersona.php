@@ -26,24 +26,24 @@
 		<figcaption class="blockquote">Por favor ingrese los siguientes datos de la persona adicional</figcaption>
 	</figure>
         
-     <form action="insertarbeneficiarioDB.php" method="POST" >
+     <form action="insertarPersonaDB.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
 
-        <label for="">id Beneficiario:</label>
-        <input type="text" name="id_persona" id="id_persona"> 
-        <label for="">Nombre:</label>
-        <input type="text" name="nombre" id="nombre">
-        <label for="">Apellido:</label>
-        <input type="text" name="apellido" id="apellido">
-        <label for="">Cédula de identidad:</label>
-        <input type="text" name="cedula" id="cedula">
+        <label for="">Id Beneficiario</label>
+        <input type="text" name="id_persona" id="id_persona" class="form-control mb-3" style="background-color: #E3F2FD;"> 
+        <label for="">Nombre</label>
+        <input type="text" name="nombre" id="nombre" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <label for="">Apellido</label>
+        <input type="text" name="apellido" id="apellido" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <label for="">Cédula de Identidad</label>
+        <input type="text" name="cedula" id="cedula" class="form-control mb-3" style="background-color: #E3F2FD;">
 
-        <label for="">Direccion:</label>
-        <input type="text" name="direccion" id="direccion">
+        <label for="">Dirección</label>
+        <input type="text" name="direccion" id="direccion" class="form-control mb-3" style="background-color: #E3F2FD;">
         
-        <label for="">Ciudad:</label>
-        <input type="text" name="ciudad" id="ciudad">
-        <label for="">Nº de Contacto:</label>
-        <input type="string" name="telefono" id="telefono">
+        <label for="">Ciudad</label>
+        <input type="text" name="ciudad" id="ciudad" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <label for="">Nº de Contacto</label>
+        <input type="string" name="telefono" id="telefono" class="form-control mb-3" style="background-color: #E3F2FD;">
         <input type="submit" name="añadir" class="mt-3">
 
     </form>

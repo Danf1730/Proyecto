@@ -27,14 +27,14 @@
         <figcaption class="fst-italic">Importante: Añadir primero la informacion de persona adicional</figcaption>
 	</figure>
         
-     <form action="insertarbeneficiarioDB.php" method="POST" >
+     <form action="insertarbeneficiarioDB.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
 
-        <label for="">id Beneficiario:</label>
-        <input type="text" name="id_persona" id="id_persona"> 
-        <label for="">id Benefactor:</label>
-        <input type="text" name="id_persona_beneficiario" id="id_persona_beneficiario">
-        <label for="">id Poliza:</label>
-        <input type="text" name="id_poliza" id="id_poliza">
+        <label for="">Id Beneficiario</label>
+        <input type="text" name="id_persona" id="id_persona" class="form-control mb-3" style="background-color: #E3F2FD;"> 
+        <label for="">Id Benefactor</label>
+        <input type="text" name="id_persona_beneficiario" id="id_persona_beneficiario" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <label for="">Id Póliza</label>
+        <input type="text" name="id_poliza" id="id_poliza" class="form-control mb-3" style="background-color: #E3F2FD;">
         <input type="submit" name="añadir" class="mt-3">
 
     </form>
