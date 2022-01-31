@@ -31,53 +31,48 @@
       <div class="row g-3">
         <div class="col-auto">
           <label for="" class="visually-hidden">Nombre</label>
-          <input type="text" name="Nombre" id="Nombre" class="form-control mb-3" style="background-color: #E3F2FD;">
+          <input type="text" name="NombPersona" id="NombPersona" class="form-control mb-3" style="background-color: #E3F2FD;">
         </div>
         <div class="col-auto">
           <label for="" class="visually-hidden">Apellido</label>
-          <input type="text" name="Apellido" id="Apellido" class="form-control mb-3" style="background-color: #E3F2FD;">
+          <input type="text" name="apellido" id="apellido" class="form-control mb-3" style="background-color: #E3F2FD;">
         </div>
       </div>
-        <label for="">Calle</label>
-        <input type="text" name="Calle" id="Calle" class="form-control mb-3" style="background-color: #E3F2FD;">
-        <label for="">Ciudad</label>
-        <input type="text" name="Ciudad" id="Ciudad" class="form-control mb-3" style="background-color: #E3F2FD;">
-        <div class="row g-3">
+      <div class="row g-3">
         <div class="col-auto">
-          <label for="" class="visually-hidden">Nº de Contacto</label>
-          <input type="string" name="Telefono" id="Telefono" class="form-control mb-3" style="background-color: #E3F2FD;">
+          <label for="" class="visually-hidden">Número de Contacto</label>
+          <input type="string" name="NumTlfPersona" id="NumTlfPersona" class="form-control mb-3" style="background-color: #E3F2FD;">
         </div>
           <div class="col-auto">
             <label for="" class="visually-hidden">Cédula de Identidad</label>
-            <input type="text" name="Cedula" id="Cedula" class="form-control mb-3" style="background-color: #E3F2FD;">
+            <input type="text" name="cedula" id="cedula" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
         </div>
+        <label for="">Dirreción</label>
+        <input type="text" name="Direc_Cliente" id="Direc_Cliente" class="form-control mb-3" style="background-color: #E3F2FD;">
+       
+        <label for="">Calle</label>
+        <input type="text" name="calle" id="calle" class="form-control mb-3" style="background-color: #E3F2FD;">
+        
+        <label for="">Ciudad</label>
+        <input type="text" name="ciudad" id="ciudad" class="form-control mb-3" style="background-color: #E3F2FD;">
+      
         <div class="row g-3">
           <div class="col-auto">
             <label for="" class="visually-hidden">Género</label>
-            <input type="text" name="Genero" id="Genero" class="form-control mb-3" style="background-color: #E3F2FD;" placeholder="F-M-N/A">
+            <input type="text" name="genero" id="genero" class="form-control mb-3" style="background-color: #E3F2FD;" placeholder="F-M-N/A">
           </div>
           <div class="col-auto">
             <label for="" class="visually-hidden">Fecha de Nacimiento</label>
-            <input type="date" name="f_nacimineto" id="f_nacimineto" class="form-control mb-3" style="background-color: #E3F2FD;">
+            <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
         </div>
         <label for="">Profesión</label>
-        <input type="text" name="prof" id="prof" class="form-control mb-3" style="background-color: #E3F2FD;">
-        <!-- <label for="">id cliente:</label>
-        <input type="text" name="id_cliente" id="id_cliente" class="form-control mb-3" style="background-color: #E3F2FD;"> -->
+        <input type="text" name="profesion" id="profesion" class="form-control mb-3" style="background-color: #E3F2FD;">
         <div class="row g-3">
           <div class="col-auto">
             <label for="">Id Sucursal Registro</label>
             <input type="text" name="id_sucursal" id="id_sucursal" class="form-control mb-3" style="background-color: #E3F2FD;">
-          </div>
-          <div class="col-auto">
-            <label for="">Id Agente Personal</label>
-            <input type="text" name="id_agente" id="id_agente" class="form-control mb-3" style="background-color: #E3F2FD;">
-          </div>
-          <div class="col-auto">
-            <label for="">Id Agente Préstamo</label>
-            <input type="text" name="id_prestamo" id="id_prestamo" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
         </div>
         <input type="submit" name="añadir" class="mt-3">

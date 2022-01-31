@@ -28,22 +28,18 @@
         
      <form action="insertarPersonaDB.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
 
-        <label for="">Id Beneficiario</label>
-        <input type="text" name="id_persona" id="id_persona" class="form-control mb-3" style="background-color: #E3F2FD;"> 
         <label for="">Nombre</label>
-        <input type="text" name="nombre" id="nombre" class="form-control mb-3" style="background-color: #E3F2FD;">
-        <label for="">Apellido</label>
-        <input type="text" name="apellido" id="apellido" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <input type="text" name="NombPersona" id="NombPersona" class="form-control mb-3" style="background-color: #E3F2FD;">
+        
         <label for="">Cédula de Identidad</label>
         <input type="text" name="cedula" id="cedula" class="form-control mb-3" style="background-color: #E3F2FD;">
-
-        <label for="">Dirección</label>
-        <input type="text" name="direccion" id="direccion" class="form-control mb-3" style="background-color: #E3F2FD;">
         
-        <label for="">Ciudad</label>
-        <input type="text" name="ciudad" id="ciudad" class="form-control mb-3" style="background-color: #E3F2FD;">
-        <label for="">Nº de Contacto</label>
-        <input type="string" name="telefono" id="telefono" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <label for="">Número de Contacto</label>
+        <input type="string" name="NumTlfPersona" id="NumTlfPersona" class="form-control mb-3" style="background-color: #E3F2FD;">
+        
+        <label for="">Tipo Personan</label>
+        <input type="string" name="Tipo_persona" id="Tipo_persona" class="form-control mb-3" style="background-color: #E3F2FD;">
+        
         <input type="submit" name="añadir" class="mt-3">
 
     </form>

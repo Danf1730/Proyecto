@@ -1,43 +1,33 @@
 <?php
 include 'AñadirPersona.php';
-       //// Datos Perzona adicional//////
-       $persona=$_POST['id_persona'];  
-       $name=$_POST['nombre']; 
-       $ape=$_POST['apellido'];
+       //// Datos información personas//////
        $cedula=$_POST['cedula']; 
-        $direc=$_POST['direccion'];
-       $tel=$_POST['telefono'];
-       $cid =$_POST['ciudad']; 
+       $nombre=$_POST['NombPersona'];
+       $telefono=$_POST['NumTlfPersona']; 
+       $tipo=$_POST['Tipo_persona'];
        /////////////////////////
 
 
 
        try{
-              $base=new PDO("mysql:host=bcfwtrpmeo8khveqpqcu-mysql.services.clever-cloud.com:3306; dbname=bcfwtrpmeo8khveqpqcu" ,"uimjtch6xs9bod2v","fMfmvxQzfl8D6VWnmeCq");
+              $base=new PDO("mysql:host=bihmjsqmjuzv93yzuyjb-mysql.services.clever-cloud.com:3306; dbname=bihmjsqmjuzv93yzuyjb" ,"u6zp5irrvsbyntyd","YItp7ofnGTt8NbLiifkD");
               $base->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               
-              if(strlen($_POST['id_persona'])>=1 
-              && strlen($_POST['nombre'])>=1 
-              && strlen($_POST['apellido'])>=1 
-              && strlen($_POST['cedula'])>=1 
-              && strlen($_POST['direccion'])>=1 
-              && strlen($_POST['telefono'])>=1 
-              && strlen($_POST['ciudad'])>=1 ){
+              if( strlen($_POST['cedula'])>=1 
+              && strlen($_POST['NombPersona'])>=1 
+              && strlen($_POST['NumTlfPersona'])>=1 
+              && strlen($_POST['Tipo_persona'])>=1  ){
 
 
             /////Añade persona adicional//////
-              $sql="INSERT INTO persona_adicional(id_persona,nombre,apellido,cedula
-                                              ,direccion,telefono,ciudad) 
-                                VALUES (:id_persona,:nombre,:apellido,:cedula,:direccion,:telefono,:ciudad)";
+              $sql="INSERT INTO persona(cedula , NombPersona , NumTlfPersona , Tipo_persona )
+                           VALUES (:cedula,:NombPersona,:NumTlfPersona,:Tipo_persona)";
                      
               $resultado=$base->prepare($sql);
-              $resultado->execute(array(":id_persona"=>$persona,
-                                        ":nombre"=>$name,
-                                        ":apellido"=>$ape,
-                                        ":cedula"=>$cedula,
-                                        ":direccion"=>$direc,
-                                        ":telefono"=>$tel,
-                                        ":ciudad"=>$cid)); 
+              $resultado->execute(array( ":cedula"=>$cedula,
+                                        ":NombPersona"=>$nombre,
+                                        ":NumTlfPersona"=>$telefono,
+                                        ":Tipo_persona"=>$tipo)); 
                      
                                         echo "Registrado correctamente";
                                    
