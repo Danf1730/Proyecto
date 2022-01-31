@@ -19,29 +19,31 @@
         >=1 && strlen($_POST['apellido'])>=1 && strlen($_POST['Direc_Cliente'])>=1 && strlen($_POST['calle'])>=1 && strlen($_POST['ciudad'])
         >=1 && strlen($_POST['genero'])>=1 && strlen($_POST['fecha_nacimiento'])>=1 && strlen($_POST['profesion'])>=1){
             
-            $host="bihmjsqmjuzv93yzuyjb-mysql.services.clever-cloud.com";
-            $database="bihmjsqmjuzv93yzuyjb";
-            $user="u6zp5irrvsbyntyd";
-            $password="YItp7ofnGTt8NbLiifkD";
-            $conexion = mysqli_connect($host, $user, $password, $database);
-           $query = "SELECT P.id_persona FROM persona as P
-            where P.cedula = $_POST[cedula]  ";
-            $resultado2 = mysqli_query($conexion,$query);
+       //     $host="bihmjsqmjuzv93yzuyjb-mysql.services.clever-cloud.com";
+           // $database="bihmjsqmjuzv93yzuyjb";
+          //  $user="u6zp5irrvsbyntyd";
+          //  $password="YItp7ofnGTt8NbLiifkD";
+          //  $conexion = mysqli_connect($host, $user, $password, $database);
+
+           $sql = "INSERT INTO cliente(id_persona,id_cliente)
+                   SELECT id_persona FROM persona 
+                   where cedula = $cedula";
+           // $resultado2 = mysqli_query($conexion,$query);
      
-               $_POST['id'] =$resultado2;
-               $resultado3= $_POST['id'];
+             // $_POST['id'] =$resultado2;
+              // $resultado3= $_POST['id'];
      
            
 
-              $sql="INSERT INTO cliente(id_persona, cedula, NombPersona, NumTlfPersona, id_cliente, id_sucursal, apellido, Direc_Cliente, calle, ciudad, genero, fecha_nacimiento, profesion)
-               VALUES (:id,:cedula,:NombPersona,:NumTlfPersona,:id,:id_sucursal,:apellido,:Direc_Cliente,:calle,:ciudad,:genero,:fecha_nacimiento,:profesion)";
+              $sql="INSERT INTO cliente(cedula, NombPersona, NumTlfPersona, id_sucursal, apellido, Direc_Cliente, calle, ciudad, genero, fecha_nacimiento, profesion)
+               VALUES (:cedula,:NombPersona,:NumTlfPersona,:id_sucursal,:apellido,:Direc_Cliente,:calle,:ciudad,:genero,:fecha_nacimiento,:profesion)";
                      
               $resultado=$base->prepare($sql);
-              $resultado->execute(array(":id"=>$resultado2,
+              $resultado->execute(array(
                                         ":cedula"=>$cedula,
                                         ":NombPersona"=>$nombre,
                                         ":NumTlfPersona"=>$telefono,
-                                        ":id"=>$resultado3,
+                                       
                                         ":id_sucursal"=>$sucursal,
                                         ":apellido"=>$apellido,
                                         ":Direc_Cliente"=>$Direc,
