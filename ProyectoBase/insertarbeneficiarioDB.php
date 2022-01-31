@@ -16,14 +16,16 @@ include 'AñadirBeneficiario.php';
               && strlen($_POST['id_persona_beneficiario'])>=1 
               && strlen($_POST['id_poliza'])>=1){
 
-/////Añade beneficiario poliza//////
+                          /////Añade beneficiario poliza//////
               $sql="INSERT INTO beneficiario_poliza(id_beneficiario, id_persona_beneficiario, id_poliza) 
               VALUES (:id_beneficiario,:id_persona_beneficiario,:id_poliza)" ; 
 
               $resultado=$base->prepare($sql);
-              $resultado->execute(array(":id_persona_beneficiario"=>$bene,
+              $resultado->execute(array( ":id_poliza"=>$poli,
                                         ":id__beneficiario"=>$persona,
-                                        ":id_poliza"=>$poli));   
+
+                                        ":id_persona_beneficiario"=>$bene,
+                                       ));   
                      
                                         echo "Registrado correctamente";
                                    
