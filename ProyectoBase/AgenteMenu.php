@@ -41,14 +41,14 @@
                 </li>
                 <li>Clientes
                     <ul>
-						<a href="#" style="text-decoration:none"><li>Consultar</a></li>
+						<a href="ConsultarClientes.php" style="text-decoration:none"><li>Consultar</a></li>
 						<a href="AñadirClientes.php" style="text-decoration:none"><li>Añadir</a></li>
                     </ul>
                 </li>
 
-				<li>Persona adicional accidentes/beneficiario
+				<li>Personas
                     <ul> 
-						<a href="AñadirPersona.php" style="text-decoration:none"><li>Persona adicional</a></li>
+						<a href="AñadirPersona.php" style="text-decoration:none"><li>Añadir persona</a></li>
 						<a href="AñadirBeneficiario.php" style="text-decoration:none"><li>Benefciario</a></li>
                     </ul>
                 </li> 

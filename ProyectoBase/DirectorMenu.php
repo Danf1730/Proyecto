@@ -30,13 +30,15 @@
                 </li>
                 <li>Clientes
                     <ul>
-						<a href="#" style="text-decoration:none"><li>Consultar</a></li>
+						<a href="ConsultarClientes.php" style="text-decoration:none"><li>Consultar</a></li>
                     </ul>
                 </li>
-                <li>Agentes
+                <li>Empleados
                     <ul>
-						<a href="#" style="text-decoration:none"><li>Consultar</a></li>
-						<a href="AñadirAgentes.php" style="text-decoration:none"><li>Añadir</a></li>
+						<a href="ConsultarEmpleados.php" style="text-decoration:none"><li>Consultar</a></li>
+						<a href="AñadirAgentes.php" style="text-decoration:none"><li>Añadir Empleados</a></li>
+						<a href="AñadirTrabaja.php" style="text-decoration:none"><li>Asignar Agente</a></li>
+						<a href="AñadirBanda.php" style="text-decoration:none"><li>Bandas Salariales</a></li>
                     </ul>
                 </li>
 				<li>Accidentes y multas

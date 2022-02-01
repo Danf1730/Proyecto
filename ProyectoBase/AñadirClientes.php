@@ -24,6 +24,7 @@
 			<p class="h3">Añadir Cliente</p>
   		</blockquote>
 		<figcaption class="blockquote">Por favor ingrese los siguientes datos del cliente</figcaption>
+    <figcaption class="blockquote">Ver el id de cliente en la consulta</figcaption>
 	</figure>
         
      <form action="insertarclienteDB.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
@@ -73,6 +74,10 @@
           <div class="col-auto">
             <label for="">Id Sucursal Registro</label>
             <input type="text" name="id_sucursal" id="id_sucursal" class="form-control mb-3" style="background-color: #E3F2FD;">
+          </div>
+          <div class="col-auto">
+            <label for="">Id personal cliente </label>
+            <input type="text" name="id_cliente" id="id_cliente" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
         </div>
         <input type="submit" name="añadir" class="mt-3">

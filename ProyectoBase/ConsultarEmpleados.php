@@ -21,38 +21,38 @@
 
     <div class="container mt-3">
     <div class="alert alert-primary" role="alert">
-    Sucursales donde viven clientes que tienen más de 5 pólizas de cualquier tipo.
+    Información del empleado
     </div>
         <table class="table">
             <thead>
                 <tr>
-                <th scope="col">ID Sucursal</th>
-                <th scope="col">Nombre Sucursal</th>
-                <th scope="col">Ciudad</th>
+                <th scope="col">ID personal</th>
+                <th scope="col">Nombre Empleado</th>
+                <th scope="col">Cedula</th>
+               <th scope="col">Tipo del Personal</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                    $host="bcfwtrpmeo8khveqpqcu-mysql.services.clever-cloud.com";
-                    $database="bcfwtrpmeo8khveqpqcu";
-                    $user="uimjtch6xs9bod2v";
-                    $password="fMfmvxQzfl8D6VWnmeCq";
+                    $host="bihmjsqmjuzv93yzuyjb-mysql.services.clever-cloud.com";
+                    $database="bihmjsqmjuzv93yzuyjb";
+                    $user="u6zp5irrvsbyntyd";
+                    $password="YItp7ofnGTt8NbLiifkD";
                     $conexion = mysqli_connect($host, $user, $password, $database);
-                    $query = "SELECT C.nb_ciudad ,S.nombre, S.id_sucursal , P.id_poliza
-                    FROM ciudad AS C ,sucursal AS S, empleado AS E , cliente AS L, propietario_poliza AS P
-                    WHERE (C.id_ciudad=S.id_ciudad) AND (S.id_sucursal=E.id_sucursal) AND 
-                           (E.id_empleado=L.id_asesor_personal) AND (L.id_cliente=P.id_cliente) 
-                           HAVING COUNT(P.id_poliza)>5";
+                    $query = "SELECT p.id_persona ,p.NombPersona,p.cedula ,p.Tipo_persona
+                    FROM persona AS p 
+                    WHERE (p.Tipo_persona='EMPLEADO') OR (p.Tipo_persona='AGENTE') ";
 
 
                     $resultado = mysqli_query($conexion,$query);
-                    $indice = 0;
                     while($fila=mysqli_fetch_row($resultado)){
                         echo "<tr>";
-                        echo "<th scope='row'>" .++$indice."</th><td>";
-                        echo $fila[2] . "</td><td>";
+                        echo "<th scope='row'>";
+                        echo $fila[0] . "</td><td>";
                         echo $fila[1]. "</td><td>";
-                        echo $fila[0]. "</td><td>";
+                        echo $fila[2]. "</td><td>";
+                        echo $fila[3]. "</td><td>";
+                
                         echo "</tr>";
                     }
            

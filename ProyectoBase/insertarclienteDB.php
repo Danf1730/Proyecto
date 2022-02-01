@@ -5,7 +5,7 @@
        $apellido =$_POST['apellido'];       $Direc =$_POST['Direc_Cliente'];
        $calle =$_POST['calle'];   $ciudad =$_POST['ciudad']; 
        $genero =$_POST['genero']; $nacimiento =$_POST['fecha_nacimiento'];  
-       $profesion=$_POST['profesion'];
+       $profesion=$_POST['profesion'];  $cliente=$_POST['id_cliente'];
 
      
        try{
@@ -17,7 +17,7 @@
               
               if(strlen($_POST['cedula'])>=1 && strlen($_POST['NombPersona'])>=1 && strlen($_POST['NumTlfPersona'])>=1 && strlen($_POST['id_sucursal'])
         >=1 && strlen($_POST['apellido'])>=1 && strlen($_POST['Direc_Cliente'])>=1 && strlen($_POST['calle'])>=1 && strlen($_POST['ciudad'])
-        >=1 && strlen($_POST['genero'])>=1 && strlen($_POST['fecha_nacimiento'])>=1 && strlen($_POST['profesion'])>=1){
+        >=1 && strlen($_POST['genero'])>=1 && strlen($_POST['fecha_nacimiento'])>=1 && strlen($_POST['profesion'])>=1  && strlen($_POST['id_cliente'])>=1){
             
        //     $host="bihmjsqmjuzv93yzuyjb-mysql.services.clever-cloud.com";
            // $database="bihmjsqmjuzv93yzuyjb";
@@ -25,9 +25,10 @@
           //  $password="YItp7ofnGTt8NbLiifkD";
           //  $conexion = mysqli_connect($host, $user, $password, $database);
 
-           $sql = "INSERT INTO cliente(id_persona,id_cliente)
-                   SELECT id_persona FROM persona 
-                   where cedula = $cedula";
+           //$sql = "INSERT INTO cliente(id_cliente) SELECT id_persona FROM persona  where cedula = $cedula";
+                   
+
+
            // $resultado2 = mysqli_query($conexion,$query);
      
              // $_POST['id'] =$resultado2;
@@ -35,15 +36,15 @@
      
            
 
-              $sql="INSERT INTO cliente(cedula, NombPersona, NumTlfPersona, id_sucursal, apellido, Direc_Cliente, calle, ciudad, genero, fecha_nacimiento, profesion)
-               VALUES (:cedula,:NombPersona,:NumTlfPersona,:id_sucursal,:apellido,:Direc_Cliente,:calle,:ciudad,:genero,:fecha_nacimiento,:profesion)";
+              $sql="INSERT INTO cliente(cedula, NombPersona, NumTlfPersona, id_cliente,id_sucursal, apellido, Direc_Cliente, calle, ciudad, genero, fecha_nacimiento, profesion)
+               VALUES (:cedula,:NombPersona,:NumTlfPersona,:id_cliente,:id_sucursal,:apellido,:Direc_Cliente,:calle,:ciudad,:genero,:fecha_nacimiento,:profesion)";
                      
               $resultado=$base->prepare($sql);
               $resultado->execute(array(
                                         ":cedula"=>$cedula,
                                         ":NombPersona"=>$nombre,
                                         ":NumTlfPersona"=>$telefono,
-                                       
+                                       ":id_cliente"=>$cliente,
                                         ":id_sucursal"=>$sucursal,
                                         ":apellido"=>$apellido,
                                         ":Direc_Cliente"=>$Direc,
@@ -59,7 +60,7 @@
                                   
        }catch(Exception $e){
              echo "mensaje error". $e->getMessage();
-             echo "linea". $e->getLine();
+             echo "-----linea error". $e->getLine();
        }
 
        finally{
