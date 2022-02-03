@@ -4,38 +4,73 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Vehiculo</title>
-	<link rel="stylesheet" type="text/css" href="style_proyecto/Menus.css">
-	<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
+	<title>Añadir Vehiculo</title>
+	<link rel="stylesheet" type="text/css" href="style_proyecto/añadir.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
+
+<nav class="navbar navbar-light" style="background-color: #2196F3;">
+        <div class="container-fluid col-md-11">
+          <h1 class="navbar-brand text-light p-1 fs-3">Aseguradora UCAB Continental</h1>
+		  	<img src="img/Logo_UCAB_2.png" alt="" width="145" height="45">
+        </div>
+</nav>
 
 <body>
 
-	<div class="cabeza">
-		<h1>Aseguradora UCAB Continental </h1>
-	</div>
+    <h1 class="mt-5"></h1>
+	<figure class="text-start ml-5">
+  		<blockquote class="blockquote">
+			<p class="h3">Añadir poliza de Vehículo</p>
+  		</blockquote>
+		<figcaption class="blockquote">Por favor ingrese los siguientes datos de la poliza del vehículo</figcaption>
+	</figure>
 
-	<div class="row">
+    <form action="insertarvehiculo.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
+       
+        <h1 class="mt-3"></h1>
+	    <figure class="text-start">
+		    <figcaption class="blockquote">Datos del Vehículo</figcaption>
+	    </figure>
+        <div class="row g-3">
+            <div class="col-auto">
+                <label for="" class="visually-hidden">Marca</label>
+                <input type="text" name="marca" id="marca" class="form-control mb-3" style="background-color: #E3F2FD;">
+            </div>
+            <div class="col-auto">
+                <label for="" class="visually-hidden">Modelo</label>
+                <input type="tex" name="modelo" id="modelo" class="form-control mb-3" style="background-color: #E3F2FD;">
+            </div>
+        </div>
 
-    <div class="col-3 col-s-3 menu">
-	<ul>
-		<a href="#" style="text-decoration:none"><li>Consultar poliza de vehiculo</a></li>
-	</ul>
+		<label for="" class="visually-hidden">Matricula</label>
+                <input type="text" name="matricula" id="matricula" class="form-control mb-3" style="background-color: #E3F2FD;">
+
+	             <label for="" class="visually-hidden">Año del Vehículo</label>
+                <input type="int" name="annio" id="annio" class="form-control mb-3" style="background-color: #E3F2FD;">
 		
-    </div>
+			<label for="">id Categoria del Vehiculo</label>
+            <input type="text" name="id_categoria" id="id_categoria" class="form-control mb-3" style="background-color: #E3F2FD;" placeholder="1.utilitario,2. gama media,3. gama alta, 4.gran turismo, 4.lujo, 6.otros">  
+            
+			<label for="">id Tipo Cobertura</label>
+           <input type="text" name="id_tipo_cobertura" id="id_tipo_cobertura" class="form-control mb-3" style="background-color: #E3F2FD;" placeholder="1.todo riesgo,2. franquicia, 3.terceros, 4.otros
+">
+           
+        
+       
+        <input type="submit" name="añadir" class="mt-5">			
+    </form>
 
-     <div class="col-6 col-s-9">
-	
-	<div align="center"> <img src="img/ucab.jpg" width="400" height="400" alt="Imagen no disponible"> </div>
-	
-  </div>
-
-</div>
-	
-	
-	<div class="footer">
-	<p> <a href="MenuCliente.php" style="float:right">Regresar</a> </p>
-	</div>
+    <nav class="navbar bottom navbar-light mt-5" style="background-color: #2196F3;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> </a>
+	        <nav aria-label="Page navigation example">
+  		        <ul class="pagination justify-content-end">
+    		        <li class="page-item"><a class="page-link" href="AgenteVehiculo.php">Regresar</a></li>
+  		        </ul>
+	        </nav>
+        </div>
+    </nav>
     
 </body>
 </html>

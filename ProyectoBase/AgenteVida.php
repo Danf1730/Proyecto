@@ -34,7 +34,7 @@
 </div>
 	
 	<div class="footer">
-	<p> <a href="AgenteMenu.php" style="float:right">Regresar</a> </p>
+	<p> <a href="MenuAgente.php" style="float:right">Regresar</a> </p>
 	</div>
     
 </body>

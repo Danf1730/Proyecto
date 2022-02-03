@@ -19,6 +19,8 @@
 
     <div class="col-3 col-s-3 menu">
 	<ul>
+	    <a href="Vehiculo.php" style="text-decoration:none"><li>Añadir  Vehiculo</a></li>
+		<a href="AñadirPropietario.php" style="text-decoration:none"><li>Añadir Propieterio del Vehiculo</a></li>
 		<a href="AñadirVehiculo.php" style="text-decoration:none"><li>Añadir poliza de Vehiculo</a></li>
 		<a href="#" style="text-decoration:none"><li>Consultar poliza de  Vehiculo</a></li>
 	</ul>
@@ -34,7 +36,7 @@
 </div>
 	
 	<div class="footer">
-	<p> <a href="AgenteMenu.php" style="float:right">Regresar</a> </p>
+	<p> <a href="MenuAgente.php" style="float:right">Regresar</a> </p>
 	</div>
     
 </body>

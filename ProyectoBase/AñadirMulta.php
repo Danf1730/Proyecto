@@ -61,7 +61,7 @@
             <a class="navbar-brand" href="#"> </a>
 	        <nav aria-label="Page navigation example">
   		        <ul class="pagination justify-content-end">
-    		        <li class="page-item"><a class="page-link" href="AgenteMenu.php">Regresar</a></li>
+    		        <li class="page-item"><a class="page-link" href="MenuAgente.php">Regresar</a></li>
   		        </ul>
 	        </nav>
         </div>

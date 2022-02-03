@@ -27,66 +27,66 @@
 	</figure>
 
     <form action="insertarpolizaVehiculoBD.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
-        <label for="">Id Póliza</label>
-        <input type="text" name="id_poliza" id="id_poliza" class="form-control mb-3 " style="background-color: #E3F2FD;">
+   
+    <label for="">Id Póliza</label>--
+        <input type="text" name="nro_poliza" id="nro_poliza" class="form-control mb-3" style="background-color: #E3F2FD;">
         <div class="row g-3">
           <div class="col-auto">
-            <label for="" class="visually-hidden">Id Empleado Asegurador</label>
-            <input type="text" name="id_empleado" id="id_empleado" class="form-control mb-3" style="background-color: #E3F2FD;">
+           <label for="" class="visually-hidden">Id Agente </label>-
+            <input type="text" name="id_agente" id="id_agente" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
           <div class="col-auto">
-            <label for="" class="visually-hidden">Id Cliente</label>
+          <label for="" class="visually-hidden">Id Cliente</label>--
             <input type="text" name="id_cliente" id="id_cliente" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
+       
         </div>
-        <label for="">Nombre del Cliente</label>
-        <input type="text" name="nombre_tomador" id="nombre_tomador" class="form-control mb-3" style="background-color: #E3F2FD;">
-        <label for="">Cobertura</label>
-        <input type="double" name="Cobertura" id="Cobertuta" class="form-control mb-3" style="background-color: #E3F2FD;">
-        <label for="">Forma de Pago</label>
-        <input type="text" name="forma_de_pago" id="forma_de_pago" class="form-control mb-3" style="background-color: #E3F2FD;">
+        
+        <label for="">Descripción</label>-
+        <input type="text" name="descrip_poliza" id="descrip_poliza" class="form-control mb-3" style="background-color: #E3F2FD;">
+       
         <div class="row g-3">
           <div class="col-auto">
-            <label for="" class="visually-hidden">Fecha del Contrato</label>
+            <label for="" class="visually-hidden">Fecha del Contrato</label>---
             <input type="date" name="f_contrato" id="f_contrato" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
           <div class="col-auto">
-            <label for="" class="visually-hidden">Fecha de Renovación</label>
+          <label for="" class="visually-hidden">Fecha de Renovación</label>-
             <input type="date" name="f_renovacion" id="f_renovacion" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
         </div>
-        <label for="">Tipo</label>
-        <input type="text" name="tipo" id="tipo" class="form-control mb-3" style="background-color: #E3F2FD;" placeholder="Vehiculo">
+         
         <div class="row g-3">
           <div class="col-auto">
-            <label for="" class="visually-hidden">Vigente</label>
-            <input type="text" name="vigente" id="vigente" class="form-control mb-3" style="background-color: #E3F2FD;" placeholder="Si / No">
+           <label for="" class="visually-hidden">Vigente</label>
+            <input type="text" name="estado_contrato" id="estado_contrato	" class="form-control mb-3" placeholder="Si / No" style="background-color: #E3F2FD;">
           </div>
+         
           <div class="col-auto">
-            <label for="" class="visually-hidden">Prima</label>
+           <label for="" class="visually-hidden">Prima</label>--
             <input type="text" name="prima" id="prima" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
         </div>
-       
+
         <h1 class="mt-3"></h1>
 	    <figure class="text-start">
 		    <figcaption class="blockquote">Datos del Vehículo</figcaption>
 	    </figure>
         <div class="row g-3">
             <div class="col-auto">
-                <label for="" class="visually-hidden">Año del Vehículo</label>
-                <input type="text" name="edad_vehiculo" id="edad_vehiculo" class="form-control mb-3" style="background-color: #E3F2FD;">
+                <label for="" class="visually-hidden">Matricula del Vehículo</label>
+                <input type="text" name="matricula" id="matricula" class="form-control mb-3" style="background-color: #E3F2FD;">
             </div>
             <div class="col-auto">
-                <label for="" class="visually-hidden">Fecha de Nacimiento</label>
-                <input type="date" name="edad_conductor" id="edad_conductor" class="form-control mb-3" style="background-color: #E3F2FD;">
+                <label for="" class="visually-hidden">Recargo</label>
+                <input type="text" name="recargo" id="recargo" class="form-control mb-3" style="background-color: #E3F2FD;">
+            </div>
+            <div class="col-auto">
+                <label for="" class="visually-hidden">Descuento</label>
+                <input type="text" name="descuento" id="descuento" class="form-control mb-3" style="background-color: #E3F2FD;">
             </div>
         </div>
-        <label for="">Categoria del Vehiculo</label>
-        <input type="text" name="categoria_vehiculo" id="categoria_vehiculo" class="form-control mb-3" style="background-color: #E3F2FD;" placeholder="utilitario, gama media, gama alta, gran turismo, lujo, otros">
-        <label for="">Tipo Cobertura</label>
-        <input type="text" name="tipo_cobertura" id="tipo_cobertura" class="form-control mb-3" style="background-color: #E3F2FD;">
-        <input type="submit" name="añadir" class="mt-5">			
+        <input type="submit" name="añadir" class="mt-5">
     </form>
 
     <nav class="navbar bottom navbar-light mt-5" style="background-color: #2196F3;">
@@ -94,7 +94,7 @@
             <a class="navbar-brand" href="#"> </a>
 	        <nav aria-label="Page navigation example">
   		        <ul class="pagination justify-content-end">
-    		        <li class="page-item"><a class="page-link" href="AgenteMenu.php">Regresar</a></li>
+    		        <li class="page-item"><a class="page-link" href="MenuAgente.php">Regresar</a></li>
   		        </ul>
 	        </nav>
         </div>

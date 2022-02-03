@@ -27,7 +27,7 @@
     <figcaption class="blockquote">Ver el id de cliente en la consulta</figcaption>
 	</figure>
         
-     <form action="insertarclienteDB.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
+     <form action="insertarClienteBD.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
         
       <div class="row g-3">
         <div class="col-auto">
@@ -89,7 +89,7 @@
     <a class="navbar-brand" href="#"> </a>
 	<nav aria-label="Page navigation example">
   		<ul class="pagination justify-content-end">
-    		<li class="page-item"><a class="page-link" href="AgenteMenu.php">Regresar</a></li>
+    		<li class="page-item"><a class="page-link" href="MenuAgente.php">Regresar</a></li>
   		</ul>
 	</nav>
   </div>

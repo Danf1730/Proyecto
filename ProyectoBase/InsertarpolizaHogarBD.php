@@ -61,7 +61,16 @@
                                         ":f_renovacion"=>$contrato2,
                                         ":prima"=>$prima));
         //////////////////////////////////////////////
-        
+         //////////// Datos Titular////////////////
+         $sql2="INSERT INTO titular(id_cliente, nro_poliza, saldo_prima, f_uso_reciente) 
+               VALUES (:id_cliente,:nro_poliza,:prima,:f_contrato)";
+                     
+         $resultado2=$base->prepare($sql2);
+         $resultado2->execute(array(":id_cliente"=>$id_cliente,
+                                    ":nro_poliza"=>$nro_poliza2,
+                                    ":prima"=>$prima2,
+                                    ":f_contrato"=>$contrato3));
+               //////////////////////////////////////////////
                    //////////// Datos inmuelbel////////////////
                       $sql3="INSERT INTO inmueble(id_inmueble, Direc_Inmueble, valor, contenido, riesgos_auxiliares) 
                             VALUES (:id_inmueble,:Direc_Inmueble,:valor,:contenido,:riesgos_auxiliares)";
@@ -85,16 +94,6 @@
                                                ":id_agente"=>$id_agente,
                                                ":prima"=>$prima3));
              //////////////////////////////////////////////
-              //////////// Datos Titular////////////////
-         $sql2="INSERT INTO titular(id_cliente, nro_poliza, saldo_prima, f_uso_reciente) 
-         VALUES (:id_cliente,:nro_poliza,:prima,:f_contrato)";
-               
-   $resultado2=$base->prepare($sql2);
-   $resultado2->execute(array(":id_cliente"=>$id_cliente,
-                              ":nro_poliza"=>$nro_poliza2,
-                              ":prima"=>$prima2,
-                              ":f_contrato"=>$contrato3));
-         //////////////////////////////////////////////
      
 
                                         echo "Registrado con exito:";  
