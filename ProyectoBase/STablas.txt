@@ -1,429 +1,663 @@
-					*LOGIN*
 
-create table login(
-    id_login int NOT NULL AUTO_INCREMENT,
-    usuario varchar(30) NOT NULL,
-    clave varchar(30) NOT NULL ,
-    id_empleado int,
-    id_cliente int,
-    pregunta_1 varchar(50) NOT NULL,
-    respuesta_1 varchar(50) NOT NULL,
-    pregunta_2 varchar(50) NOT NULL,
-    respuesta_2 varchar(50) NOT NULL,
-    pregunta_3 varchar(50) NOT NULL,
-    respuesta_3 varchar(50) NOT NULL,
-    PRIMARY KEY (id_login),    
-    FOREIGN KEY (id_empleado) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_empleado) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente) ON DELETE CASCADE ON UPDATE CASCADE 
+		               	       *USUARIO*
+
+create table usuario(
+	id_usuario int NOT NULL AUTO_INCREMENT,
+	nombre_usuario varchar(50) NOT NULL,
+	email varchar (50) NOT NULL,
+	clave varchar(50) NOT NULL,
+	nombre varchar(50) NOT NULL,
+	apellido varchar(50) NOT NULL,
+	edad int NOT NULL,
+	genero varchar(50) NOT NULL,
+	id_ciudad int,
+	PRIMARY KEY (id_usuario),
+	FOREIGN KEY (id_ciudad) REFERENCES ciudad (id_ciudad) ON DELETE CASCADE ON UPDATE CASCADE
 )
 
-ALTER TABLE login ADD CONSTRAINT UQ_ID_EMPLEADO_LOGIN UNIQUE (id_empleado);
-ALTER TABLE login ADD CONSTRAINT UQ_USUARIO_LOGIN UNIQUE (usuario);
-ALTER TABLE login ADD CONSTRAINT NN_CLAVE_LOGIN CHECK (clave not like '%-%');
+ALTER TABLE usuario ADD CONSTRAINT UQ_IDUSUARIO_USUARIO UNIQUE (id_usuario);
+ALTER TABLE usuario ADD CONSTRAINT NN_CLAVE_USUARIO CHECK (clave not like '%-%');
+ALTER TABLE usuario ADD CONSTRAINT NN_NOMBRE_USUARIO CHECK (nombre<>' ');
+ALTER TABLE usuario ADD CONSTRAINT NN_NOMBREU_USUARIO CHECK (nombre_usuario<>' ');
+ALTER TABLE usuario ADD CONSTRAINT NN_APELLIDO_USUARIO CHECK (apellido<>' ');
+ALTER TABLE usuario ADD CONSTRAINT VN_EDAD_USUARIO CHECK (edad>0);
+ALTER TABLE usuario ADD CONSTRAINT G_GENERO_USUARIO CHECK (genero='F' or genero='M' or genero='N/A');
 
 
 
 
+		               	       *ROL_USUARIO*
 
-				      *SUCURSAL*
+create table rol_usuario(
+	id_perfil int,
+	id_usuario int,	
+	PRIMARY KEY (id_perfil),	
+	PRIMARY KEY (id_usuario),
+	FOREIGN KEY (id_perfil) REFERENCES perfil (id_perfil) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+
+
+
+		               	       *PERFIL*
+
+create table perfil(
+	id_perfil int NOT NULL AUTO_INCREMENT,
+	nombre_perfil varchar(50) NOT NULL,
+	PRIMARY KEY (id_perfil)	
+)
+
+ALTER TABLE perfil ADD CONSTRAINT UQ_IDPERFIL_PERFIL UNIQUE (id_perfil);
+ALTER TABLE perfil ADD CONSTRAINT NN_NOMBRE_PERFIL CHECK (nombre_perfil<>' ');
+
+
+
+
+		               	       *PAIS*
+
+create table pais(
+	id_pais int NOT NULL AUTO_INCREMENT,
+	nb_pais varchar(50) NOT NULL,
+	PRIMARY KEY (id_pais)
+)
+
+ALTER TABLE pais ADD CONSTRAINT UQ_ID_PAIS_PAIS UNIQUE (id_pais);
+
+
+
+
+		               	       *ESTADO*
+
+create table estado(
+	id_estado int NOT NULL AUTO_INCREMENT,
+	id_pais int,
+	nb_estado varchar(50) NOT NULL,
+	PRIMARY KEY (id_estado),
+	FOREIGN KEY (id_pais) REFERENCES pais (id_pais) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE estado ADD CONSTRAINT UQ_ID_ESTADO_EST UNIQUE (id_estado);
+
+
+
+
+		               	       *MUNICIPIO*
+
+create table municipio(
+	id_municipio int NOT NULL AUTO_INCREMENT,
+	id_estado int,
+	nb_municipio varchar(50) NOT NULL,
+	PRIMARY KEY (id_municipio),
+	FOREIGN KEY (id_estado) REFERENCES estado (id_estado) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE municipio ADD CONSTRAINT UQ_ID_MUNICIPIO_MUNI UNIQUE (id_municipio);
+
+
+
+
+		               	       *PARROQUIA*
+
+create table parroquia(
+	id_parroquia int NOT NULL AUTO_INCREMENT,
+	id_municipio int,
+	nb_parroquia varchar(50) NOT NULL,
+	PRIMARY KEY (id_parroquia),
+	FOREIGN KEY (id_municipio) REFERENCES municipio (id_municipio) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE parroquia ADD CONSTRAINT UQ_ID_PARROQUIA_PARROQ UNIQUE (id_parroquia);
+
+
+
+
+		               	       *CIUDAD*
+
+create table ciudad(
+	id_ciudad int NOT NULL AUTO_INCREMENT,
+	id_municipio int,
+	nb_ciudad varchar(50) NOT NULL,
+	PRIMARY KEY (id_ciudad),
+	FOREIGN KEY (id_municipio) REFERENCES municipio (id_municipio) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE ciudad ADD CONSTRAINT UQ_ID_CIUDAD_CIUD UNIQUE (id_ciudad);
+
+
+
+
+		               	       *SUCURSAL*
 
 create table sucursal(
-    id_sucursal int NOT NULL AUTO_INCREMENT,
-    ubicacion varchar(50) NOT NULL,
-    nombre varchar(50) NOT NULL,
-    id_director int NOT NULL,
-    PRIMARY KEY (id_sucursal)
+	id_sucursal int NOT NULL AUTO_INCREMENT,
+	nb_sucursal varchar(50) NOT NULL,
+	id_ciudad int,
+	activos int NOT NULL,
+	id_director int,
+	PRIMARY KEY (id_sucursal),
+	FOREIGN KEY (id_ciudad) REFERENCES ciudad (id_ciudad) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (id_director) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE
 )
 
-
-ALTER TABLE sucursal ADD CONSTRAINT NN_NOMBRE_SUCURSAL CHECK (nombre<>' ');
-
-
+ALTER TABLE sucursal ADD CONSTRAINT NN_NOMBRE_SUCURSAL CHECK (nb_sucursal<>' ');
+ALTER TABLE sucursal ADD CONSTRAINT UQ_ID_SUCURSAL_SUCURSAL UNIQUE (id_sucursal);
 
 
-				      *EMPLEADO*
+
+
+		               	       *PERSONA*
+
+create table persona (
+	id_persona int NOT NULL AUTO_INCREMENT,
+	cedula int NOT NULL,
+	NombPersona varchar(50) NOT NULL,
+	NumTlfPersona int NOT NULL,
+	Tipo_persona varchar(50) NOT NULL,
+	PRIMARY KEY (id_persona)
+)
+
+ALTER TABLE persona ADD CONSTRAINT UQ_ID_PERSONA_PERSONA UNIQUE (id_persona);
+ALTER TABLE persona ADD CONSTRAINT UQ_CEDULA_PERSONA UNIQUE (cedula);
+ALTER TABLE persona ADD CONSTRAINT NN_NOMBRE_PERSONA CHECK (NombPersona<>' ');
+ALTER TABLE persona ADD CONSTRAINT VN_TELEFONO_PERSONA CHECK (NumTlfPersona>0);
+ALTER TABLE persona ADD CONSTRAINT TIPOPERS_PERSONA CHECK (Tipo_persona='BENEFICIARIO' or Tipo_persona='EMPLEADO' or Tipo_persona='AGENTE' or Tipo_persona='CLIENTE');
+
+
+
+
+		               	       *BENEFICIARIO*
+
+create table beneficiario AS SELECT id_persona, cedula, NombPersona, NumTlfPersona FROM persona WHERE Tipo_persona='BENEFICIARIO';
+
+
+
+
+		               	       *EMPLEADO*
+create table empleado AS SELECT id_persona, cedula, NombPersona, NumTlfPersona FROM persona WHERE Tipo_persona='EMPLEADO';
 
 create table empleado(
-    id_empleado int NOT NULL AUTO_INCREMENT,
-    id_sucursal int NOT NULL,
-    cedula int NOT NULL,  
-    nombre varchar(50) NOT NULL, 
-    apellido varchar(50) NOT NULL,
-    telefono int NOT NULL, 
-    direccion varchar(50) NOT NULL,
-    fecha_inicio_empresa DATE NOT NULL,
-    fecha_inicio_sucursal DATE NOT NULL,
-    b_salarial double NOT NULL,
-    s_objetivos double NOT NULL,
-    tipo_empleado varchar(50) NOT NULL,
-    PRIMARY KEY (id_empleado)
-    FOREIGN KEY (id_sucursal) REFERENCES sucursal (id_sucursal) ON DELETE CASCADE ON UPDATE CASCADE
+	id_empleado int,
+	fecha_inicio_empresa date NOT NULL,
+	PRIMARY KEY (id_empleado),
+	FOREIGN KEY (id_empleado) REFERENCES persona (id_persona) ON DELETE CASCADE ON UPDATE CASCADE
 )
 
-ALTER TABLE empleado ADD CONSTRAINT UQ_ID_EMPLEADO_EMPLEADO UNIQUE (id_empleado);
-ALTER TABLE empleado ADD CONSTRAINT UQ_ID_CEDULA_EMPLEADO UNIQUE (cedula);
-ALTER TABLE empleado ADD CONSTRAINT VN_CEDULA_EMPLEADO CHECK (cedula>0);
-ALTER TABLE empleado ADD CONSTRAINT VN_TELEFONO_EMPLEADO CHECK (telefono>0);
-ALTER TABLE empleado ADD CONSTRAINT VN_BSALARIAL_EMPLEADO CHECK (b_salarial>0);
-ALTER TABLE empleado ADD CONSTRAINT VN_SOBJETIVOS_EMPLEADO CHECK (s_objetivos>0);
-ALTER TABLE empleado ADD CONSTRAINT AD_TIPOE_EMPLEADO CHECK (tipo_empleado='Agente' or tipo_empleado='Director');
-ALTER TABLE empleado ADD CONSTRAINT NN_NOMBRE_EMPLEADO CHECK (nombre<>' ');
-ALTER TABLE empleado ADD CONSTRAINT NN_APELLIDO_EMPLEADO CHECK (apellido<>' ');
 
 
 
 
+		               	       *AGENTE*
 
-				     *SUBORDINADO*
+create table agente AS SELECT id_persona, cedula, NombPersona, NumTlfPersona FROM persona WHERE Tipo_persona='AGENTE';
 
-create table subordinado(
-    id_subordinado int NOT NULL AUTO_INCREMENT,
-    id_empleado int NOT NULL,
-    id_empleado_subordinado int,  
-    nombre varchar(50) NOT NULL,
-    PRIMARY KEY (id_subordinado)
-    FOREIGN KEY (id_empleado_subordinado) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE
-    FOREIGN KEY (id_empleado) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE
-    FOREIGN KEY (id_empleado_subordinado) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE
+create table agente(
+	id_agente int,
+	Direc_Agente varchar(50) NOT NULL,
+	Tipo_Agente varchar(50) NOT NULL,
+	PRIMARY KEY (id_agente)
+	FOREIGN KEY (id_agente) REFERENCES persona (id_persona) ON DELETE CASCADE ON UPDATE CASCADE
 )
-
-ALTER TABLE subordinado ADD CONSTRAINT UQ_ID_SUBORDINADO_SUBORDINADO UNIQUE (id_subordinado);
-ALTER TABLE subordinado ADD CONSTRAINT NN_NOMBRE_SUBORDINADO CHECK (nombre<>' ');
-
-
-
-
-				     *CARTERA_AGENTE*
-
-create table cartera_agente(
-    id_cartera int NOT NULL AUTO_INCREMENT,
-    id_empleado int NOT NULL,
-    id_poliza int NOT NULL,
-    monto int NOT NULL, 
-    year int NOT NULL,  
-    PRIMARY KEY (id_cartera),
-    FOREIGN KEY (id_empleado) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_poliza) REFERENCES poliza (id_poliza) ON DELETE CASCADE ON UPDATE CASCADE
-)
-
-ALTER TABLE cartera_agente ADD CONSTRAINT UQ_ID_CARTERA_CARTAGENTE UNIQUE (id_cartera);
-ALTER TABLE cartera_agente ADD CONSTRAINT VN_MONTO_CARTAGENTE CHECK (monto>0);
-ALTER TABLE cartera_agente ADD CONSTRAINT VN_YEAR_CARTAGENTE CHECK (year>0);
+ALTER TABLE agente ADD COLUMN id_agente int
+ALTER TABLE agente ADD COLUMN Direc_Agente varchar(50) NOT NULL
+ALTER TABLE agente ADD COLUMN Tipo_Agente varchar(50) NOT NULL
+ALTER TABLE agente ADD PRIMARY KEY (id_agente)
+ALTER TABLE agente ADD FOREIGN KEY (id_agente) REFERENCES persona (id_persona) ON DELETE CASCADE ON UPDATE CASCADE
 
 
 
 
 
-				        *CLIENTE*
+		               	       *CLIENTE*
+
+create table cliente AS SELECT id_persona, cedula, NombPersona, NumTlfPersona FROM persona WHERE Tipo_persona=CLIENTE';
 
 create table cliente(
-    id_cliente int NOT NULL AUTO_INCREMENT,
-    id_sucursal int NOT NULL,
-    id_agente_prestamo int NOT NULL,
-    id_asesor_personal int NOT NULL,
-    nombre varchar(50) NOT NULL,
-    apellido varchar(50) NOT NULL,
-    calle varchar(50) NOT NULL,
-    ciudad varchar(50) NOT NULL,
-    genero varchar(50) NOT NULL,
-    fecha_nacimiento DATE NOT NULL,
-    telefono int NOT NULL,
-    cedula int NOT NULL, 
-    profesion varchar(50) NOT NULL, 
-    PRIMARY KEY (id_cliente),
-    FOREIGN KEY (id_sucursal) REFERENCES sucursal (id_sucursal) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_agente_prestamo) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_asesor_personal) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE
+	id_cliente int,
+	id_sucursal int,
+	apellido varchar(50) NOT NULL,
+	Direc_Cliente varchar(50) NOT NULL,
+	calle varchar(50) NOT NULL,
+	ciudad varchar(50) NOT NULL,
+	genero varchar(50) NOT NULL,
+	fecha_nacimiento DATE NOT NULL,
+	profesion varchar(50) NOT NULL, 
+	PRIMARY KEY (id_cliente),
+	FOREIGN KEY (id_sucursal) REFERENCES sucursal (id_sucursal) ON DELETE CASCADE ON UPDATE CASCADE   
+	FOREIGN KEY (id_cliente) REFERENCES persona (id_persona) ON DELETE CASCADE ON UPDATE CASCADE
 )
 
-ALTER TABLE cliente ADD CONSTRAINT UQ_ID_CLIENTE_CLIENTE UNIQUE (id_cliente);
-ALTER TABLE cliente ADD CONSTRAINT UQ_CEDULA_CLIENTE UNIQUE (cedula);
-ALTER TABLE cliente ADD CONSTRAINT G_GENERO_EMPLEADO CHECK (genero='F' or genero='M' or genero='N/A');
-ALTER TABLE cliente ADD CONSTRAINT VN_FNACIMIENTO_CLIENTE CHECK (fecha_nacimiento>0);
-ALTER TABLE cliente ADD CONSTRAINT VN_TELEFONO_CLIENTE CHECK (telefono>0);
-ALTER TABLE cliente ADD CONSTRAINT VN_CEDULA_CLIENTE CHECK (cedula>0);
-ALTER TABLE cliente ADD CONSTRAINT NN_NOMBRE_CLIENTE CHECK (nombre<>' ');
-ALTER TABLE cliente ADD CONSTRAINT NN_APELLIDO_CLIENTE CHECK (apellido<>' ');
+ALTER TABLE cliente ADD COLUMN id_cliente int
+ALTER TABLE cliente ADD COLUMN id_sucursal int
+ALTER TABLE cliente ADD COLUMN apellido varchar(50) NOT NULL
+ALTER TABLE cliente ADD COLUMN Direc_Cliente varchar(50) NOT NULL
+ALTER TABLE cliente ADD COLUMN calle varchar(50) NOT NULL
+ALTER TABLE cliente ADD COLUMN ciudad varchar(50) NOT NULL
+ALTER TABLE cliente ADD COLUMN genero varchar(50) NOT NULL
+ALTER TABLE cliente ADD COLUMN fecha_nacimiento DATE NOT NULL
+ALTER TABLE cliente ADD COLUMN profesion varchar(50) NOT NULL
+ALTER TABLE cliente ADD PRIMARY KEY (id_cliente)
+ALTER TABLE cliente ADD FOREIGN KEY (id_sucursal) REFERENCES sucursal (id_sucursal) ON DELETE CASCADE ON UPDATE CASCADE
+ALTER TABLE cliente ADD FOREIGN KEY (id_cliente) REFERENCES persona (id_persona) ON DELETE CASCADE ON UPDATE CASCADE
+
+
+ALTER TABLE cliente ADD CONSTRAINT NN_APELLIDO_CLIENT CHECK (apellido<>' ');
+ALTER TABLE cliente ADD CONSTRAINT G_GENERO_CLIENT CHECK (genero='F' or genero='M' or genero='N/A');
 
 
 
 
 
-				        *PRESTAMO*
+		               	       *BANDA_SALARIAL*
 
-create table prestamo(
-    id_prestamo int NOT NULL AUTO_INCREMENT,
-    id_empleado int NOT NULL,
-    id_sucursal int NOT NULL,
-    interes double NOT NULL, 
-    importe double NOT NULL,
-    PRIMARY KEY (id_prestamo),
-    FOREIGN KEY (id_empleado) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_sucursal) REFERENCES sucursal (id_sucursal) ON DELETE CASCADE ON UPDATE CASCADE
+create table banda_salarial(
+	id_banda int NOT NULL AUTO_INCREMENT,
+	Banda_Min int NOT NULL,
+	Banda_Max int NOT NULL,
+	PRIMARY KEY (id_banda)
 )
 
-ALTER TABLE prestamo ADD CONSTRAINT UQ_ID_PRESTAMO_PRESTAMO UNIQUE (id_prestamo);
-ALTER TABLE prestamo ADD CONSTRAINT VN_INTERES_PRESTAMO CHECK (interes>0);
-ALTER TABLE prestamo ADD CONSTRAINT VN_IMPORTE_PRESTAMO CHECK (importe>0);
+ALTER TABLE banda_salarial ADD CONSTRAINT UQ_ID_BANDA_BSALARIAL UNIQUE (id_banda);
+ALTER TABLE banda_salarial ADD CONSTRAINT VN_BMIN_BSALARIAL CHECK (Banda_Min>=0);
+ALTER TABLE banda_salarial ADD CONSTRAINT VN_BMAX_BSALARIAL CHECK (Banda_Max>=0);
 
 
 
+		               	       *POLIZA*
 
-				  *SOLICITANTE_PRESTAMO*
-
-create table solicitante_prestamo(
-    id_solicitante int NOT NULL AUTO_INCREMENT,
-    id_prestamo int NOT NULL,
-    id_cliente int NOT NULL,
-    PRIMARY KEY (id_solicitante),
-    FOREIGN KEY (id_prestamo) REFERENCES prestamo (id_prestamo) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente) ON DELETE CASCADE ON UPDATE CASCADE
+create table poliza(
+	nro_poliza int NOT NULL AUTO_INCREMENT,
+	descrip_poliza varchar(50) NOT NULL,
+	f_contrato date NOT NULL,
+	f_renovacion date NOT NULL,
+	prima int NOT NULL,
+	PRIMARY KEY (nro_poliza)
 )
 
-ALTER TABLE solicitante_prestamo ADD CONSTRAINT UQ_ID_SOLICITANTE_SPRESTAMO UNIQUE (id_solicitante);
+ALTER TABLE poliza ADD CONSTRAINT UQ_NRO_POLIZA_POLIZA UNIQUE (nro_poliza);
+ALTER TABLE poliza ADD CONSTRAINT VN_FCONTRATO_POLIZA CHECK (f_contrato>0);
+ALTER TABLE poliza ADD CONSTRAINT VN_FRENOVACION_POLIZA CHECK (f_renovacion>0);
+ALTER TABLE poliza ADD CONSTRAINT VN_PRIMA_POLIZA CHECK (prima>=0);
 
 
 
 
-				     *MOVIMIENTO_PAGO*
+		               	       *INMUEBLE*
 
-create table movimiento_pago(
-    id_movimiento int NOT NULL AUTO_INCREMENT,
-    id_prestamo int NOT NULL,
-    monto_abono double NOT NULL,
-    monto_pendiente double NOT NULL,
-    f_pago datetime NOT NULL,
-    f_pago_prox date NOT NULL,
-    PRIMARY KEY (id_movimiento),
-    FOREIGN KEY (id_prestamo) REFERENCES prestamo (id_prestamo) ON DELETE CASCADE ON UPDATE CASCADE
+create table inmueble(
+	id_inmueble int NOT NULL AUTO_INCREMENT,
+	Direc_Inmueble varcha(50) NOT NULL,
+	valor int NOT NULL,
+	contenido varchar(100) NOT NULL,
+	riesgos_auxiliares varchar(50) NOT NULL,
+	PRIMARY KEY (id_inmueble)
 )
 
-ALTER TABLE movimiento_pago ADD CONSTRAINT UQ_ID_MOVIMIENTO_MOVP UNIQUE (id_movimiento);
-ALTER TABLE movimiento_pago ADD CONSTRAINT VN_MABONO_MOVP CHECK (monto_abono>0);
-ALTER TABLE movimiento_pago ADD CONSTRAINT VN_MONTOP_MOVP CHECK (monto_pendiente>0);
-ALTER TABLE movimiento_pago ADD CONSTRAINT VN_FPAGO_MOVP CHECK (f_pago>0);
-ALTER TABLE movimiento_pago ADD CONSTRAINT VN_FPAGO_APROX_MOVP CHECK (f_pago_prox>0);
+ALTER TABLE inmueble ADD CONSTRAINT UQ_ID_INMUEBLE_INMUEB UNIQUE (id_inmueble);
+ALTER TABLE inmueble ADD CONSTRAINT VN_VALOR_INMUEB CHECK (valor>=0);
 
 
 
 
-				        *VEHICULO*
+		               	       *VEHICULO*
 
 create table vehiculo(
-    id_vehiculo int NOT NULL AUTO_INCREMENT,
-    id_cliente int NOT NULL,
-    matricula varchar(50) NOT NULL,
-    marca varchar(50) NOT NULL,
-    modelo varchar(50) NOT NULL,
-    PRIMARY KEY (id_vehiculo),
-    FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente) ON DELETE CASCADE ON UPDATE CASCADE
+	matricula varchar(7) NOT NULL,
+	marca varchar(50) NOT NULL,
+	modelo varchar(50) NOT NULL,
+	annio int NOT NULL,
+	id_categoria int,
+	id_tipo_cobertura int,
+	PRIMARY KEY (matricula),
+	FOREIGN KEY (id_categoria) REFERENCES categoria_vehiculo (id_categorira) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (id_tipo_cobertura) REFERENCES tipo_cobertura (id_tipo_cobertura) ON DELETE CASCADE ON UPDATE CASCADE   
 )
 
-ALTER TABLE vehiculo ADD CONSTRAINT UQ_ID_VEHICULO_VEHICULO UNIQUE (id_vehiculo);
 ALTER TABLE vehiculo ADD CONSTRAINT UQ_MATRICULA_VEHICULO UNIQUE (matricula);
-ALTER TABLE vehiculo ADD CONSTRAINT VN_MATRICULA_VEHICULO CHECK (matricula>0);
+ALTER TABLE vehiculo ADD CONSTRAINT NN_MATRICULA_VEHICULO CHECK (matricula not like '%-%');
+ALTER TABLE vehiculo ADD CONSTRAINT VN_ANNIO_VEHICULO CHECK (annio>=0);
 
 
 
 
-				  *VEHICULO_ACCIDENTE*
 
-create table vehiculo_accidente(
-    id_accidente int NOT NULL AUTO_INCREMENT,
-    lugar varchar(50) NOT NULL,
-    f_accidente datetime NOT NULL,
-    PRIMARY KEY (id_accidente)
+		               	       *CATEGORIA_VEHICULO*
+
+
+create table categoria_vehiculo(
+	id_categoria int NOT NULL AUTO_INCREMENT,
+	DescripCateg varchar(50) NOT NULL,
+	PRIMARY KEY (id_categoria)
 )
 
-ALTER TABLE vehiculo_accidente ADD CONSTRAINT UQ_ID_ACCIDENTE_VACCIDENTE UNIQUE (id_accidente);
-ALTER TABLE vehiculo_accidente ADD CONSTRAINT VN_FACCIDENTE_VACCIDENTE CHECK (f_accidente>0);
+ALTER TABLE categoria_vehiculo ADD CONSTRAINT UQ_IDCATEGORIA_CATVEHI UNIQUE (id_categoria);
 
 
 
 
-				  *INVOLUCRADO_VEHICULO*
+		               	       *TIPO_COBERTURA*
 
-create table involucrado_vehiculo(
-    id_involucrado int NOT NULL AUTO_INCREMENT,
-    id_accidente int,
-    id_vehiculo int,
-    id_persona int,
-    id_multa int,
-    PRIMARY KEY (id_involucrado),
-    FOREIGN KEY (id_accidente) REFERENCES vehiculo_accidente (id_accidente) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_vehiculo) REFERENCES vehiculo (id_vehiculo) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_multa) REFERENCES multa (id_multa) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_persona) REFERENCES persona_adicional (id_persona) ON DELETE CASCADE ON UPDATE CASCADE
+
+create table tipo_cobertura(
+	id_tipo_cobertura int NOT NULL AUTO_INCREMENT,
+	DescripTipoCobertura varchar(50) NOT NULL,
+	PRIMARY KEY (id_tipo_cobertura)
 )
 
-ALTER TABLE involucrado_vehiculo ADD CONSTRAINT UQ_ID_INVOLUCRADO_INVEHICULO UNIQUE (id_involucrado);
+ALTER TABLE tipo_cobertura ADD CONSTRAINT UQ_ID_TIPO_COBERTURA UNIQUE (id_tipo_cobertura);
 
 
 
 
-				          *MULTA*
+		               	       *VIDA*
+
+
+create table vida(
+	id_vida_salud int NOT NULL AUTO_INCREMENT,
+	prima int NOT NULL,
+	cobertura varchar(50),
+	PRIMARY KEY (id_vida_salud)
+)
+
+ALTER TABLE vida ADD CONSTRAINT UQ_ID_VIDA_SALUD UNIQUE (id_vida_salud);
+
+
+
+
+MULTA
 
 create table multa(
-    id_multa int NOT NULL AUTO_INCREMENT,
-    id_vehiculo int NOT NULL,
-    id_cliente_conductor int NOT NULL,
-    importe int NOT NULL,
-    f_multa date NOT NULL,
-    lugar varchar(50) NOT NULL,
-    nivel_gravedad varchar(50) NOT NULL,
-    PRIMARY KEY (id_multa),
-    FOREIGN KEY (id_vehiculo) REFERENCES vehiculo (id_vehiculo) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_cliente_conductor) REFERENCES cliente (id_cliente) ON DELETE CASCADE ON UPDATE CASCADE
+	id_multa int NOT NULL AUTO_INCREMENT,
+	f_multa date NOT NULL,
+	lugar_multa varchar(50) NOT NULL,
+	hora_multa time NOT NULL,
+	importe int NOT NULL,
+	matricula varchar(7),
+	nivel_gravedad int NOT NULL,
+	PRIMARY KEY (id_multa),
+	FOREIGN KEY (matricula) REFERENCES vehiculo (matricula) ON DELETE CASCADE ON UPDATE CASCADE
 )
 
 ALTER TABLE multa ADD CONSTRAINT UQ_ID_MULTA_MULTA UNIQUE (id_multa);
-ALTER TABLE multa ADD CONSTRAINT VN_IMPORTE_MULTA CHECK (importe>0);
-ALTER TABLE multa ADD CONSTRAINT VN_FMULTA_MULTA CHECK (f_multa>0);
+ALTER TABLE multa ADD CONSTRAINT VN_IMPORTE_MULTA CHECK (importe>=0);
 ALTER TABLE multa ADD CONSTRAINT NIVEL_GRAVEDAD_MULTA CHECK (nivel_gravedad>='1' and nivel_gravedad<='10');
 
 
 
 
-				          *POLIZA*
+CATEGORIA_ACCIDENTE
 
-create table poliza(
-    id_poliza int NOT NULL AUTO_INCREMENT,
-    id_empleado int NOT NULL,
-    nombre_tomador varchar(50) NOT NULL,
-    cobertura double NOT NULL,
-    forma_de_pago varchar(50) NOT NULL,
-    f_contrato date NOT NULL,
-    f_Renovacion varchar(50) NOT NULL,
-    vigente varchar(50) NOT NULL,
-    tipo varchar(50) NOT NULL,
-    prima double NOT NULL,
-    PRIMARY KEY (id_poliza),
-    FOREIGN KEY (id_empleado) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE
+create table categoria_accidente(
+	id_categoria int NOT NULL AUTO_INCREMENT,
+	DescripCateg varchar(50) NOT NULL,
+	DescripSubCategoria varchar(50) NOT NULL,
+	PRIMARY KEY (id_categoria)
 )
 
-ALTER TABLE poliza ADD CONSTRAINT UQ_ID_POLIZA_POLIZA UNIQUE (id_poliza);
-ALTER TABLE poliza ADD CONSTRAINT V_VIGENTE_POLIZA CHECK (vigente='Si' or 'No');
-ALTER TABLE poliza ADD CONSTRAINT V_TIPO_POLIZA CHECK (tipo='Vehiculo' or tipo='Hogar' or tipo='Vida');
-ALTER TABLE poliza ADD CONSTRAINT VN_COBERTURA_POLIZA CHECK (cobertura>0);
-ALTER TABLE poliza ADD CONSTRAINT VN_FCONTRATO_POLIZA CHECK (f_contrato>0);
-ALTER TABLE poliza ADD CONSTRAINT VN_FRENOVACION_POLIZA CHECK (f_renovacion>0);
-ALTER TABLE poliza ADD CONSTRAINT VN_PRIMA_POLIZA CHECK (prima>0);
+ALTER TABLE categoria_accidente ADD CONSTRAINT UQ_ID_CATEGORIA_ACCIDENTE UNIQUE (id_categoria);
 
 
 
 
-				     *POLIZA_HOGAR*
+ACCIDENTE
 
-create table poliza_hogar(
-    id int NOT NULL AUTO_INCREMENT,
-    id_poliza int NOT NULL,
-    nombre_item varchar(50) NOT NULL,
-    tipo_item varchar(50) NOT NULL,
-    valor_item double NOT NULL,
-    prima_asignada double NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (id_poliza) REFERENCES poliza (id_poliza) ON DELETE CASCADE ON UPDATE CASCADE
+create table accidente(
+	nro_referenciaAcc int NOT NULL AUTO_INCREMENT,
+	f_acc date NOT NULL,
+	lugar_acc NOT NULL,
+	hora_acc time NOT NULL,
+	id_categoria int,
+	PRIMARY KEY (nro_referenciaAcc),
+	FOREIGN KEY (id_categoria) REFERENCES categoria_accidente (id_categoria) ON DELETE CASCADE ON UPDATE CASCADE	
 )
 
-ALTER TABLE poliza_hogar ADD CONSTRAINT UQ_ID_PHOGAR UNIQUE (id);
-ALTER TABLE poliza_hogar ADD CONSTRAINT VN_VITEM_PHOGAR CHECK (valor_item>0);
-ALTER TABLE poliza_hogar ADD CONSTRAINT VN_PRIMA_PHOGAR CHECK (prima_asignada>0);
+ALTER TABLE accidente ADD CONSTRAINT UQ_NRO_REFERENCIA_ACCIDENTE UNIQUE (nro_referenciaAcc);
 
 
 
 
-				     *POLIZA_VIDA*
+PRESTAMO
 
-create table poliza_vida(
-    id int NOT NULL AUTO_INCREMENT,
-    id_poliza int NOT NULL,
-    edad_cliente date NOT NULL,
-    profesion_cliente varchar(50) NOT NULL,
-    cobertura_economica double NOT NULL,
-    prima_asignada double NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (id_poliza) REFERENCES poliza (id_poliza) ON DELETE CASCADE ON UPDATE CASCADE
+create table prestamo(
+	id_prestamo int NOT NULL AUTO_INCREMENT,
+	importe_prestamo int NOT NULL,
+	PRIMARY KEY (id_prestamo)
 )
 
-ALTER TABLE poliza_vida ADD CONSTRAINT UQ_ID_PVIDA UNIQUE (id);
-ALTER TABLE poliza_vida ADD CONSTRAINT VN_EDAD_CLIENTE_PVIDA CHECK (edad_cliente>0);
-ALTER TABLE poliza_vida ADD CONSTRAINT VN_COBERTURAE_PVIDA CHECK (cobertura_economica>0);
-ALTER TABLE poliza_vida ADD CONSTRAINT VN_PRIMA_PVIDA CHECK (prima_asignada>0);
+ALTER TABLE prestamo ADD CONSTRAINT UQ_IDPRESTAMO_PRESTAMO UNIQUE (id_prestamo);
+ALTER TABLE prestamo ADD CONSTRAINT VN_IMPORTEP_PRESTAMO CHECK (importe_prestamo>=0);
 
 
 
 
-				     *POLIZA_VEHICULO*
+PAGO
 
-create table poliza_vehiculo(
-    id int NOT NULL AUTO_INCREMENT,
-    id_poliza int NOT NULL,
-    categoria_vehiculo varchar(50) NOT NULL,
-    edad_vehiculo int NOT NULL,
-    edad_conductor date NOT NULL,
-    tipo_cobertura varchar(50) NOT NULL,
-    prima_asignada double NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (id_poliza) REFERENCES poliza (id_poliza) ON DELETE CASCADE ON UPDATE CASCADE
+create table pago(
+	nro_pago int NOT NULL AUTO_INCREMENT,
+	id_prestamo int,
+	f_pago date NOT NULL,
+	importe_pago int NOT NULL,
+	PRIMARY KEY (nro_pago),
+	PRIMARY KEY (id_prestamo),
+	FOREIGN KEY (id_prestamo) REFERENCES prestamo (id_prestamo) ON DELETE CASCADE ON UPDATE CASCADE	
 )
 
-ALTER TABLE poliza_vehiculo ADD CONSTRAINT UQ_ID_PVEHICULO UNIQUE (id);
-ALTER TABLE poliza_vehiculo ADD CONSTRAINT VN_EDADV_PVEHICULO CHECK (edad_vehiculo>0);
-ALTER TABLE poliza_vehiculo ADD CONSTRAINT VN_EDADC_PVEHICULO CHECK (edad_conductor>0);
-ALTER TABLE poliza_vehiculo ADD CONSTRAINT VN_PRIMA_PVEHICULO CHECK (prima_asignada>0);
+ALTER TABLE pago ADD CONSTRAINT UQ_NRO_PAGO UNIQUE (nro_pago);
+ALTER TABLE pago ADD CONSTRAINT VN_IMPORTEP_PAGO CHECK (importe_pago>=0);
 
 
 
 
-				  *PROPIETARIO_POLIZA*
+FINANCIADORA 
 
-create table propietario_poliza(
-    id_propietario int NOT NULL AUTO_INCREMENT,
-    id_cliente int NOT NULL,
-    id_poliza int NOT NULL,
-    id_agente_personal int NOT NULL,
-    f_ultimo_uso date NOT NULL,
-    PRIMARY KEY (id_propietario),
-    FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_poliza) REFERENCES poliza (id_poliza) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_agente_personal) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE
+create table financiadora(
+	id_financiadora int NOT NULL AUTO_INCREMENT,
+	Direct_Financ varchar(100) NOT NULL,
+	TlfFinanciadora int NOT NULL,
+	PRIMARY KEY (id_financiadora)
 )
 
-ALTER TABLE propietario_poliza ADD CONSTRAINT UQ_ID_PROPIETARIO_PPOLIZA UNIQUE (id_propietario);
-ALTER TABLE propietario_poliza ADD CONSTRAINT VN_FULT_USO_PPOLIZA CHECK (f_ultimo_uso>0);
+ALTER TABLE financiadora ADD CONSTRAINT UQ_IDFINANCIAD_FINANCIADORA UNIQUE (id_financiadora);
+ALTER TABLE financiadora ADD CONSTRAINT VN_TELEFONO_PAGO CHECK (TlfFinanciadora>=0);
 
 
 
 
-				  *PERSONA_ADICIONAL*
-
-create table persona_adicional(
-    id_persona int NOT NULL AUTO_INCREMENT,
-    nombre varchar(50) NOT NULL,
-    apellido varchar(50) NOT NULL,
-    cedula int NOT NULL,
-    direccion varchar(50) NOT NULL,
-    telefono int NOT NULL, 
-    ciudad varchar(50) NOT NULL, 
-    PRIMARY KEY (id_persona)
+TRABAJA
+	
+create table trabaja(
+	id_empleado int,
+	id_sucursal int,
+	id_banda int,
+	f_inicio_sucursal date NOT NULL,
+	acumulado_salario int NOT NULL,
+	PRIMARY KEY (id_empleado),
+	PRIMARY KEY (id_sucursal),
+	PRIMARY KEY (id_banda),
+	FOREIGN KEY (id_empleado) REFERENCES empleado (id_empleado) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (id_sucursal) REFERENCES sucursal (id_sucursal) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (id_banda) REFERENCES banda_salarial (id_banda) ON DELETE CASCADE ON UPDATE CASCADE	
 )
 
-ALTER TABLE persona_adicional ADD CONSTRAINT NN_NOMBRE_PERSONAD CHECK (nombre<>' ');
-ALTER TABLE persona_adicional ADD CONSTRAINT NN_APELLIDO_PERSONAD CHECK (apellido<>' ');
-ALTER TABLE persona_adicional ADD CONSTRAINT VN_CEDULA_PERSONAD CHECK (cedula>0);
-ALTER TABLE persona_adicional ADD CONSTRAINT VN_TELEFONO_PERSONAD CHECK (telefono>0);
+ALTER TABLE trabaja ADD CONSTRAINT VN_ACUMSALARIO_TRABAJA CHECK (acumulado_salario>=0);
 
 
 
-		                *BENEFICIARIO_POLIZA*
 
-create table beneficiario_poliza(
-    id_beneficiario int NOT NULL AUTO_INCREMENT,
-    id_persona_beneficiario int NOT NULL,
-    id_poliza int NOT NULL,
-    PRIMARY KEY (id_beneficiario),
-    FOREIGN KEY (id_poliza) REFERENCES poliza (id_poliza) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_persona_beneficiario) REFERENCES persona_adicional (id_persona) ON DELETE CASCADE ON UPDATE CASCADE
+TITULAR
+
+create table titular(
+	id_cliente int,
+	nro_poliza int,
+	saldo_prima int NOT NULL,
+	f_uso_reciente date NOT NULL,
+	PRIMARY KEY (id_cliente),
+	PRIMARY KEY (nro_poliza),
+	FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (nro_poliza) REFERENCES poliza (nro_poliza) ON DELETE CASCADE ON UPDATE CASCADE
 )
+
+ALTER TABLE titular ADD CONSTRAINT VN_SPRIMA_TITULAR CHECK (saldo_prima>=0);
+
+
+
+INVOLUCRA
+
+create table involucra(
+	nro_referenciaAcc int,
+	matricula varchar(7),
+	id_persona int,
+	PRIMARY KEY (nro_referenciaAcc),
+	PRIMARY KEY (matricula),
+	PRIMARY KEY (id_persona),
+	FOREIGN KEY (nro_referenciaAcc) REFERENCES accidente (nro_referenciaAcc) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (matricula) REFERENCES vehiculo (matricula) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (id_persona) REFERENCES persona (id_persona) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+
+
+
+POSEE
+
+create table posee(
+	id_persona int,
+	matricula varchar(7),
+	PRIMARY KEY (id_persona),
+	PRIMARY KEY (matricula),
+	FOREIGN KEY (id_persona) REFERENCES persona (id_persona) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (matricula) REFERENCES vehiculo (matricula) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+
+
+
+CONTRATA_INMUEBLE
+
+create table contrata_inmueble(
+	id_inmueble int,
+	id_cliente int,
+	id_agente int,
+	f_contrato date NOT NULL,
+	estado_contrato varchar(10) NOT NULL,	
+	monto_comision_Ag int NOT NULL,
+	PRIMARY KEY (id_inmueble),
+	PRIMARY KEY (id_cliente),
+	PRIMARY KEY (id_agente),
+	PRIMARY KEY (f_contrato),
+	FOREIGN KEY (id_inmueble) REFERENCES inmueble (id_inmueble) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente) ON DELETE CASCADE ON UPDATE CASCADE,	
+	FOREIGN KEY (estado_contrato) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (id_agente) REFERENCES agente (id_agente) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE contrata_inmueble ADD CONSTRAINT VN_MCOMISION_CONTINMUEBLE CHECK (monto_comision_Ag>=0);
+
+
+
+
+CONTRATA_VEHICULO
+
+create table contrata_vehiculo(
+	id_cliente int,
+	id_agente int,
+	matricula varchar(7),
+	f_contrato date NOT NULL,
+	recargo int NOT NULL,
+	descuentos int NOT NULL,
+	estado_contrato varchar(10) NOT NULL,
+	monto_comision_Ag int NOT NULL,
+	PRIMARY KEY (id_cliente),
+	PRIMARY KEY (matricula),
+	PRIMARY KEY (id_agente),
+	PRIMARY KEY (f_contrato),
+	FOREIGN KEY (matricula) REFERENCES vehiculo (matricula) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente) ON DELETE CASCADE ON UPDATE CASCADE,	
+	FOREIGN KEY (estado_contrato) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (id_agente) REFERENCES agente (id_agente) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE contrata_vehiculo ADD CONSTRAINT VN_RECARGO_CONTVEHICULO CHECK (recargo>=0);
+ALTER TABLE contrata_vehiculo ADD CONSTRAINT VN_DESCUENTO_CONTVEHICULO CHECK (descuentos>=0);
+ALTER TABLE contrata_vehiculo ADD CONSTRAINT VN_MCOMISION_CONTVEHICULO CHECK (monto_comision_Ag>=0);
+
+
+
+
+CONTRATA_VIDA
+
+create table contrata_vida(
+	id_vida_salud int,
+	id_cliente int,
+	id_persona int,
+	id_agente int,
+	fecha_contrato date NOT NULL,
+	estado_contrato varchar(10) NOT NULL,
+	monto_comision_Ag int NOT NULL,
+	PRIMARY KEY (id_cliente),
+	PRIMARY KEY (id_vida_salud),
+	PRIMARY KEY (id_persona),
+	PRIMARY KEY (id_agente),
+	PRIMARY KEY (f_contrato),
+	FOREIGN KEY (id_vida_salud) REFERENCES vida (id_vida_salud) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente) ON DELETE CASCADE ON UPDATE CASCADE,	
+	FOREIGN KEY (id_persona) REFERENCES beneficiario (id_persona) ON DELETE CASCADE ON UPDATE CASCADE,	
+	FOREIGN KEY (estado_contrato) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (id_agente) REFERENCES agente (id_agente) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+ALTER TABLE contrata_vida ADD CONSTRAINT VN_MCOMISION_CONTVIDA CHECK (monto_comision_Ag>=0);
+
+
+
+
+PRESTATARIO
+
+create table prestatario(
+	id_prestamo int,
+	id_cliente int,
+	id_financiadora int,
+	tipo_interes varchar(50) NOT NULL,
+	PRIMARY KEY (id_prestamo),
+	PRIMARY KEY (id_cliente),
+	PRIMARY KEY (id_financiadora),
+	FOREIGN KEY (id_prestamo) REFERENCES prestamo (id_prestamo) ON DELETE CASCADE ON UPDATE CASCADE,	
+	FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente) ON DELETE CASCADE ON UPDATE CASCADE,	
+	FOREIGN KEY (id_financiadora) REFERENCES financiadora (id_financiadora) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+
+
+
+REGISTRO_SINIESTRO
+
+create table registro_siniestro(
+	nro_siniestro int,
+	nro_poliza int,
+	f_siniestro date NOT NULL,
+	f_respuesta date NOT NULL,
+	id_rechazo boolean NOT NULL,
+	monto_reconocido int NOT NULL,
+	monto_solicitado int NOT NULL,
+	PRIMARY KEY (nro_siniestro),
+	PRIMARY KEY (nro_poliza),
+	PRIMARY KEY (f_siniestro),
+	FOREIGN KEY (nro_siniestro) REFERENCES siniestro (nro_siniestro) ON DELETE CASCADE ON UPDATE CASCADE,	
+	FOREIGN KEY (nro_poliza) REFERENCES poliza (nro_poliza) ON DELETE CASCADE ON UPDATE CASCADE	
+)
+
+ALTER TABLE registro_siniestro ADD CONSTRAINT VN_MRECONOCIDO_RSINIESTRO CHECK (monto_reconocido>=0);
+ALTER TABLE registro_siniestro ADD CONSTRAINT VN_MSOLICITADO_RSINIESTRO CHECK (monto_solicitado>=0);
+
+
+
+
+SINIESTRO
+
+create table siniestro(
+	nro_siniestro int NOT NULL AUTO_INCREMENT,
+	descripcion_siniestro varchar(100) NOT NULL,
+	PRIMARY KEY (nro_siniestro)
+)
+
+ALTER TABLE siniestro ADD CONSTRAINT UQ_NROSINIESTRO_SINIESTRO UNIQUE (nro_siniestro);

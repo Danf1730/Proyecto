@@ -1,0 +1,156 @@
+MUNICIPIO
+
+INSERT INTO `municipio`(`id_estado`, `nb_municipio`) VALUES ("21","Valera");
+INSERT INTO `municipio`(`id_estado`, `nb_municipio`) VALUES ("21","Trujillo");
+INSERT INTO `municipio`(`id_estado`, `nb_municipio`) VALUES ("21","Boconó");
+INSERT INTO `municipio`(`id_estado`, `nb_municipio`) VALUES ("17","Arismendi");
+INSERT INTO `municipio`(`id_estado`, `nb_municipio`) VALUES ("17","Mariño");
+INSERT INTO `municipio`(`id_estado`, `nb_municipio`) VALUES ("17","Marcano");
+INSERT INTO `municipio`(`id_estado`, `nb_municipio`) VALUES ("15","El Hatillo");
+INSERT INTO `municipio`(`id_estado`, `nb_municipio`) VALUES ("15","Sucre");
+INSERT INTO `municipio`(`id_estado`, `nb_municipio`) VALUES ("15","Chacao");
+INSERT INTO `municipio`(`id_estado`, `nb_municipio`) VALUES ("4","Santiago Mariño");
+INSERT INTO `municipio`(`id_estado`, `nb_municipio`) VALUES ("4","Bolívar");
+INSERT INTO `municipio`(`id_estado`, `nb_municipio`) VALUES ("4","Zamora");
+INSERT INTO `municipio`(`id_estado`, `nb_municipio`) VALUES ("2","Bolívar");
+INSERT INTO `municipio`(`id_estado`, `nb_municipio`) VALUES ("2","Anaco");
+INSERT INTO `municipio`(`id_estado`, `nb_municipio`) VALUES ("2","Guanta");
+INSERT INTO `municipio`(`id_estado`, `nb_municipio`) VALUES ("14","Campo Elías");
+INSERT INTO `municipio`(`id_estado`, `nb_municipio`) VALUES ("14","Santos Marquina");
+INSERT INTO `municipio`(`id_estado`, `nb_municipio`) VALUES ("14","Sucre")
+
+
+
+PARROQUIA
+
+INSERT INTO `parroquia`(`id_municipio`, `nb_parroquia`) VALUES ("1","Juan Ignacio Montilla");
+INSERT INTO `parroquia`(`id_municipio`, `nb_parroquia`) VALUES ("2","Chiquinquira");
+INSERT INTO `parroquia`(`id_municipio`, `nb_parroquia`) VALUES ("3","Boconó");
+INSERT INTO `parroquia`(`id_municipio`, `nb_parroquia`) VALUES ("4","La Asunción");
+INSERT INTO `parroquia`(`id_municipio`, `nb_parroquia`) VALUES ("5","Porlamar");
+INSERT INTO `parroquia`(`id_municipio`, `nb_parroquia`) VALUES ("6","Juan Griego");
+INSERT INTO `parroquia`(`id_municipio`, `nb_parroquia`) VALUES ("7","El Hatillo");
+INSERT INTO `parroquia`(`id_municipio`, `nb_parroquia`) VALUES ("8","Petare");
+INSERT INTO `parroquia`(`id_municipio`, `nb_parroquia`) VALUES ("9","Chacao");
+INSERT INTO `parroquia`(`id_municipio`, `nb_parroquia`) VALUES ("10","Turmero");
+INSERT INTO `parroquia`(`id_municipio`, `nb_parroquia`) VALUES ("11","San Mateo");
+INSERT INTO `parroquia`(`id_municipio`, `nb_parroquia`) VALUES ("12","Magdaleno");
+INSERT INTO `parroquia`(`id_municipio`, `nb_parroquia`) VALUES ("13","Anaco");
+INSERT INTO `parroquia`(`id_municipio`, `nb_parroquia`) VALUES ("14","Pozuelos");
+INSERT INTO `parroquia`(`id_municipio`, `nb_parroquia`) VALUES ("15","Guanta");
+INSERT INTO `parroquia`(`id_municipio`, `nb_parroquia`) VALUES ("16","Jají");
+INSERT INTO `parroquia`(`id_municipio`, `nb_parroquia`) VALUES ("17","La Trampa");
+INSERT INTO `parroquia`(`id_municipio`, `nb_parroquia`) VALUES ("18","Tabay");
+
+
+
+CIUDAD
+
+INSERT INTO `ciudad`(`id_municipio`, `nb_ciudad`) VALUES ("1","Valera");
+INSERT INTO `ciudad`(`id_municipio`, `nb_ciudad`) VALUES ("2","Trujillo");
+INSERT INTO `ciudad`(`id_municipio`, `nb_ciudad`) VALUES ("3","Boconó");
+INSERT INTO `ciudad`(`id_municipio`, `nb_ciudad`) VALUES ("4","La Asunción");
+INSERT INTO `ciudad`(`id_municipio`, `nb_ciudad`) VALUES ("5","Porlamar");
+INSERT INTO `ciudad`(`id_municipio`, `nb_ciudad`) VALUES ("6","Juan Griego");
+INSERT INTO `ciudad`(`id_municipio`, `nb_ciudad`) VALUES ("7","Caracas");
+INSERT INTO `ciudad`(`id_municipio`, `nb_ciudad`) VALUES ("8","Caracas");
+INSERT INTO `ciudad`(`id_municipio`, `nb_ciudad`) VALUES ("9","Caracas");
+INSERT INTO `ciudad`(`id_municipio`, `nb_ciudad`) VALUES ("10","Turmero");
+INSERT INTO `ciudad`(`id_municipio`, `nb_ciudad`) VALUES ("11","San Mateo");
+INSERT INTO `ciudad`(`id_municipio`, `nb_ciudad`) VALUES ("12","Villa De Cura");
+INSERT INTO `ciudad`(`id_municipio`, `nb_ciudad`) VALUES ("13","Anaco");
+INSERT INTO `ciudad`(`id_municipio`, `nb_ciudad`) VALUES ("14","Puerto La Cruz");
+INSERT INTO `ciudad`(`id_municipio`, `nb_ciudad`) VALUES ("15","Guanta");
+INSERT INTO `ciudad`(`id_municipio`, `nb_ciudad`) VALUES ("16","Ejido");
+INSERT INTO `ciudad`(`id_municipio`, `nb_ciudad`) VALUES ("18","Lagunillas");
+INSERT INTO `ciudad`(`id_municipio`, `nb_ciudad`) VALUES ("17","Tabay")
+
+
+
+
+PERSONA
+
+INSERT INTO `persona`(`cedula`, `NombPersona`, `NumTlfPersona`, `Tipo_persona`) VALUES ("13654832","Juan","04245684360","EMPLEADO");
+INSERT INTO `persona`(`cedula`, `NombPersona`, `NumTlfPersona`, `Tipo_persona`) VALUES ("9456001","Diego","04144592013","EMPLEADO");
+INSERT INTO `persona`(`cedula`, `NombPersona`, `NumTlfPersona`, `Tipo_persona`) VALUES ("27569300","Andrea","04165823014","EMPLEADO");
+INSERT INTO `persona`(`cedula`, `NombPersona`, `NumTlfPersona`, `Tipo_persona`) VALUES ("10253478","Cristina","04125203961","EMPLEADO")
+
+INSERT INTO `persona`(`cedula`, `NombPersona`, `NumTlfPersona`, `Tipo_persona`) VALUES ("13654832","Juan","04245684360","CLIENTE");
+INSERT INTO `persona`(`cedula`, `NombPersona`, `NumTlfPersona`, `Tipo_persona`) VALUES ("9456001","Diego","04144592013","CLIENTE");
+INSERT INTO `persona`(`cedula`, `NombPersona`, `NumTlfPersona`, `Tipo_persona`) VALUES ("27569300","Andrea","04165823014","CLIENTE");
+INSERT INTO `persona`(`cedula`, `NombPersona`, `NumTlfPersona`, `Tipo_persona`) VALUES ("10253478","Cristina","04125203961","CLIENTE")
+
+
+
+
+EMPLEADO
+
+INSERT INTO `empleado`(`id_persona`, `cedula`, `NombPersona`, `NumTlfPersona`, `id_empleado`, `fecha_inicio_empresa`) VALUES ("3","13654832","Juan","04245684360","3","21/07/14");
+INSERT INTO `empleado`(`id_persona`, `cedula`, `NombPersona`, `NumTlfPersona`, `id_empleado`, `fecha_inicio_empresa`) VALUES ("4","9456001","Diego","04144592013","4","21/06/05");
+INSERT INTO `empleado`(`id_persona`, `cedula`, `NombPersona`, `NumTlfPersona`, `id_empleado`, `fecha_inicio_empresa`) VALUES ("5","27569300","Andrea","04165823014","5","21/12/03");
+INSERT INTO `empleado`(`id_persona`, `cedula`, `NombPersona`, `NumTlfPersona`, `id_empleado`, `fecha_inicio_empresa`) VALUES ("6","10253478","Cristina","04125203961","6","21/10/20")
+
+
+
+
+SUCURSAL
+
+INSERT INTO `sucursal`(`nb_sucursal`, `id_ciudad`, `activos`, `id_director`) VALUES ("Sucursal Caracas","8","524","2");
+INSERT INTO `sucursal`(`nb_sucursal`, `id_ciudad`, `activos`, `id_director`) VALUES ("Sucursal Porlamar","5","156","3");
+INSERT INTO `sucursal`(`nb_sucursal`, `id_ciudad`, `activos`, `id_director`) VALUES ("Sucursal San Mateo","11","254","4");
+INSERT INTO `sucursal`(`nb_sucursal`, `id_ciudad`, `activos`, `id_director`) VALUES ("Sucursal Puerto La Cruz","14","158","5");
+INSERT INTO `sucursal`(`nb_sucursal`, `id_ciudad`, `activos`, `id_director`) VALUES ("Sucursal Trujillo","2","104","6")
+
+
+
+
+CATEGORIA_ACCIDENTE
+
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En el hogar","Intoxicaciones");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En el hogar","Quemaduras");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En el hogar","Torceduras");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En el hogar","Heridas");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En el hogar","Otro");
+
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En el trabajo","Quemaduras");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En el trabajo","Congelamiento");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En el trabajo","Inmersión");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En el trabajo","Electrocución");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En el trabajo","Otro");
+
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En la calle","Choques");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En la calle","Atropellamientos");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En la calle","Volcaduras");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En la calle","Bala perdida");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En la calle","Otro");
+
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En el campo","Caídas");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En el campo","Ataque por animales");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En el campo","Incendios");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En el campo","Otro");
+
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En la infancia","Caídas");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En la infancia","Accidentes en el transporte");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En la infancia","Intoxicaciones");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En la infancia","Quemaduras");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En la infancia","Otro");
+
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En la escuela","Caídas");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En la escuela","Heridas");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En la escuela","Otro");
+
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En Hospitales","Caídas");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En Hospitales","Intoxicación");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("En Hospitales","Otro");
+
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("Por Animales","Caídas");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("Por Animales","Accidentes en el transporte");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("Por Animales","Intoxicaciones");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("Por Animales","Quemaduras");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("Por Animales","Otro");
+
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("Por desastres naturales","Derrumbes");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("Por desastres naturales","Deslizamientos");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("Por desastres naturales","Muertes");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("Por desastres naturales","Pérdida de hogares");
+INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("Por desastres naturales","Otro");
