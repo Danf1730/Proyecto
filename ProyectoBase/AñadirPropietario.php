@@ -24,8 +24,7 @@
 			<p class="h3">Matrícula Cliente</p>
   		</blockquote>
 		<figcaption class="blockquote">Por favor ingrese los siguientes datos del propietario</figcaption>
-      
-	</figure>
+  </figure>
         
      <form action="insertarPropietario.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
       <div class="row g-3">
@@ -43,16 +42,16 @@
 
     </form>
 	
-<nav class="navbar bottom navbar-light mt-5" style="background-color: #2196F3;">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"> </a>
-	<nav aria-label="Page navigation example">
-  		<ul class="pagination justify-content-end">
-    		<li class="page-item"><a class="page-link" href="AgenteVehiculo.php">Regresar</a></li>
-  		</ul>
-	</nav>
-  </div>
-</nav>
+    <nav class="navbar bottom navbar-light mt-5" style="background-color: #2196F3;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"> </a>
+	      <nav aria-label="Page navigation example">
+  		    <ul class="pagination justify-content-end">
+    		    <li class="page-item"><a class="page-link" href="AgenteVehiculo.php">Regresar</a></li>
+  		    </ul>
+	      </nav>
+      </div>
+    </nav>
     
 </body>
 </html>

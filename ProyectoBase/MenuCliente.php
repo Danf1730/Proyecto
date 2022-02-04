@@ -4,17 +4,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Aseguradora UCAB Contineltal  </title>
+	<title>Aseguradora UCAB Continental  </title>
 	<link rel="stylesheet" type="text/css" href="style_proyecto/Menus.css" style="text-decoration:none">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <nav class="navbar navbar-light" style="background-color: #2196F3;">
         <div class="container-fluid col-md-11">
-          <h1 class="navbar-brand text-light p-1 fs-3">Aseguradora UCAB Continental</h1>
+          <h1 class="navbar-brand text-light p-1 fs-3">Aseguradora UCAB Continental - Menú Cliente</h1>
 			  <nav aria-label="Page navigation example">
   				<ul class="pagination justify-content-end">
-    				<li class="page-item"><a class="page-link" href="Sesion.php">Iniciar sesión</li></a>
+    				<li class="page-item"><a class="page-link" href="Inicio.php">Cerrar sesión</li></a>
   				</ul>
 			</nav>
         </div>

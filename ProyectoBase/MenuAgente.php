@@ -11,10 +11,10 @@
 
 <nav class="navbar navbar-light" style="background-color: #2196F3;">
         <div class="container-fluid col-md-11">
-          <h1 class="navbar-brand text-light p-1 fs-3">Aseguradora UCAB Continental</h1>
+          <h1 class="navbar-brand text-light p-1 fs-3">Aseguradora UCAB Continental - Menú Agente</h1>
 			  <nav aria-label="Page navigation example">
   				<ul class="pagination justify-content-end">
-    				<li class="page-item"><a class="page-link" href="Sesion.php">Iniciar sesión</li></a>
+    				<li class="page-item"><a class="page-link" href="Inicio.php">Cerrar sesión</li></a>
   				</ul>
 			</nav>
         </div>

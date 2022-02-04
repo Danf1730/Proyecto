@@ -14,7 +14,7 @@
           <h1 class="navbar-brand text-light p-1 fs-3">Aseguradora UCAB Continental</h1>
 			  <nav aria-label="Page navigation example">
   				<ul class="pagination justify-content-end">
-    				<li class="page-item"><a class="page-link" href="Sesion.php">Iniciar sesion</li><a>
+    				<li class="page-item"><a class="page-link" href="Sesion.php">Iniciar sesion<a></li>
   				</ul>
 			</nav>
         </div>
