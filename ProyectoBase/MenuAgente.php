@@ -53,12 +53,13 @@
                     </ul>
                 </li> 
                 <a href="Solicitudes.php" style="text-decoration:none"><li>Solicitudes</li></a>
-				<li>Accidentes y multas
+				<li>Siniestros
                     <ul> 
-						<a href="#" style="text-decoration:none"><li>Consultar Accidente</li></a>
+						<a href="ConultarTipo.php" style="text-decoration:none"><li>Consultar tipos de Accidente</li></a>
 						<a href="AñadirAccidente.php" style="text-decoration:none"><li>Añadir Accidente</li></a>
-						<a href="#" style="text-decoration:none"><li>Consultar Multa</li></a>
+						<a href="ConsultarMulta.php" style="text-decoration:none"><li>Consultar Multa</li></a>
                         <a href="AñadirMulta.php" style="text-decoration:none"><li>Añadir Multa </li></a>
+						<a href="AñadirSiniestro.php" style="text-decoration:none"><li>Añadir Siniesro </li></a>
                     </ul>
                 </li> 
 				<li>Reportes

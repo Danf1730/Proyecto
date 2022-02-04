@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Añadir Accidente</title>
+	<title>Añadir Multa</title>
 	<link rel="stylesheet" type="text/css" href="style_proyecto/añadir.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
@@ -23,47 +23,53 @@
   		<blockquote class="blockquote">
 			<p class="h3">Añadir Accidente</p>
   		</blockquote>
-		<figcaption class="blockquote">Por favor ingrese los siguientes datos del accidente</figcaption>
+		<figcaption class="blockquote">Por favor ingrese los siguientes datos de la multa</figcaption>
 	</figure>
 
-    <form class="w-30 p-3 border-0" style="background-color: white;">
+    <form action="insertarAccidenteBD.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
         <div class="row g-3">
           <div class="col-auto">
-            <label for="" class="visually-hidden">ID Cliente Involucrado</label>
-            <input type="text" name="id_involucrado" class="form-control mb-3" style="background-color: #E3F2FD;">
+            <label for="">ID accidente</label>
+            <input type="text" name="id_accidente" id="id_accidente" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
           <div class="col-auto">
-            <label for="" class="visually-hidden">ID Vehículo</label>
-            <input type="text" name="id_vehiculo" class="form-control mb-3" style="background-color: #E3F2FD;">
+            <label for="">Matricula Vehículo</label>
+            <input type="text" name="matricula" id="matricula" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
         </div>
         <div class="row g-3">
           <div class="col-auto">
-            <label for="" class="visually-hidden">Id Persona Incolucrado</label>
-            <input type="text" name="id_persona" class="form-control mb-3" style="background-color: #E3F2FD;" placeholder="Añadido en persona adicional">
+            <label for="">Fecha del accidneyte</label>
+            <input type="date" name="f_multa" id="f_multa" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
           <div class="col-auto">
-            <label for="" class="visually-hidden">Id Multa</label>
-            <input type="text" name="id_multa" class="form-control mb-3" style="background-color: #E3F2FD;">
+            <label for="">hora del accidneyte</label>
+            <input type="time" name="h_multa" id="h_multa" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
+          <div class="col-auto">
+        <label for="">Categoria del Accidente</label>
+        <input type="text" name="tipo" id="tipo" class="form-control mb-3" style="background-color: #E3F2FD;">
         </div>
-        <label for="">Fecha y Hora del accidente</label>
-        <input type="datetime-local" name="Fecha" class="form-control mb-3" style="background-color: #E3F2FD;">
-        <label for="">Lugar</label>
-        <input type="text" name="Lugar" class="form-control mb-3" style="background-color: #E3F2FD;">
-        <input type="submit" name="submit" class="mt-5">
-        
-
+        <div class="col-auto">
+        <label for="">Identificador persona</label>
+        <input type="text" name="id_persona" id="id_persona" class="form-control mb-3" style="background-color: #E3F2FD;" >
+        </div>
+      </div>
+      <label for="">Lugar</label>
+        <input type="text" name="lugar" id="lugar" class="form-control mb-3" style="background-color: #E3F2FD;" >
+        <input type="submit" name="Asubmit" class="mt-5">
 </form>
-<nav class="navbar bottom navbar-light mt-5" style="background-color: #2196F3;">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"> </a>
-	<nav aria-label="Page navigation example">
-  		<ul class="pagination justify-content-end">
-    		<li class="page-item"><a class="page-link" href="MenuAgente.php">Regresar</a></li>
-  		</ul>
-	</nav>
-  </div>
-</nav>
+	
+    <nav class="navbar bottom navbar-light mt-5" style="background-color: #2196F3;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> </a>
+	        <nav aria-label="Page navigation example">
+  		        <ul class="pagination justify-content-end">
+    		        <li class="page-item"><a class="page-link" href="MenuAgente.php">Regresar</a></li>
+  		        </ul>
+	        </nav>
+        </div>
+    </nav>
+
 </body>
 </html>

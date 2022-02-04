@@ -26,7 +26,7 @@
 		<figcaption class="blockquote">Por favor ingrese los siguientes datos de la póliza del vehículo</figcaption>
 	</figure>
 
-    <form action="insertarvehiculo.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
+    <form action="insertarVehiculoBD.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
        
         <h1 class="mt-3"></h1>
 	    <figure class="text-start">

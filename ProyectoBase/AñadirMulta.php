@@ -33,18 +33,18 @@
             <input type="text" name="id_multa" id="id_multa" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
           <div class="col-auto">
-            <label for="">ID Vehículo</label>
-            <input type="text" name="id_vehiculo" id="id_vehiculo" class="form-control mb-3" style="background-color: #E3F2FD;">
+            <label for="">Matricula Vehículo</label>
+            <input type="text" name="matricula" id="matricula" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
         </div>
         <div class="row g-3">
           <div class="col-auto">
-            <label for="">ID Conductor</label>
-            <input type="text" name="id_cliente_conductor" id="id_cliente_conductor" class="form-control mb-3" style="background-color: #E3F2FD;">
-         </div>
-          <div class="col-auto">
             <label for="">Fecha de la Multa</label>
             <input type="date" name="f_multa" id="f_multa" class="form-control mb-3" style="background-color: #E3F2FD;">
+          </div>
+          <div class="col-auto">
+            <label for="">hora de la Multa</label>
+            <input type="time" name="h_multa" id="h_multa" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
         </div>
         <label for="">Importe</label>
