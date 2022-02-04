@@ -64,8 +64,8 @@
          
         <div class="row g-3">
           <div class="col-auto">
-           <label for="" class="visually-hidden">Vigente</label>
-            <input type="text" name="estado_contrato" id="estado_contrato	" class="form-control mb-3" placeholder="Si / No" style="background-color: #E3F2FD;">
+           <label for="" class="visually-hidden">Estado del contrato</label>
+            <input type="text" name="estado_contrato" id="estado_contrato	" class="form-control mb-3" placeholder="Activo / Vencido / Suspendido" style="background-color: #E3F2FD;">
           </div>
          
           <div class="col-auto">
