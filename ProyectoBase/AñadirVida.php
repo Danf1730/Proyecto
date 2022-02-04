@@ -21,9 +21,9 @@
     <h1 class="mt-5"></h1>
 	<figure class="text-start ml-5">
   		<blockquote class="blockquote">
-			<p class="h3">Añadir poliza de Vida</p>
+			<p class="h3">Añadir póliza de Vida</p>
   		</blockquote>
-		<figcaption class="blockquote">Por favor ingrese los siguientes datos de la poliza</figcaption>
+		<figcaption class="blockquote">Por favor ingrese los siguientes datos de la póliza</figcaption>
 	</figure>
 
     <form action="insertarpolizaVidaBD.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">

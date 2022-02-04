@@ -21,37 +21,37 @@
     <h1 class="mt-5"></h1>
 	<figure class="text-start ml-5">
   		<blockquote class="blockquote">
-			<p class="h3">Añadir poliza de Vehículo</p>
+			<p class="h3">Añadir póliza de Vehículo</p>
   		</blockquote>
-		<figcaption class="blockquote">Por favor ingrese los siguientes datos de la poliza del vehículo</figcaption>
+		<figcaption class="blockquote">Por favor ingrese los siguientes datos de la póliza del vehículo</figcaption>
 	</figure>
 
     <form action="insertarpolizaVehiculoBD.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
    
-    <label for="">Id Póliza</label>--
+    <label for="">Id Póliza</label>
         <input type="text" name="nro_poliza" id="nro_poliza" class="form-control mb-3" style="background-color: #E3F2FD;">
         <div class="row g-3">
           <div class="col-auto">
-           <label for="" class="visually-hidden">Id Agente </label>-
+           <label for="" class="visually-hidden">Id Agente </label>
             <input type="text" name="id_agente" id="id_agente" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
           <div class="col-auto">
-          <label for="" class="visually-hidden">Id Cliente</label>--
+          <label for="" class="visually-hidden">Id Cliente</label>
             <input type="text" name="id_cliente" id="id_cliente" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
        
         </div>
         
-        <label for="">Descripción</label>-
+        <label for="">Descripción</label>
         <input type="text" name="descrip_poliza" id="descrip_poliza" class="form-control mb-3" style="background-color: #E3F2FD;">
        
         <div class="row g-3">
           <div class="col-auto">
-            <label for="" class="visually-hidden">Fecha del Contrato</label>---
+            <label for="" class="visually-hidden">Fecha del Contrato</label>
             <input type="date" name="f_contrato" id="f_contrato" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
           <div class="col-auto">
-          <label for="" class="visually-hidden">Fecha de Renovación</label>-
+          <label for="" class="visually-hidden">Fecha de Renovación</label>
             <input type="date" name="f_renovacion" id="f_renovacion" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
         </div>
@@ -63,7 +63,7 @@
           </div>
          
           <div class="col-auto">
-           <label for="" class="visually-hidden">Prima</label>--
+           <label for="" class="visually-hidden">Prima</label>
             <input type="text" name="prima" id="prima" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
         </div>
@@ -74,7 +74,7 @@
 	    </figure>
         <div class="row g-3">
             <div class="col-auto">
-                <label for="" class="visually-hidden">Matricula del Vehículo</label>
+                <label for="" class="visually-hidden">Matrícula del Vehículo</label>
                 <input type="text" name="matricula" id="matricula" class="form-control mb-3" style="background-color: #E3F2FD;">
             </div>
             <div class="col-auto">

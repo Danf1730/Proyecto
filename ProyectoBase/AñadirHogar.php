@@ -21,9 +21,9 @@
     <h1 class="mt-5"></h1>
 	<figure class="text-start ml-5">
   		<blockquote class="blockquote">
-			<p class="h3">Añadir Poliza de Hogar</p>
+			<p class="h3">Añadir Póliza de Hogar</p>
   		</blockquote>
-		<figcaption class="blockquote">Por favor ingrese los siguientes datos de la poliza</figcaption>
+		<figcaption class="blockquote">Por favor ingrese los siguientes datos de la póliza</figcaption>
 	</figure>
         
     <form action="insertarpolizaHogarBD.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
@@ -72,9 +72,9 @@
 	      <figure class="text-start">
 		      <figcaption class="blockquote">Datos del inmueble</figcaption>
 	      </figure>
-      <label for="">id inmueble</label>
+      <label for="">Id Inmueble</label>
         <input type="text" name="id_inmueble" id="id_inmueble" class="form-control mb-3" style="background-color: #E3F2FD;">
-        <label for="">Dirección inmueble</label>
+        <label for="">Dirección Inmueble</label>
         <input type="text" name="Direc_Inmueble" id="Direc_Inmueble" class="form-control mb-3" style="background-color: #E3F2FD;">
         <label for="">Contenido</label>
         <input type="text" name="contenido" id="contenido" class="form-control mb-3" style="background-color: #E3F2FD;">

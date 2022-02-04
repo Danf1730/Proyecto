@@ -29,7 +29,7 @@
     <form class="w-30 p-3 border-0" style="background-color: white;">
         <div class="row g-3">
           <div class="col-auto">
-            <label for="" class="visually-hidden">ID Cliente Incolucrado</label>
+            <label for="" class="visually-hidden">ID Cliente Involucrado</label>
             <input type="text" name="id_involucrado" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
           <div class="col-auto">
@@ -47,9 +47,9 @@
             <input type="text" name="id_multa" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
         </div>
-        <label for="">Fecha y Hora del accidente:</label>
+        <label for="">Fecha y Hora del accidente</label>
         <input type="datetime-local" name="Fecha" class="form-control mb-3" style="background-color: #E3F2FD;">
-        <label for="">Lugar:</label>
+        <label for="">Lugar</label>
         <input type="text" name="Lugar" class="form-control mb-3" style="background-color: #E3F2FD;">
         <input type="submit" name="submit" class="mt-5">
         

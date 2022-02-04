@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Añadir Vehiculo</title>
+	<title>Añadir Vehículo</title>
 	<link rel="stylesheet" type="text/css" href="style_proyecto/añadir.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
@@ -21,9 +21,9 @@
     <h1 class="mt-5"></h1>
 	<figure class="text-start ml-5">
   		<blockquote class="blockquote">
-			<p class="h3">Añadir poliza de Vehículo</p>
+			<p class="h3">Añadir póliza de Vehículo</p>
   		</blockquote>
-		<figcaption class="blockquote">Por favor ingrese los siguientes datos de la poliza del vehículo</figcaption>
+		<figcaption class="blockquote">Por favor ingrese los siguientes datos de la póliza del vehículo</figcaption>
 	</figure>
 
     <form action="insertarvehiculo.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
@@ -43,17 +43,17 @@
             </div>
         </div>
 
-		<label for="" class="visually-hidden">Matricula</label>
+		<label for="" class="visually-hidden">Matrícula</label>
                 <input type="text" name="matricula" id="matricula" class="form-control mb-3" style="background-color: #E3F2FD;">
 
 	             <label for="" class="visually-hidden">Año del Vehículo</label>
                 <input type="int" name="annio" id="annio" class="form-control mb-3" style="background-color: #E3F2FD;">
 		
-			<label for="">id Categoria del Vehiculo</label>
-            <input type="text" name="id_categoria" id="id_categoria" class="form-control mb-3" style="background-color: #E3F2FD;" placeholder="1.utilitario,2. gama media,3. gama alta, 4.gran turismo, 4.lujo, 6.otros">  
+			<label for="">Id Categoría del Vehículo</label>
+            <input type="text" name="id_categoria" id="id_categoria" class="form-control mb-3" style="background-color: #E3F2FD;" placeholder="1.Utilitario,2.Gama media,3.Gama alta,4.Gran turismo,5.Lujo,6.Otros">  
             
-			<label for="">id Tipo Cobertura</label>
-           <input type="text" name="id_tipo_cobertura" id="id_tipo_cobertura" class="form-control mb-3" style="background-color: #E3F2FD;" placeholder="1.todo riesgo,2. franquicia, 3.terceros, 4.otros
+			<label for="">Id Tipo Cobertura</label>
+           <input type="text" name="id_tipo_cobertura" id="id_tipo_cobertura" class="form-control mb-3" style="background-color: #E3F2FD;" placeholder="1.Todo riesgo, 2.Franquicia, 3.Terceros, 4.Otros
 ">
            
         

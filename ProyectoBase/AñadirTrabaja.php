@@ -21,7 +21,7 @@
     <h1 class="mt-5"></h1>
 	<figure class="text-start ml-5">
   		<blockquote class="blockquote">
-			<p class="h3">Trabajador a sucursal</p>
+			<p class="h3">Trabajador - Sucursal</p>
   		</blockquote>
 		<figcaption class="blockquote">Por favor ingrese los siguientes datos del empleado</figcaption>
       
@@ -30,27 +30,27 @@
      <form action="insertarTrabajaBD.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
       <div class="row g-3">
         <div class="col-auto">
-          <label for="" class="visually-hidden">id banda </label>
+          <label for="" class="visually-hidden">Id Banda Salarial </label>
           <input type="text" name="id_banda" id="id_banda" class="form-control mb-3" style="background-color: #E3F2FD;">
         </div>
       </div>
       <div class="row g-3">
         <div class="col-auto">
-          <label for="" class="visually-hidden">id empleado</label>
+          <label for="" class="visually-hidden">Id Empleado</label>
           <input type="text" name="id_empleado" id="id_empleado" class="form-control mb-3" style="background-color: #E3F2FD;">
         </div>
         <div class="col-auto">
-          <label for="" class="visually-hidden">id sucursal</label>
+          <label for="" class="visually-hidden">Id Sucursal</label>
           <input type="text" name=" id_sucursal" id=" id_sucursal" class="form-control mb-3" style="background-color: #E3F2FD;">
         </div>
       </div>
       <div class="row g-3">
         <div class="col-auto">
-          <label for="" class="visually-hidden">Inicio en sucursal</label>
+          <label for="" class="visually-hidden">Inicio en Sucursal</label>
           <input type="date" name="f_inicio_sucursal" id="f_inicio_sucursal" class="form-control mb-3" style="background-color: #E3F2FD;">
         </div>
         <div class="col-auto">
-          <label for="" class="visually-hidden">salario acumulado</label>
+          <label for="" class="visually-hidden">Salário Acumulado</label>
           <input type="text" name="acumulado_salario" id="acumulado_salario" class="form-control mb-3" style="background-color: #E3F2FD;">
         </div>
       </div>

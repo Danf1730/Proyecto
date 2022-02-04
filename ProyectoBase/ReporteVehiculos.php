@@ -29,22 +29,22 @@
 			<ul>
 				<li>Clientes con más pólizas
 					<ul>
-				       <li><a href="#" style="text-decoration:none">Clientes propietarios de 2 o más pólizas de vehículos que son propietarios de una de salud</a></li>
+				       <a href="#" style="text-decoration:none"><li>Clientes propietarios de 2 o más pólizas de vehículos que son propietarios de una de salud</li></a>
                   	</ul>
 				</li>
 				<li>Vehículos Accidentados
 					<!-- <ul>
-				       <li><a href="" style="text-decoration:none"> </a></li>
+				       <li><a href="" style="text-decoration:none"><li> </li></a>
                   	</ul> -->
 				</li>
 				<li>Cadena "Jos"
 					<ul>
-				       <li><a href="Reporte_8.php" style="text-decoration:none">Clientes con cadena "Jos" que tienen una poliza activa y han sufrido almenos 2 accidentes</a></li>
+				       <a href="Reporte_8.php" style="text-decoration:none"><li>Clientes con cadena "Jos" que tienen una póliza activa y han sufrido al menos 2 accidentes</li></a>
                   	</ul>
 				</li>
 				<li>Multas Gravedad 8 o superior
 					<!-- <ul>
-				       <li><a href="" style="text-decoration:none"> </a></li>
+				       <a href="" style="text-decoration:none"><li>   </li></a>
                   	</ul> -->
 				</li>
 			</ul>

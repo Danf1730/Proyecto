@@ -33,7 +33,7 @@
         
       <div class="row g-3">
         <div class="col-auto">
-          <label for="" class="visually-hidden">ID agente/empleado</label>
+          <label for="" class="visually-hidden">ID Agente/Empleado</label>
           <input type="text" name="id_agente" id="id_agente" class="form-control mb-3" style="background-color: #E3F2FD;">
         </div>
         <div class="col-auto">
@@ -42,7 +42,7 @@
         </div>
       
         <div class="col-auto">
-          <label for="" class="visually-hidden">Tipo agente</label>
+          <label for="" class="visually-hidden">Tipo Agente</label>
           <input type="string" name="Tipo_agente" id="Tipo_agente" class="form-control mb-3" style="background-color: #E3F2FD;">
         </div>
 

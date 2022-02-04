@@ -14,7 +14,7 @@
           <h1 class="navbar-brand text-light p-1 fs-3">Aseguradora UCAB Continental</h1>
 			  <nav aria-label="Page navigation example">
   				<ul class="pagination justify-content-end">
-    				<li class="page-item"><a class="page-link" href="Sesion.php">Iniciar sesion</a></li>
+    				<li class="page-item"><a class="page-link" href="Sesion.php">Iniciar sesión</li></a>
   				</ul>
 			</nav>
         </div>
@@ -34,19 +34,19 @@
 			<ul>
 			    <li>Beneficiario
 				<ul>
-				       <li><a href="AñadirBeneficiario.php" style="text-decoration:none" >Informacion Beneficiario Poliza</a></li>
-					   <li><a href="AñadirPersona.php" style="text-decoration:none" >Informacion beneficiatio personal</a></li>
+				       <a href="AñadirBeneficiario.php" style="text-decoration:none" ><li>Información Beneficiario Póliza</li></a>
+					   <a href="AñadirPersona.php" style="text-decoration:none" ><li>Información Beneficiario Personal</li></a>
                   </ul>
 				</li>
-			    <li><a href="Sucursales.php" style="text-decoration:none" >Sucursales</li></a>
-				<li>Seguros/Polizas 
+			    <a href="Sucursales.php" style="text-decoration:none" ><li>Sucursales</li></a>
+				<li>Seguros/Pólizas 
                    <ul>
-				       <li><a href="Vida.php" style="text-decoration:none" >Vida</a></li>
-					   <li><a href="Hogar.php" style="text-decoration:none" >Hogar</a></li>
-					   <li><a href="Vehiculo.php" style="text-decoration:none">Vehiculo</a></li>
+				       <a href="Vida.php" style="text-decoration:none" ><li>Vida</li></a>
+					   <a href="Hogar.php" style="text-decoration:none" ><li>Hogar</li></a>
+					   <a href="Vehiculo.php" style="text-decoration:none"><li>Vehículo</li></a>
                   </ul>
                 </li> 
-				<li> <a href="Financiamiento.php" style="text-decoration:none"> Financiamiento</li></a>
+				<a href="Financiamiento.php" style="text-decoration:none"><li> Financiamiento</li></a>
 			</ul>
         </div>
 	

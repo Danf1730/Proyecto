@@ -19,8 +19,8 @@
 
     <div class="col-3 col-s-3 menu">
 	<ul>
-		<a href="AñadirHogar.php" style="text-decoration:none"><li>Añadir poliza de Hogar</a></li>
-		<a href="#" style="text-decoration:none"><li>Consultar poliza de Hogar</a></li>
+		<a href="AñadirHogar.php" style="text-decoration:none"><li>Añadir póliza de Hogar</a></li>
+		<a href="#" style="text-decoration:none"><li>Consultar póliza de Hogar</a></li>
 	</ul>
 		
     </div>

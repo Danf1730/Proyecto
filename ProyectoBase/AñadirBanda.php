@@ -21,20 +21,20 @@
     <h1 class="mt-5"></h1>
 	<figure class="text-start ml-5">
   		<blockquote class="blockquote">
-			<p class="h3">Trabajador a sucursal</p>
+			<p class="h3">Trabajador - Sucursal</p>
   		</blockquote>
-		<figcaption class="blockquote">Por favor ingrese los  datos de banda </figcaption>
+		<figcaption class="blockquote">Por favor ingrese los  datos de la banda salarial</figcaption>
       
 	</figure>
         
      <form action="insertarBandaBD.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
       <div class="row g-3">
         <div class="col-auto">
-          <label for="" class="visually-hidden">Banda Minima</label>
+          <label for="" class="visually-hidden">Banda Mínima</label>
           <input type="text" name="Banda_Min" id="Banda_Min" class="form-control mb-3" style="background-color: #E3F2FD;">
         </div>
         <div class="col-auto">
-          <label for="" class="visually-hidden">Banda Maxima</label>
+          <label for="" class="visually-hidden">Banda Máxima</label>
           <input type="text" name="Banda_Max" id="Banda_Max" class="form-control mb-3" style="background-color: #E3F2FD;">
         </div>
       </div>
@@ -53,6 +53,7 @@
 	</nav>
   </div>
 </nav>
+
     
 </body>
 </html>

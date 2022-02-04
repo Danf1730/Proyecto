@@ -76,7 +76,7 @@
             <input type="text" name="id_sucursal" id="id_sucursal" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
           <div class="col-auto">
-            <label for="">Id personal cliente </label>
+            <label for="">Id Personal Cliente </label>
             <input type="text" name="id_cliente" id="id_cliente" class="form-control mb-3" style="background-color: #E3F2FD;">
           </div>
         </div>

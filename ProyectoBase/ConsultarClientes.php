@@ -28,7 +28,7 @@
                 <tr>
                 <th scope="col">ID personal</th>
                 <th scope="col">Nombre Cliente</th>
-                <th scope="col">Cedula</th>
+                <th scope="col">Cédula</th>
                 <th scope="col">Nombre Sucursal</th>
                 </tr>
             </thead>

@@ -28,7 +28,7 @@
                 <tr>
                 <th scope="col">ID personal</th>
                 <th scope="col">Nombre Empleado</th>
-                <th scope="col">Cedula</th>
+                <th scope="col">Cédula</th>
                <th scope="col">Tipo del Personal</th>
                 </tr>
             </thead>

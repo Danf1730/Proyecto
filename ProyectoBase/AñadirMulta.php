@@ -52,7 +52,7 @@
         <label for="">Lugar</label>
         <input type="text" name="lugar" id="lugar" class="form-control mb-3" style="background-color: #E3F2FD;">
         <label for="">Gravedad</label>
-        <input type="text" name="nivel_gravedad" id="nivel_gravedad" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <input type="text" name="nivel_gravedad" id="nivel_gravedad" class="form-control mb-3" style="background-color: #E3F2FD;" placeholder="De 1 a 10">
         <input type="submit" name="Asubmit" class="mt-5">
 </form>
 	

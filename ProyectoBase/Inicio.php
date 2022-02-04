@@ -14,7 +14,7 @@
           <h1 class="navbar-brand text-light p-1 fs-3">Aseguradora UCAB Continental</h1>
 			  <nav aria-label="Page navigation example">
   				<ul class="pagination justify-content-end">
-    				<li class="page-item"><a class="page-link" href="Sesion.php">Iniciar sesion</a></li>
+    				<li class="page-item"><a class="page-link" href="Sesion.php">Iniciar sesion</li><a>
   				</ul>
 			</nav>
         </div>
@@ -32,15 +32,15 @@
 
 		<div class="col-3 col-s-3 menu mt-5 ml-5">
 			<ul>
-			    <li><a href="Sucursales.php" style="text-decoration:none" >Sucursales</li></a>
-				<li><a href="#" > Seguros/Polizas </a>
+			    <a href="Sucursales.php" style="text-decoration:none" ><li>Sucursales</li></a>
+				<li> Seguros/Polizas 
                    <ul>
-				       <li><a href="Vida.php" style="text-decoration:none" >Vida</a></li>
-					   <li><a href="Hogar.php" style="text-decoration:none" >Hogar</a></li>
-					   <li><a href="Vehiculo.php" style="text-decoration:none">Vehiculo</a></li>
+				       <a href="Vida.php" style="text-decoration:none" ><li>Vida</li><a>
+					   <a href="Hogar.php" style="text-decoration:none" ><li>Hogar</li><a>
+					   <a href="Vehiculo.php" style="text-decoration:none"><li>Vehiculo</li><a>
                   </ul>
                 </li> 
-				<li> <a href="Financiamiento.php" style="text-decoration:none"> Financiamiento</li></a>
+				<a href="Financiamiento.php" style="text-decoration:none"><li> Financiamiento</li></a>
 			</ul>
         </div>
 	

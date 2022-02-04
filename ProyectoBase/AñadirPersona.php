@@ -37,8 +37,8 @@
         <label for="">Número de Contacto</label>
         <input type="string" name="NumTlfPersona" id="NumTlfPersona" class="form-control mb-3" style="background-color: #E3F2FD;">
         
-        <label for="">Tipo Personan</label>
-        <input type="string" name="Tipo_persona" id="Tipo_persona" class="form-control mb-3" style="background-color: #E3F2FD;">
+        <label for="">Tipo Persona</label>
+        <input type="string" name="Tipo_persona" id="Tipo_persona" class="form-control mb-3" style="background-color: #E3F2FD;" placeholder="CLIENTE-EMPLEADO-AGENTE-BENEFICIARIO">
         
         <input type="submit" name="añadir" class="mt-3">
 

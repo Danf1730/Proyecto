@@ -14,7 +14,7 @@
           <h1 class="navbar-brand text-light p-1 fs-3">Aseguradora UCAB Continental</h1>
 			  <nav aria-label="Page navigation example">
   				<ul class="pagination justify-content-end">
-    				<li class="page-item"><a class="page-link" href="Sesion.php">Iniciar sesion</a></li>
+    				<li class="page-item"><a class="page-link" href="Sesion.php">Iniciar sesión</li></a>
   				</ul>
 			</nav>
         </div>
@@ -32,40 +32,40 @@
 
 		<div class="col-3 col-s-3 menu mt-5 ml-5">
 			<ul>
-                <li>Seguros/Poliza
+                <li>Seguros/Póliza
                     <ul>
-						<a href="AgenteVida.php" style="text-decoration:none"><li>Vida</a></li>
-						<a href="AgenteHogar.php" style="text-decoration:none"><li>Hogar</a></li>
-						<a href="AgenteVehiculo.php" style="text-decoration:none"><li>Vehiculo</a></li>
+						<a href="AgenteVida.php" style="text-decoration:none"><li>Vida</li></a>
+						<a href="AgenteHogar.php" style="text-decoration:none"><li>Hogar</li></a>
+						<a href="AgenteVehiculo.php" style="text-decoration:none"><li>Vehículo</li></a>
                     </ul>
                 </li>
                 <li>Clientes
                     <ul>
-						<a href="ConsultarClientes.php" style="text-decoration:none"><li>Consultar</a></li>
-						<a href="AñadirClientes.php" style="text-decoration:none"><li>Añadir</a></li>
+						<a href="ConsultarClientes.php" style="text-decoration:none"><li>Consultar</li></a>
+						<a href="AñadirClientes.php" style="text-decoration:none"><li>Añadir</li></a>
                     </ul>
                 </li>
 
 				<li>Personas
                     <ul> 
-						<a href="AñadirPersona.php" style="text-decoration:none"><li>Añadir persona</a></li>
-						<a href="AñadirBeneficiario.php" style="text-decoration:none"><li>Benefciario</a></li>
+						<a href="AñadirPersona.php" style="text-decoration:none"><li>Añadir persona</li></a>
+						<a href="AñadirBeneficiario.php" style="text-decoration:none"><li>Beneficiario</li></a>
                     </ul>
                 </li> 
-                <a href="Solicitudes.php" style="text-decoration:none"><li>Solicitudes</a></li>
+                <a href="Solicitudes.php" style="text-decoration:none"><li>Solicitudes</li></a>
 				<li>Accidentes y multas
                     <ul> 
-						<a href="#" style="text-decoration:none"><li>Consultar Accidente</a></li>
-						<a href="AñadirAccidente.php" style="text-decoration:none"><li>Añadir Accidente</a></li>
-						<a href="#" style="text-decoration:none"><li>Consultar Multa</a></li>
-                        <a href="AñadirMulta" style="text-decoration:none"><li>Añadir Multa </li></a>
+						<a href="#" style="text-decoration:none"><li>Consultar Accidente</li></a>
+						<a href="AñadirAccidente.php" style="text-decoration:none"><li>Añadir Accidente</li></a>
+						<a href="#" style="text-decoration:none"><li>Consultar Multa</li></a>
+                        <a href="AñadirMulta.php" style="text-decoration:none"><li>Añadir Multa </li></a>
                     </ul>
                 </li> 
 				<li>Reportes
                 <ul>
-						<a href="ReporteVehiculo.php" style="text-decoration:none"><li>Vehiculo</a></li>
-						<a href="ReporteVida.php" style="text-decoration:none"><li>Vida</a></li>
-						<a href="ReportePoliza.php" style="text-decoration:none"><li>Sucursales y Polizas</a></li>
+						<a href="ReporteVehiculo.php" style="text-decoration:none"><li>Vehículo</li></a>
+						<a href="ReporteVida.php" style="text-decoration:none"><li>Vida</li></a>
+						<a href="ReportePoliza.php" style="text-decoration:none"><li>Sucursales y Pólizas</li></a>
                     </ul>
                 </li>
                 

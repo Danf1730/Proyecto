@@ -21,20 +21,20 @@
     <h1 class="mt-5"></h1>
 	<figure class="text-start ml-5">
   		<blockquote class="blockquote">
-			<p class="h3">Matricula Cliene</p>
+			<p class="h3">Matrícula Cliente</p>
   		</blockquote>
-		<figcaption class="blockquote">Por favor ingrese los siguientes datos del propiedtario</figcaption>
+		<figcaption class="blockquote">Por favor ingrese los siguientes datos del propietario</figcaption>
       
 	</figure>
         
      <form action="insertarPropietario.php" method="POST" class="w-30 p-3 border-0" style="background-color: white;">
       <div class="row g-3">
         <div class="col-auto">
-          <label for="" class="visually-hidden">ID clinte</label>
+          <label for="" class="visually-hidden">ID cliente</label>
           <input type="text" name="id_persona" id="id_persona" class="form-control mb-3" style="background-color: #E3F2FD;">
         </div>
         <div class="col-auto">
-          <label for="" class="visually-hidden">Matricula vehiculo</label>
+          <label for="" class="visually-hidden">Matrícula del Vehículo</label>
           <input type="text" name="matricula" id="matricula" class="form-control mb-3" style="background-color: #E3F2FD;">
         </div>
       </div>
