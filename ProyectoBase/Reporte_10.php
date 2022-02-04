@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Reportes seguros y polizas</title>
 	<link rel="stylesheet" type="text/css" href="style_proyecto/Menus.css" style="text-decoration:none">
-	
+	<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <nav class="navbar navbar-light" style="background-color: #2196F3;">
         <div class="container-fluid col-md-11">
           <h1 class="navbar-brand text-light p-1 fs-3">Aseguradora UCAB Continental</h1>
-		  	<img src="img/Logo_UCAB_2.png" alt="" width="145" height="45"> 
+		  	<img src="img/Logo_UCAB_2.png" alt="" width="145" height="45">
         
         </div>
 </nav>
@@ -21,14 +21,14 @@
 
     <div class="container mt-3">
     <div class="alert alert-primary" role="alert">
-    Lista de los datos de todas las pólizas por sucursal ordenadas cronológicamente por la fecha de la póliza.
+    Sucursal con más préstamos 
+
     </div>
         <table class="table">
             <thead>
                 <tr>
-                <th scope="col">ID Sucursal</th>
-                <th scope="col">ID Poliza</th>
-                <th scope="col">Fecha</th>
+                <th scope="col">Nombre Sucursal</th>
+                <th scope="col">Ciudad</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,20 +38,27 @@
                     $user="u6zp5irrvsbyntyd";
                     $password="YItp7ofnGTt8NbLiifkD";
                     $conexion = mysqli_connect($host, $user, $password, $database);
-                    $query = "SELECT P.id_poliza,P.f_contrato,S.id_sucursal
-                    From sucursal AS S, poliza AS P , empleado AS E
-                    WHERE (S.id_sucursal=E.id_sucursal) AND (E.id_empleado=P.id_empleado) 
-                  order by S.id_sucursal ,P.f_contrato";
+                    // $query = 
+
 
 
                     $resultado = mysqli_query($conexion,$query);
+                    $indice = 0;
                     while($fila=mysqli_fetch_row($resultado)){
                         echo "<tr>";
-                        echo "<th scope='row'>";
-                        echo $fila[2] . "</td><td>";
-                        echo $fila[0]. "</td><td>";
-                        echo $fila[1]. "</td><td>";
+                        echo "<th scope='row'>" ;
+                        echo $fila[4] . "</td><td>";
+                        echo $fila[5]. "</td><td>";
+                        echo $fila[6]. "</td><td>";
+                        echo $fila[7] . "</td><td>";
+                        echo $fila[8] . "</td><td>";
+                        echo $fila[9] . "</td><td>";
+                        echo $fila[10] . "</td><td>";
+                        echo $fila[11] . "</td><td>";
+                        echo $fila[12] . "</td>";
                         echo "</tr>";
+                        echo "</br>";
+                        echo "</br>";
                     }
            
                 ?>

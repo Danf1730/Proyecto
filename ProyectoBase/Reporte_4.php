@@ -46,10 +46,9 @@
 
 
                     $resultado = mysqli_query($conexion,$query);
-                    $indice = 0;
                     while($fila=mysqli_fetch_row($resultado)){
                         echo "<tr>";
-                        echo "<th scope='row'>" .++$indice."</th><td>";
+                        echo "<th scope='row'>";
                         echo $fila[2] . "</td><td>";
                         echo $fila[1]. "</td><td>";
                         echo $fila[0]. "</td><td>";
