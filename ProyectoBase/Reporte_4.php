@@ -33,10 +33,10 @@
             </thead>
             <tbody>
                 <?php
-                    $host="bcfwtrpmeo8khveqpqcu-mysql.services.clever-cloud.com";
-                    $database="bcfwtrpmeo8khveqpqcu";
-                    $user="uimjtch6xs9bod2v";
-                    $password="fMfmvxQzfl8D6VWnmeCq";
+                    $host="bihmjsqmjuzv93yzuyjb-mysql.services.clever-cloud.com";
+                    $database="bihmjsqmjuzv93yzuyjb";
+                    $user="u6zp5irrvsbyntyd";
+                    $password="YItp7ofnGTt8NbLiifkD";
                     $conexion = mysqli_connect($host, $user, $password, $database);
                     $query = "SELECT C.nb_ciudad ,S.nombre, S.id_sucursal , P.id_poliza
                     FROM ciudad AS C ,sucursal AS S, empleado AS E , cliente AS L, propietario_poliza AS P

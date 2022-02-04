@@ -42,10 +42,10 @@
             </thead>
             <tbody>
                 <?php
-                    $host="bcfwtrpmeo8khveqpqcu-mysql.services.clever-cloud.com";
-                    $database="bcfwtrpmeo8khveqpqcu";
-                    $user="uimjtch6xs9bod2v";
-                    $password="fMfmvxQzfl8D6VWnmeCq";
+                    $host="bihmjsqmjuzv93yzuyjb-mysql.services.clever-cloud.com";
+                    $database="bihmjsqmjuzv93yzuyjb";
+                    $user="u6zp5irrvsbyntyd";
+                    $password="YItp7ofnGTt8NbLiifkD";
                     $conexion = mysqli_connect($host, $user, $password, $database);
                     $query = "SELECT * FROM cliente 
                     where nombre like '%Jos%' 
