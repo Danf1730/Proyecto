@@ -539,7 +539,7 @@ create table contrata_inmueble(
 	id_cliente int,
 	id_agente int,
 	f_contrato date NOT NULL,
-	estado_contrato varchar(10) NOT NULL,	
+	estado_contrato varchar(15) NOT NULL,	
 	monto_comision_Ag int NOT NULL,
 	PRIMARY KEY (id_inmueble),
 	PRIMARY KEY (id_cliente),
@@ -552,7 +552,7 @@ create table contrata_inmueble(
 )
 
 ALTER TABLE contrata_inmueble ADD CONSTRAINT VN_MCOMISION_CONTINMUEBLE CHECK (monto_comision_Ag>=0);
-
+ALTER TABLE contrata_inmueble ADD CONSTRAINT VSV_ESTCONTRATO_CONTINMUEBLE CHECK (estado_contrato='Activo' or estado_contrato='Suspendido' or estado_contrato='Vencido')
 
 
 
@@ -565,7 +565,7 @@ create table contrata_vehiculo(
 	f_contrato date NOT NULL,
 	recargo int NOT NULL,
 	descuentos int NOT NULL,
-	estado_contrato varchar(10) NOT NULL,
+	estado_contrato varchar(15) NOT NULL,
 	monto_comision_Ag int NOT NULL,
 	PRIMARY KEY (id_cliente),
 	PRIMARY KEY (matricula),
@@ -580,6 +580,7 @@ create table contrata_vehiculo(
 ALTER TABLE contrata_vehiculo ADD CONSTRAINT VN_RECARGO_CONTVEHICULO CHECK (recargo>=0);
 ALTER TABLE contrata_vehiculo ADD CONSTRAINT VN_DESCUENTO_CONTVEHICULO CHECK (descuentos>=0);
 ALTER TABLE contrata_vehiculo ADD CONSTRAINT VN_MCOMISION_CONTVEHICULO CHECK (monto_comision_Ag>=0);
+ALTER TABLE contrata_vehiculo ADD CONSTRAINT ASV_ESTCONTRATO_CONTVEHICULO CHECK (estado_contrato='Activo' or estado_contrato='Suspendido' or estado_contrato='Vencido')
 
 
 
@@ -607,6 +608,7 @@ create table contrata_vida(
 )
 
 ALTER TABLE contrata_vida ADD CONSTRAINT VN_MCOMISION_CONTVIDA CHECK (monto_comision_Ag>=0);
+ALTER TABLE contrata_vida ADD CONSTRAINT ASV_ESTCONTRATO_CONTVIDA CHECK (estado_contrato='Activo' or estado_contrato='Suspendido' or estado_contrato='Vencido')
 
 
 
@@ -648,6 +650,7 @@ create table registro_siniestro(
 
 ALTER TABLE registro_siniestro ADD CONSTRAINT VN_MRECONOCIDO_RSINIESTRO CHECK (monto_reconocido>=0);
 ALTER TABLE registro_siniestro ADD CONSTRAINT VN_MSOLICITADO_RSINIESTRO CHECK (monto_solicitado>=0);
+ALTER TABLE registro_siniestro ADD CONSTRAINT SN_ID_RECHAZO_RSINIESTRO CHECK (id_rechazo='Si' or id_rechazo='No')
 
 
 

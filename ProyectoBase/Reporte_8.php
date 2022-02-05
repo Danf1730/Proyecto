@@ -30,13 +30,13 @@
                 <tr>
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
+                <th scope="col">Dirección</th>
                 <th scope="col">Calle</th>
                 <th scope="col">Ciudad</th>
-                <th scope="col">Genero</th>
+                <th scope="col">Género</th>
                 <th scope="col">Fecha Nacimiento</th>
-                <th scope="col">Telefono</th>
-                <th scope="col">Cedula</th>
-                <th scope="col">Profesion</th>
+                <th scope="col">Teléfono</th>
+                <th scope="col">Profesión</th>
                 </tr>
             </thead>
             <tbody>
@@ -47,36 +47,28 @@
                     $password="YItp7ofnGTt8NbLiifkD";
                     $conexion = mysqli_connect($host, $user, $password, $database);
                     $query = "SELECT * FROM cliente 
-                    where nombre like '%Jos%' 
+                    where NombPersona like '%Jos%' 
                     and id_cliente in (
-                                        SELECT id_cliente from propietario_poliza 
-                                        where id_poliza in (
-                                                            select id_poliza from poliza 
-                                                            where vigente = 'si' 
-                                                            and id_poliza in(
-                                                                            SELECT id_poliza from poliza_vehiculo
-                                                                            )
-                                                            )
-                                        )
-                    and id_cliente in (
-                    SELECT id_cliente from vehiculo
-                    where id_vehiculo in (
-                                         SELECT id_vehiculo from involucrado_vehiculo
-                                         )
-                    )";
+                                        SELECT id_cliente from contrata_vehiculo
+                                        where estado_contrato='Activo'
+                                        AND Matricula in (
+                                                            SELECT Matricula from involucra
+                                                            group by Matricula having SUM(Nro_ReferenciaAcc)>=2
+                                                         )
+                                       )";
                     $resultado = mysqli_query($conexion,$query);
                     while($fila=mysqli_fetch_row($resultado)){
                         echo "<tr>";
-                        echo "<th scope='row'>" .++$indice."</th><td>";
-                        echo $fila[4] . "</td><td>";
-                        echo $fila[5]. "</td><td>";
+                        echo "<th scope='row'>";
+                        echo $fila[1] . "</td><td>";
+                        echo $fila[5] . "</td><td>";
                         echo $fila[6]. "</td><td>";
-                        echo $fila[7] . "</td><td>";
+                        echo $fila[7]. "</td><td>";
                         echo $fila[8] . "</td><td>";
                         echo $fila[9] . "</td><td>";
                         echo $fila[10] . "</td><td>";
-                        echo $fila[11] . "</td><td>";
-                        echo $fila[12] . "</td>";
+                        echo $fila[2] . "</td><td>";
+                        echo $fila[11] . "</td>";
                         echo "</tr>";
                         echo "</br>";
                         echo "</br>";
