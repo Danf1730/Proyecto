@@ -53,7 +53,7 @@
                                         where estado_contrato='Activo'
                                         AND Matricula in (
                                                             SELECT Matricula from involucra
-                                                            group by Matricula having SUM(Nro_ReferenciaAcc)>=2
+                                                            group by Matricula having COUNT(Nro_ReferenciaAcc)>=2
                                                          )
                                        )";
                     $resultado = mysqli_query($conexion,$query);
