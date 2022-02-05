@@ -21,7 +21,7 @@
     <h1 class="mt-5"></h1>
 	<figure class="text-start ml-5">
   		<blockquote class="blockquote">
-			<p class="h3">Añadir póliza de Vehículo</p>
+			<p class="h3">Añadir  Vehículo</p>
   		</blockquote>
 		<figcaption class="blockquote">Por favor ingrese los siguientes datos de la póliza del vehículo</figcaption>
 	</figure>

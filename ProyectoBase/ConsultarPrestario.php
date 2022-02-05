@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Clientes</title>
+	<title>Finaciadoras</title>
 	<link rel="stylesheet" type="text/css" href="style_proyecto/Menus.css" style="text-decoration:none">
 	
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -21,15 +21,16 @@
 
     <div class="container mt-3">
     <div class="alert alert-primary" role="alert">
-    Información del cliente
+   Prestario
     </div>
         <table class="table">
             <thead>
                 <tr>
-                <th scope="col">ID personal</th>
-                <th scope="col">Nombre Cliente</th>
-                <th scope="col">Cédula</th>
-                <th scope="col">Nombre Sucursal</th>
+                <th scope="col">Identificador del prestamos </th>
+                <th scope="col">Identificador del cliente </th>
+                <th scope="col">Nombre cliente</th>
+                <th scope="col">Monto del prestamo</th>
+                <th scope="col">Tipo del interes </th>
                 </tr>
             </thead>
             <tbody>
@@ -39,10 +40,9 @@
                     $user="u6zp5irrvsbyntyd";
                     $password="YItp7ofnGTt8NbLiifkD";
                     $conexion = mysqli_connect($host, $user, $password, $database);
-                    $query = "SELECT p.id_persona ,p.NombPersona,p.cedula ,s.nb_sucursal
-                    FROM persona AS p , cliente AS c , sucursal AS s
-                    WHERE (p.Tipo_persona='CLIENTE') AND (p.id_persona=c.id_cliente) AND (c.id_sucursal=s.id_sucursal)";
-
+                    $query = "SELECT p.id_prestamo ,p.id_cliente,c.NombPersona , t.importe_prestamo,p.tipo_interes
+                    FROM prestatario AS p , cliente AS c , prestamo AS t
+                    WHERE (p.id_prestamo=t.id_prestamo) AND (p.id_cliente=c.id_cliente)";
 
                     $resultado = mysqli_query($conexion,$query);
                     while($fila=mysqli_fetch_row($resultado)){
@@ -52,6 +52,7 @@
                         echo $fila[1]. "</td><td>";
                         echo $fila[2]. "</td><td>";
                         echo $fila[3]. "</td><td>";
+                        echo $fila[4]. "</td><td>";
                         echo "</tr>";
                     }
            
@@ -64,7 +65,7 @@
             <a class="navbar-brand" href="#"> </a>
 	        <nav aria-label="Page navigation example">
   		        <ul class="pagination justify-content-end">
-    		        <li class="page-item"><a class="page-link" href="MenuAgente.php">Regresar</a></li>
+    		        <li class="page-item"><a class="page-link" href="MenuCliente.php">Regresar</a></li>
   		        </ul>
 	        </nav>
         </div>

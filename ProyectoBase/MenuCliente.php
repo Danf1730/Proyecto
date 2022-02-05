@@ -42,11 +42,17 @@
 				<li>Seguros/Pólizas 
                    <ul>
 				       <a href="Vida.php" style="text-decoration:none" ><li>Vida</li></a>
-					   <a href="Hogar.php" style="text-decoration:none" ><li>Hogar</li></a>
-					   <a href="Vehiculo.php" style="text-decoration:none"><li>Vehículo</li></a>
+					   <a href="ConsultarHogar.php" style="text-decoration:none" ><li>Hogar</li></a>
+					   <a href="ConsultarVehiculo.php" style="text-decoration:none"><li>Vehículo</li></a>
                   </ul>
                 </li> 
-				<a href="Financiamiento.php" style="text-decoration:none"><li> Financiamiento</li></a>
+				<li> Financiamiento
+				<ul>
+				       <a href="ConsultarFinanciamiento.php" style="text-decoration:none" ><li>Consultar financiadoras</li></a>
+					   <a href="Financiamiento.php" style="text-decoration:none" ><li>Añadir Financiamiento</li></a>
+					   <a href="ConsultarPrestrio.php" style="text-decoration:none"><li>Consultar Prestario</li></a>
+                  </ul>
+				</li>
 			</ul>
         </div>
 	

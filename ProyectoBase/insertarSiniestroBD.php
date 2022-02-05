@@ -1,6 +1,6 @@
 <?php
 include 'AñadirSiniestro.php';
-       //// Datos información personas//////
+       //// Datos información siniestro//////
        $siniestro=$_POST['id_siniestro'];
        $poliza=$_POST['id_poliza'];
        $f_siniestro=$_POST['f_siniestro'];
