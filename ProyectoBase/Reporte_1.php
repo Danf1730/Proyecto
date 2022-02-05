@@ -31,11 +31,11 @@
                 <th scope="col">Apellido</th>
                 <th scope="col">Calle</th>
                 <th scope="col">Ciudad</th>
-                <th scope="col">Genero</th>
+                <th scope="col">Género</th>
                 <th scope="col">Fecha Nacimiento</th>
-                <th scope="col">Telefono</th>
-                <th scope="col">Cedula</th>
-                <th scope="col">Profesion</th>
+                <th scope="col">Teléfono</th>
+                <th scope="col">Cédula</th>
+                <th scope="col">Profesión</th>
                 </tr>
             </thead>
             <tbody>
@@ -45,7 +45,15 @@
                     $user="u6zp5irrvsbyntyd";
                     $password="YItp7ofnGTt8NbLiifkD";
                     $conexion = mysqli_connect($host, $user, $password, $database);
-                    // $query = 
+                    $query = "SELECT * FROM cliente
+                              where id_cliente in ( SELECT id_cliente FROM contrata_vehiculo
+                                                    where estado_contrato='Activo'
+                                                    AND (GROUP BY id_cliente HAVING COUNT(id_cliente)>2)
+                                                )
+                              AND id_cliente in (SELECT id_cliente FROM contrata_vida
+                                                where estado_contrato='Activo'
+                                                )
+                    )";
 
 
 
