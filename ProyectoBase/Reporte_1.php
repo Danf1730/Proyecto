@@ -48,13 +48,17 @@
                     $query = "SELECT * FROM cliente
                               where id_cliente in (
                                                     SELECT id_cliente from contrata_vehiculo
-                                                    GROUP BY id_cliente HAVING COUNT(id_cliente)>=2
-                                                    AND where estado_contrato='Activo'
+                                                    where estado_contrato='Activo' 
+                                                    and id_cliente in (
+                                                                        SELECT id_persona FROM posee
+                                                                        GROUP BY id_persona having COUNT(matricula)>=2
+                                                                    )
                                                 )
-                            --   AND id_cliente in (
-                                                    -- SELECT id_cliente FROM contrata_vida
-                            --                     where estado_contrato='Activo'
-                            --                     )";
+                             and id_cliente in (
+                                                SELECT id_cliente from contrata_vida
+                                                where estado_contrato='Activo'
+
+                                                )";
 
 
 
