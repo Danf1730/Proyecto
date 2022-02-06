@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Reportes seguros y polizas</title>
 	<link rel="stylesheet" type="text/css" href="style_proyecto/Menus.css" style="text-decoration:none">
@@ -27,17 +27,17 @@
         <table class="table">
             <thead>
                 <tr>
+                <tr>
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
+                <th scope="col">Dirección</th>
                 <th scope="col">Calle</th>
                 <th scope="col">Ciudad</th>
-                <th scope="col">Genero</th>
+                <th scope="col">Género</th>
                 <th scope="col">Fecha Nacimiento</th>
-                <th scope="col">Telefono</th>
-                <th scope="col">Cedula</th>
-                <th scope="col">Profesion</th>
-                <th scope="col">Multa</th>
-                <th scope="col">Gravedad</th>
+                <th scope="col">Teléfono</th>
+                <th scope="col">Profesión</th>
+                <th scope="col">Gravedad de la multa</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,25 +46,34 @@
                     $database="bihmjsqmjuzv93yzuyjb";
                     $user="u6zp5irrvsbyntyd";
                     $password="YItp7ofnGTt8NbLiifkD";
-                    $conexion = mysqli_connect($host, $user, $password, $database);
-                    // $query = 
-
-
+                    $conexion = mysqli_connect($host, $user, $password, $database);       
+                    $query ="SELECT C.*, M.nivel_gravedad FROM cliente AS C, multa AS M, contrata_vehiculo AS CV
+                            where C.id_cliente in (
+                                                SELECT CV.id_cliente from contrata_vehiculo
+                                                where estado_contrato='Activo'
+                                                AND C.id_cliente in(
+                                                                  SELECT CV.id_cliente from contrata_vehiculo
+                                                                  where CV.matricula in (
+                                                                                      SELECT M.matricula FROM multa
+                                                                                      where M.nivel_gravedad>='8' and M.nivel_gravedad<='10'
+                                                                                    )
+                                                                )
+                                                  )";
 
                     $resultado = mysqli_query($conexion,$query);
-                    $indice = 0;
                     while($fila=mysqli_fetch_row($resultado)){
-                        echo "<tr>";
-                        echo "<th scope='row'>" ;
-                        echo $fila[4] . "</td><td>";
-                        echo $fila[5]. "</td><td>";
+                    echo "<tr>";
+                        echo "<th scope='row'>" ;;
+                        echo $fila[1] . "</td><td>";
+                        echo $fila[5] . "</td><td>";
                         echo $fila[6]. "</td><td>";
-                        echo $fila[7] . "</td><td>";
+                        echo $fila[7]. "</td><td>";
                         echo $fila[8] . "</td><td>";
                         echo $fila[9] . "</td><td>";
                         echo $fila[10] . "</td><td>";
+                        echo $fila[2] . "</td><td>";
                         echo $fila[11] . "</td><td>";
-                        echo $fila[12] . "</td>";
+                        echo $fila[12] . "</td><td>";
                         echo "</tr>";
                         echo "</br>";
                         echo "</br>";
