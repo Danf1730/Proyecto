@@ -21,18 +21,14 @@
 
     <div class="container mt-3">
     <div class="alert alert-primary" role="alert">
-    
-    Lista de los agentes que han realizado contratos de las pólizas y en que fecha. 
-    La información es necesaria para el pago de comisiones y carteras.
-
+    Lista de los agentes que han realizado contratos de las pólizas y en que fecha. La información es necesaria para el pago de comisiones y carteras.
     </div>
         <table class="table">
             <thead>
                 <tr>
+                <th scope="col">Cédula</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Ciudad</th>
-                <th scope="col">Póliza</th>
+                <th scope="col">Dirección</th>
                 <th scope="col">Fecha póliza</th>
                 </tr>
             </thead>
@@ -43,7 +39,22 @@
                     $user="u6zp5irrvsbyntyd";
                     $password="YItp7ofnGTt8NbLiifkD";
                     $conexion = mysqli_connect($host, $user, $password, $database);
-                    // $query = 
+                    $query = "SELECT P.NombPersona, P.cedula, A.Direc_Agente, CV.f_contrato
+                              FROM persona AS P, agente AS A, contrata_vehiculo AS CV, contrata_vida AS CVI, contrata_inmueble AS CI
+                              where P.Tipo_persona='AGENTE'
+                              AND (A.id_agente in (
+                                                  SELECT CV.id_agente FROM contrata_vehiculo
+                                                  where (A.id_agente=CV.id_agente)
+                                                )
+                              or A.id_agente in (
+                                                  SELECT CVI.id_agente FROM contrata_vida
+                                                  where (A.id_agente=CVI.id_agente)
+                                                )
+                              or A.id_agente in (
+                                                  SELECT CI.id_agente FROM contrata_inmueble
+                                                  where (A.id_agente=CI.id_agente)
+                                                ))
+                    ";
 
 
 
@@ -52,15 +63,10 @@
                     while($fila=mysqli_fetch_row($resultado)){
                         echo "<tr>";
                         echo "<th scope='row'>" ;
-                        echo $fila[4] . "</td><td>";
-                        echo $fila[5]. "</td><td>";
-                        echo $fila[6]. "</td><td>";
-                        echo $fila[7] . "</td><td>";
-                        echo $fila[8] . "</td><td>";
-                        echo $fila[9] . "</td><td>";
-                        echo $fila[10] . "</td><td>";
-                        echo $fila[11] . "</td><td>";
-                        echo $fila[12] . "</td>";
+                        echo $fila[1] . "</td><td>";
+                        echo $fila[0]. "</td><td>";
+                        echo $fila[2]. "</td><td>";
+                        echo $fila[3] . "</td>";
                         echo "</tr>";
                         echo "</br>";
                         echo "</br>";

@@ -29,7 +29,7 @@
 			<ul>
 				<li>Clientes con más pólizas
 					<ul>
-				       <a href="#" style="text-decoration:none"><li>Clientes propietarios de 2 o más pólizas de vehículos que son propietarios de una de salud</li></a>
+						<a href="Reporte_1.php" style="text-decoration:none"><li>Clientes propietarios de 2 o más pólizas de vehículos que son propietarios de una de salud</li></a>
                   	</ul>
 				</li>
 				<li>Vehículos Accidentados
