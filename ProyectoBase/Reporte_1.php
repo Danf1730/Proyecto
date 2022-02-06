@@ -29,12 +29,12 @@
                 <tr>
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
+                <th scope="col">Dirección</th>
                 <th scope="col">Calle</th>
                 <th scope="col">Ciudad</th>
                 <th scope="col">Género</th>
                 <th scope="col">Fecha Nacimiento</th>
                 <th scope="col">Teléfono</th>
-                <th scope="col">Cédula</th>
                 <th scope="col">Profesión</th>
                 </tr>
             </thead>
@@ -46,30 +46,31 @@
                     $password="YItp7ofnGTt8NbLiifkD";
                     $conexion = mysqli_connect($host, $user, $password, $database);
                     $query = "SELECT * FROM cliente
-                              where id_cliente in ( SELECT id_cliente FROM contrata_vehiculo
-                                                    where estado_contrato='Activo'
-                                                    AND (GROUP BY id_cliente HAVING COUNT(id_cliente)>2)
+                              where id_cliente in (
+                                                    SELECT id_cliente from contrata_vehiculo
+                                                    GROUP BY id_cliente HAVING COUNT(id_cliente)>=2
+                                                    AND where estado_contrato='Activo'
                                                 )
-                              AND id_cliente in (SELECT id_cliente FROM contrata_vida
-                                                where estado_contrato='Activo'
-                                                )
-                    )";
+                            --   AND id_cliente in (
+                                                    -- SELECT id_cliente FROM contrata_vida
+                            --                     where estado_contrato='Activo'
+                            --                     )";
 
 
 
                     $resultado = mysqli_query($conexion,$query);
                     while($fila=mysqli_fetch_row($resultado)){
                         echo "<tr>";
-                        echo "<th scope='row'>" ;
-                        echo $fila[4] . "</td><td>";
-                        echo $fila[5]. "</td><td>";
+                        echo "<th scope='row'>";
+                        echo $fila[1] . "</td><td>";
+                        echo $fila[5] . "</td><td>";
                         echo $fila[6]. "</td><td>";
-                        echo $fila[7] . "</td><td>";
+                        echo $fila[7]. "</td><td>";
                         echo $fila[8] . "</td><td>";
                         echo $fila[9] . "</td><td>";
                         echo $fila[10] . "</td><td>";
-                        echo $fila[11] . "</td><td>";
-                        echo $fila[12] . "</td>";
+                        echo $fila[2] . "</td><td>";
+                        echo $fila[11] . "</td>";
                         echo "</tr>";
                         echo "</br>";
                         echo "</br>";

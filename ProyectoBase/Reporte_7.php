@@ -24,13 +24,61 @@
     Número total de personas cuyo vehículo estuvo implicado en algún accidente durante algún mes/año específico.
 
     </div>
-        
 
-
-
-
-
+    <form action='datosreporte7.php'>
     
+    <div class="row g-3">
+        <div class="col-auto">
+          <label for="" class="visually-hidden">Mes</label>
+          <input type="text" name="NombPersona" id="NombPersona" class="form-control mb-3" style="background-color: #E3F2FD;">
+        </div>
+        <div class="col-auto">
+          <label for="" class="visually-hidden">Año</label>
+          <input type="text" name="apellido" id="apellido" class="form-control mb-3" style="background-color: #E3F2FD;">
+        </div>
+      </div>
+
+    </form>    
+
+
+
+    <table class="table">
+ 
+            <thead>
+                <tr>
+                <th scope="col">Cantidad de personas cuyo vehículo estuvo implicado en algún accidente en la fecha seleccionada</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+                <?php
+                    $host="bihmjsqmjuzv93yzuyjb-mysql.services.clever-cloud.com";
+                    $database="bihmjsqmjuzv93yzuyjb";
+                    $user="u6zp5irrvsbyntyd";
+                    $password="YItp7ofnGTt8NbLiifkD";
+                    $conexion = mysqli_connect($host, $user, $password, $database);
+                    $query = "SELECT SUM(id_persona) FROM involucra
+                              where Nro_ReferenciaAcc in (
+                                                          SELECT Nro_ReferenciaAcc FROM accidente
+                                                          where FechaAcc=($annio/$mes)
+                                                        )";
+
+
+
+
+                    $resultado = mysqli_query($conexion,$query);
+                    while($fila=mysqli_fetch_row($resultado)){
+                        echo "<tr>";
+                        echo "<th scope='row'>";
+                        echo $fila[1] . "</td><td>";
+                        echo "</tr>";
+                    }
+           
+                    ?>
+                    </tbody>
+            </table>
+
     </div>
 
     <nav class="navbar bottom navbar-light mt-5" style="background-color: #2196F3;">
