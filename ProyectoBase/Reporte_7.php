@@ -58,11 +58,7 @@
                     $user="u6zp5irrvsbyntyd";
                     $password="YItp7ofnGTt8NbLiifkD";
                     $conexion = mysqli_connect($host, $user, $password, $database);
-                    $query = "SELECT SUM(id_persona) FROM involucra
-                              where Nro_ReferenciaAcc in (
-                                                          SELECT Nro_ReferenciaAcc FROM accidente
-                                                          where FechaAcc=($annio/$mes)
-                                                        )";
+                    //$query = 
 
 
 
