@@ -21,7 +21,8 @@
 
     <div class="container mt-3">
     <div class="alert alert-primary" role="alert">
-    Lista de los agentes que han realizado contratos de las pólizas y en que fecha. La información es necesaria para el pago de comisiones y carteras.
+    Lista de los agentes que han realizado contratos de las pólizas y en que fecha. 
+    La información es necesaria para el pago de comisiones y carteras.
     </div>
         <table class="table">
             <thead>

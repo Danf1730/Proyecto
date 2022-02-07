@@ -39,17 +39,12 @@
                     $user="u6zp5irrvsbyntyd";
                     $password="YItp7ofnGTt8NbLiifkD";
                     $conexion = mysqli_connect($host, $user, $password, $database);
-                    // $query = "SELECT C.nb_ciudad ,S.nb_sucursal, S.id_sucursal , P.nro_poliza
+                    // $query = "SELECT C.nb_ciudad ,S.nb_sucursal, S.id_sucursal , P.id_poliza
                     // FROM ciudad AS C ,sucursal AS S, sucursal AS E , cliente AS L, titular AS P, poliza
                     // WHERE (C.id_ciudad=S.id_ciudad) AND (S.id_sucursal=E.id_sucursal) AND 
                     //        (E.id_empleado=L.id_asesor_personal) AND (L.id_cliente=P.id_cliente) 
-                    //        HAVING COUNT(P.nro_poliza)>5";
+                    //        HAVING COUNT(P.id_poliza)>5";
 
-                    $query = "SELECT S.nb_sucursal, C.nb_ciudad, T.nro_poliza, S.id_sucursal 
-                             FROM ciudad AS C, sucursal AS S, PC AS cliente, T AS titular 
-                            -- where (C.id_ciudad=S.id_ciudad) AND (S.id_sucursal=PC.id_sucursal) AND (PC.id_cliente=T.id_cliente)
-                            -- AND (T.nro_poliza=P.nro_poliza)
-                            -- HAVING COUNT(P.nro_poliza)>5";
 
 
                     $resultado = mysqli_query($conexion,$query);

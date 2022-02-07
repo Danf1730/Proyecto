@@ -26,13 +26,10 @@
         <table class="table">
             <thead>
                 <tr>
-                <th scope="col">Indice</th>
-                <th scope="col">ID Sucursal</th>
-                <th scope="col">Nombre Sucursal</th>
-                <th scope="col">ID cliente</th> 
-                <th scope="col">Nombre Cliente</th>
-                <th scope="col">ID Poliza</th>
-                <th scope="col">Tipo Poliza</th>
+                <th scope="col">Nombre Asegurado</th>
+                <th scope="col">Descripción de la póliza</th>
+                <th scope="col">Saldo Prima</th>
+                <th scope="col">Fecha de uso reciente</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,22 +39,24 @@
                     $user="u6zp5irrvsbyntyd";
                     $password="YItp7ofnGTt8NbLiifkD";
                     $conexion = mysqli_connect($host, $user, $password, $database);
-                    $query = "SELECT S.nombre, S.id_sucursal, C.id_cliente,Q.nombre_tomador,P.id_poliza , Q.tipo 
-                    FROM sucursal AS S, empleado AS E , cliente AS C, propietario_poliza AS P , poliza AS Q
-                    WHERE (S.id_sucursal=E.id_sucursal) AND (E.id_empleado=C.id_asesor_personal) AND (C.id_cliente=P.id_cliente) AND (P.id_poliza=Q.id_poliza) 
-                    ";
+                    $query = "SELECT C.NombPersona, P.descrip_poliza, T.saldo_prima, T.f_uso_reciente 
+                            FROM cliente AS C, poliza AS P, titular AS T
+                            where (C.id_cliente=T.id_cliente) 
+                            AND (T.nro_poliza=P.nro_poliza) in (
+                                SELECT nro_poliza FROM poliza
+                            ) 
+                            ";
+                    
 
 
                     $resultado = mysqli_query($conexion,$query);
                     while($fila=mysqli_fetch_row($resultado)){
                         echo "<tr>";
-                        echo "<th scope='row'>" .++$indice."</th><td>";
+                        echo "<th scope='row'>";
+                        echo $fila[0] . "</td><td>";
                         echo $fila[1] . "</td><td>";
-                        echo $fila[0]. "</td><td>";
                         echo $fila[2]. "</td><td>";
-                        echo $fila[3] . "</td><td>";
-                        echo $fila[4]. "</td><td>";
-                        echo $fila[5]. "</td><td>";
+                        echo $fila[3]. "</td><td>";
                         echo "</tr>";
                     }
            
