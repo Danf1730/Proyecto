@@ -28,6 +28,7 @@
                 <tr>
                 <th scope="col">Nombre Sucursal</th>
                 <th scope="col">Ciudad</th>
+                <th scope="col">Identificador Cliente</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,11 +38,11 @@
                     $user="u6zp5irrvsbyntyd";
                     $password="YItp7ofnGTt8NbLiifkD";
                     $conexion = mysqli_connect($host, $user, $password, $database);
-                    // $query = "SELECT C.nb_ciudad ,S.nb_sucursal, S.id_sucursal , P.id_poliza
-                    // FROM ciudad AS C ,sucursal AS S, sucursal AS E , cliente AS L, titular AS P, poliza
-                    // WHERE (C.id_ciudad=S.id_ciudad) AND (S.id_sucursal=E.id_sucursal) AND 
-                    //        (E.id_empleado=L.id_asesor_personal) AND (L.id_cliente=P.id_cliente) 
-                    //        HAVING COUNT(P.id_poliza)>5";
+                     $query = "SELECT S.nb_sucursal,C.nb_ciudad , T.id_cliente 
+                    FROM ciudad AS C ,sucursal AS S, titular AS T, cliente AS L
+                    WHERE (C.id_ciudad=S.id_ciudad) AND (S.id_sucursal=L.id_sucursal) AND 
+                          (L.id_cliente=T.id_cliente ) 
+                          having  COUNT(T.nro_poliza )>5 ";
 
 
 
@@ -49,8 +50,9 @@
                     while($fila=mysqli_fetch_row($resultado)){
                         echo "<tr>";
                         echo "<th scope='row'>";
-                        echo $fila[7] . "</td><td>";
-                        echo $fila[6] . "</td><td>";
+                        echo $fila[0] . "</td><td>";
+                        echo $fila[1] . "</td><td>";
+                        echo $fila[2] . "</td><td>";
                         echo "</tr>";
                     }
            

@@ -25,8 +25,8 @@
         <table class="table">
             <thead>
                 <tr>
-                <th scope="col">Nro Póliza</th>
                 <th scope="col">Nombre Sucursal</th>
+                <th scope="col">Nro Póliza</th>
                 <th scope="col">Fecha</th>
                 </tr>
             </thead>
@@ -37,19 +37,19 @@
                     $user="u6zp5irrvsbyntyd";
                     $password="YItp7ofnGTt8NbLiifkD";
                     $conexion = mysqli_connect($host, $user, $password, $database);
-                    $query = "SELECT P.id_poliza,P.f_contrato,S.id_sucursal
-                    From sucursal AS S, poliza AS P , empleado AS E
-                    WHERE (S.id_sucursal=E.id_sucursal) AND (E.id_empleado=P.id_empleado) 
-                  order by S.id_sucursal ,P.f_contrato";
+                    $query = "SELECT S.nb_sucursal,T.nro_poliza,T.f_uso_reciente
+                    From sucursal AS S, cliente AS C , titular AS T
+                    WHERE (S.id_sucursal=C.id_sucursal) AND (C.id_cliente=T.id_cliente) 
+                  order by S.nb_sucursal ,T.f_uso_reciente";
 
 
                     $resultado = mysqli_query($conexion,$query);
                     while($fila=mysqli_fetch_row($resultado)){
                         echo "<tr>";
                         echo "<th scope='row'>";
-                        echo $fila[2] . "</td><td>";
-                        echo $fila[0]. "</td><td>";
+                        echo $fila[0] . "</td><td>";
                         echo $fila[1]. "</td><td>";
+                        echo $fila[2]. "</td><td>";
                         echo "</tr>";
                     }
            

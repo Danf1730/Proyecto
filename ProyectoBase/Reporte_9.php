@@ -55,14 +55,13 @@
                                                   SELECT distinct CI.id_agente FROM contrata_inmueble
                                                   where (A.id_agente=CI.id_agente)
                                                 ))
-                    ";
+                                                group by P.cedula ";
 
 
 
                     $resultado = mysqli_query($conexion,$query);
                     $indice = 0;
                     while($fila=mysqli_fetch_row($resultado)){
-                        echo "<tr>";
                         echo "<th scope='row'>" ;
                         echo $fila[1] . "</td><td>";
                         echo $fila[0]. "</td><td>";
