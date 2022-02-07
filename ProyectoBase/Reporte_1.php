@@ -57,7 +57,6 @@
                              and id_cliente in (
                                                 SELECT id_cliente from contrata_vida
                                                 where estado_contrato='Activo'
-
                                                 )";
 
 
