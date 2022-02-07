@@ -154,3 +154,87 @@ INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES 
 INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("Por desastres naturales","Muertes");
 INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("Por desastres naturales","Pérdida de hogares");
 INSERT INTO `categoria_accidente`(`DescripCateg`, `DescripSubCategoria`) VALUES ("Por desastres naturales","Otro");
+
+
+
+
+VEHICULO
+
+INSERT INTO `vehiculo`(`matricula`, `marca`, `modelo`, `annio`, `id_categoria`, `id_tipo_cobertura`) VALUES ("5AJ7SCS","Fiat","500X","2018","2","1");
+INSERT INTO `vehiculo`(`matricula`, `marca`, `modelo`, `annio`, `id_categoria`, `id_tipo_cobertura`) VALUES ("JE54ILM","Mazda","Sedan","2019","2","1");
+INSERT INTO `vehiculo`(`matricula`, `marca`, `modelo`, `annio`, `id_categoria`, `id_tipo_cobertura`) VALUES ("78IES50","Chevrolet","Aveo","2011","2","3");
+INSERT INTO `vehiculo`(`matricula`, `marca`, `modelo`, `annio`, `id_categoria`, `id_tipo_cobertura`) VALUES ("AC254LP","Toyota","Corolla","2019","2","3");
+INSERT INTO `vehiculo`(`matricula`, `marca`, `modelo`, `annio`, `id_categoria`, `id_tipo_cobertura`) VALUES ("HY74LI5","Chevrolet","Spark","2010","2","1")
+
+
+
+
+ACCIDENTE
+
+INSERT INTO `accidente`(`f_acc`, `lugar_acc`, `hora_acc`, `id_categoria`) VALUES ("20/12/24","Av. Teherán","11:31:05","11");
+INSERT INTO `accidente`(`f_acc`, `lugar_acc`, `hora_acc`, `id_categoria`) VALUES ("21/01/30","Autopista","09:23:00","11");
+INSERT INTO `accidente`(`f_acc`, `lugar_acc`, `hora_acc`, `id_categoria`) VALUES ("20/12/24","El Hatillo","06:31:08","11");
+INSERT INTO `accidente`(`f_acc`, `lugar_acc`, `hora_acc`, `id_categoria`) VALUES ("21/01/30","Autopista","14:07:50","13");
+INSERT INTO `accidente`(`f_acc`, `lugar_acc`, `hora_acc`, `id_categoria`) VALUES ("21/01/30","Autopista","16:38:18","15");
+
+
+
+
+POSEE
+
+INSERT INTO `posee`(`id_persona`, `matricula`) VALUES ("13","JE54ILM");
+INSERT INTO `posee`(`id_persona`, `matricula`) VALUES ("16","5AJ7SCS");
+INSERT INTO `posee`(`id_persona`, `matricula`) VALUES ("12","78IES50");
+INSERT INTO `posee`(`id_persona`, `matricula`) VALUES ("13","AC254LP");
+INSERT INTO `posee`(`id_persona`, `matricula`) VALUES ("12","HY74LI5")
+
+
+
+
+MULTA
+
+INSERT INTO `multa`(`f_multa`, `lugar_multa`, `hora_multa`, `importe`, `matricula`, `nivel_gravedad`) VALUES ("20/12/24","Autopista","09:42:50","145","JE54ILM","5");
+INSERT INTO `multa`(`f_multa`, `lugar_multa`, `hora_multa`, `importe`, `matricula`, `nivel_gravedad`) VALUES ("20/12/24","El Hatillo","06:54:38","500","5AJ7SCS","9")
+
+
+INVOLUCRA
+
+INSERT INTO `involucra`(`nro_referenciaAcc`, `matricula`, `id_persona`) VALUES ("2","JE54ILM","13");
+INSERT INTO `involucra`(`nro_referenciaAcc`, `matricula`, `id_persona`) VALUES ("3","JE54ILM","13");
+INSERT INTO `involucra`(`nro_referenciaAcc`, `matricula`, `id_persona`) VALUES ("5","5AJ7SCS","16");
+INSERT INTO `involucra`(`nro_referenciaAcc`, `matricula`, `id_persona`) VALUES ("7","5AJ7SCS","16");
+INSERT INTO `involucra`(`nro_referenciaAcc`, `matricula`, `id_persona`) VALUES ("6","78IES50","12")
+
+
+
+
+CONTRATA_VEHICULO
+
+INSERT INTO `contrata_vehiculo`(`id_cliente`, `id_agente`, `matricula`, `f_contrato`, `recargo`, `descuentos`, `estado_contrato`, `monto_comision_Ag`) VALUES ("13","7","JE54ILM","20/10/29","5470","652","Activo","514");
+INSERT INTO `contrata_vehiculo`(`id_cliente`, `id_agente`, `matricula`, `f_contrato`, `recargo`, `descuentos`, `estado_contrato`, `monto_comision_Ag`) VALUES ("16","7","5AJ7SCS","20/02/15","7851","300","Activo","854");
+INSERT INTO `contrata_vehiculo`(`id_cliente`, `id_agente`, `matricula`, `f_contrato`, `recargo`, `descuentos`, `estado_contrato`, `monto_comision_Ag`) VALUES ("12","7","78IES50","20/07/08","4965","250","Activo","500");
+INSERT INTO `contrata_vehiculo`(`id_cliente`, `id_agente`, `matricula`, `f_contrato`, `recargo`, `descuentos`, `estado_contrato`, `monto_comision_Ag`) VALUES ("13","8","AC254LP","20/08/15","2854","100","Activo","315");
+INSERT INTO `contrata_vehiculo`(`id_cliente`, `id_agente`, `matricula`, `f_contrato`, `recargo`, `descuentos`, `estado_contrato`, `monto_comision_Ag`) VALUES ("12","8","HY74LI5","21/01/18","7585","200","Activo","425")
+
+
+
+
+CONTRATA_VIDA
+
+INSERT INTO `contrata_vida`(`id_vida_salud`, `id_cliente`, `id_persona`, `id_agente`, `f_contrato`, `estado_contrato`, `monto_comision_Ag`) VALUES ("4","12","12","8","20/11/27","Activo","254")
+
+
+
+
+PRESTAMO
+
+INSERT INTO `prestamo`(`importe_prestamo`) VALUES ("275")
+
+
+TITULAR
+
+INSERT INTO `titular`(`id_cliente`, `nro_poliza`, `saldo_prima`, `f_uso_reciente`) VALUES ("12","2","4965","21/12/07");
+INSERT INTO `titular`(`id_cliente`, `nro_poliza`, `saldo_prima`, `f_uso_reciente`) VALUES ("12","2","7585","21/06/15");
+INSERT INTO `titular`(`id_cliente`, `nro_poliza`, `saldo_prima`, `f_uso_reciente`) VALUES ("13","3","5470","22/01/12");
+INSERT INTO `titular`(`id_cliente`, `nro_poliza`, `saldo_prima`, `f_uso_reciente`) VALUES ("13","3","2854","21/10/10");
+INSERT INTO `titular`(`id_cliente`, `nro_poliza`, `saldo_prima`, `f_uso_reciente`) VALUES ("16","3","7851","22/02/01")

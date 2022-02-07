@@ -28,9 +28,9 @@
 		<div class="col-3 col-s-3 menu mt-5 ml-5">
 			<ul>
 				<li>Clientes con más pólizas
-					<!-- <ul>
-				       <li><a href="" style="text-decoration:none" >Informacion Beneficiario Poliza</li></a>
-                  	</ul> -->
+					<ul>
+				       <a href="Reporte_1.php" style="text-decoration:none" ><li>Informacion Beneficiario Poliza</li></a>
+                  	</ul>
 				</li>
 				<li>Sucursales con más pólizas
 					<ul>
@@ -55,6 +55,16 @@
 				<li>Personas con cadena ¨Jos¨
 					<ul>
 				       <a href="Reporte_8.php" style="text-decoration:none"><li>Clientes con cadena "Jos" que tienen una poliza activa y han sufrido al menos 2 accidentes</li></a>
+                  	</ul>
+				</li>
+				<li>Agentes que han realizado contratos de las pólizas
+					<ul>
+				       <a href="Reporte_9.php" style="text-decoration:none"><li>Lista de los agentes que han realizado contratos de las pólizas y en que fecha</li></a>
+                  	</ul>
+				</li>
+				<li>Multas con gravedad de 8 a 10
+					<ul>
+				       <a href="Reporte_11.php" style="text-decoration:none"><li>Clientes que tienen multas de gravedad 8 a 10</li></a>
                   	</ul>
 				</li>
 			</ul>

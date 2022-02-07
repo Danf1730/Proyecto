@@ -32,11 +32,6 @@
 						<a href="Reporte_1.php" style="text-decoration:none"><li>Clientes propietarios de 2 o más pólizas de vehículos que son propietarios de una de salud</li></a>
                   	</ul>
 				</li>
-				<li>Vehículos Accidentados
-					<!-- <ul>
-				       <li><a href="" style="text-decoration:none"><li> </li></a>
-                  	</ul> -->
-				</li>
 				<li>Cadena "Jos"
 					<ul>
 				       <a href="Reporte_8.php" style="text-decoration:none"><li>Clientes con cadena "Jos" que tienen una póliza activa y han sufrido al menos 2 accidentes</li></a>
