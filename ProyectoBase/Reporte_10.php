@@ -48,7 +48,7 @@
                                                                                                 SELECT id_prestamo FROM prestamo
                                                                                               )
                                                                         )
-                                                    )
+                                                    )Limit 1,1
                     ";
 
 
