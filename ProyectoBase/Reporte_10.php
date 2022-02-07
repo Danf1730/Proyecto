@@ -38,7 +38,18 @@
                     $user="u6zp5irrvsbyntyd";
                     $password="YItp7ofnGTt8NbLiifkD";
                     $conexion = mysqli_connect($host, $user, $password, $database);
-                    // $query = 
+                    $query = "SELECT S.*, C.nb_ciudad FROM sucursal AS S, ciudad AS C
+                              where C.id_ciudad=S.id_ciudad
+                              and id_sucursal in (
+                                                    SELECT id_sucursal FROM cliente
+                                                    where id_cliente in (
+                                                                         SELECT id_cliente FROM prestatario
+                                                                         where id_prestamo in (
+                                                                                                SELECT id_prestamo FROM prestamo
+                                                                                              )
+                                                                        )
+                                                    )
+                    ";
 
 
 
@@ -47,15 +58,8 @@
                     while($fila=mysqli_fetch_row($resultado)){
                         echo "<tr>";
                         echo "<th scope='row'>" ;
-                        echo $fila[4] . "</td><td>";
-                        echo $fila[5]. "</td><td>";
-                        echo $fila[6]. "</td><td>";
-                        echo $fila[7] . "</td><td>";
-                        echo $fila[8] . "</td><td>";
-                        echo $fila[9] . "</td><td>";
-                        echo $fila[10] . "</td><td>";
-                        echo $fila[11] . "</td><td>";
-                        echo $fila[12] . "</td>";
+                        echo $fila[1] . "</td><td>";
+                        echo $fila[5] . "</td>";
                         echo "</tr>";
                         echo "</br>";
                         echo "</br>";

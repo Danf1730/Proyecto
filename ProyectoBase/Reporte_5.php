@@ -5,7 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Reportes seguros y polizas</title>
 	<link rel="stylesheet" type="text/css" href="style_proyecto/Menus.css" style="text-decoration:none">
-	
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
@@ -26,8 +25,8 @@
         <table class="table">
             <thead>
                 <tr>
-                <th scope="col">ID Sucursal</th>
-                <th scope="col">ID Poliza</th>
+                <th scope="col">Nro Póliza</th>
+                <th scope="col">Nombre Sucursal</th>
                 <th scope="col">Fecha</th>
                 </tr>
             </thead>

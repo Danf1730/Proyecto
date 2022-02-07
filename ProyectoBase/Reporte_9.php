@@ -43,15 +43,15 @@
                               FROM persona AS P, agente AS A, contrata_vehiculo AS CV, contrata_vida AS CVI, contrata_inmueble AS CI
                               where P.Tipo_persona='AGENTE'
                               AND (A.id_agente in (
-                                                  SELECT CV.id_agente FROM contrata_vehiculo
+                                                  SELECT distinct CV.id_agente FROM contrata_vehiculo
                                                   where (A.id_agente=CV.id_agente)
                                                 )
                               or A.id_agente in (
-                                                  SELECT CVI.id_agente FROM contrata_vida
+                                                  SELECT distinct CVI.id_agente FROM contrata_vida
                                                   where (A.id_agente=CVI.id_agente)
                                                 )
                               or A.id_agente in (
-                                                  SELECT CI.id_agente FROM contrata_inmueble
+                                                  SELECT distinct CI.id_agente FROM contrata_inmueble
                                                   where (A.id_agente=CI.id_agente)
                                                 ))
                     ";
