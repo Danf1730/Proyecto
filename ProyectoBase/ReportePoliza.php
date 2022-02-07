@@ -48,9 +48,9 @@
                   	</ul>
 				</li>
 				<li>Sucursales con más préstamos en pólizas
-					<!-- <ul>
-				       <a href="" style="text-decoration:none"><li>  </li></a>
-                  	</ul> -->
+					<ul>
+				       <a href="Reporte_10.php" style="text-decoration:none"><li></li></a>
+                  	</ul>
 				</li>
 				<li>Personas con cadena ¨Jos¨
 					<ul>
