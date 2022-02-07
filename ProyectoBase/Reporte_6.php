@@ -44,7 +44,12 @@
                             where (C.id_cliente=T.id_cliente) 
                             AND (T.nro_poliza=P.nro_poliza) in (
                                 SELECT nro_poliza FROM poliza
+<<<<<<< HEAD
                             )";
+=======
+                            ) 
+                            ";
+>>>>>>> main
                     
 
 
