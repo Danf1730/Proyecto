@@ -28,7 +28,7 @@
                 <tr>
                 <th scope="col">Nombre Sucursal</th>
                 <th scope="col">Ciudad</th>
-                <th scope="col">Identificador Cliente</th>
+                <th scope="col">Cliente</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,10 +38,11 @@
                     $user="u6zp5irrvsbyntyd";
                     $password="YItp7ofnGTt8NbLiifkD";
                     $conexion = mysqli_connect($host, $user, $password, $database);
-                     $query = "SELECT S.nb_sucursal,C.nb_ciudad , T.id_cliente 
+                     $query = "SELECT S.nb_sucursal,C.nb_ciudad ,T.id_cliente
                     FROM ciudad AS C ,sucursal AS S, titular AS T, cliente AS L
                     WHERE (C.id_ciudad=S.id_ciudad) AND (S.id_sucursal=L.id_sucursal) AND 
                           (L.id_cliente=T.id_cliente ) 
+                          group by T.id_cliente
                           having  COUNT(T.nro_poliza )>5 ";
 
 
