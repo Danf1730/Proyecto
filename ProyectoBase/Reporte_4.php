@@ -42,8 +42,6 @@
                     // WHERE (C.id_ciudad=S.id_ciudad) AND (S.id_sucursal=E.id_sucursal) AND 
                     //        (E.id_empleado=L.id_asesor_personal) AND (L.id_cliente=P.id_cliente) 
                     //        HAVING COUNT(P.id_poliza)>5";
-<<<<<<< HEAD
-
 
                     $query = "SELECT S.nb_sucursal, C.nb_ciudad 
                     FROM sucursal AS sucursal, ciudad AS C,
@@ -51,9 +49,6 @@
                     -- AND (S.id_sucursal=cliente.id_sucursal)
                     -- AND (cliente.id_cliente=titular.id_cliente) HAVING COUNT(titular.nro_poliza)>5
                     ";
-=======
-
->>>>>>> main
 
 
                     $resultado = mysqli_query($conexion,$query);
